@@ -27,6 +27,17 @@ $999.00 carried, 1.333476 SPY units @ 749.17 (2026-07-13 close). Live clock and
 all live-vs-SPY comparisons measure from this mark. Costs standard now 0.15%.
 
 ## Standing briefing instructions (per Mr. Menéndez, 2026-07-14)
+- FORMAT (added later on 2026-07-14, SUPERSEDES the long template): the daily
+  email must be a TWO-MINUTE READ MAX (~250-350 words + two small tables).
+  Structure: (1) SCOREBOARD table — live value, day change, vs SPY day/since
+  inception, worst dip, holdings one line; (2) TRACK RECORD table — $1k
+  backtest from 2000/2010/2020 → strategy vs SPY (and vs EWC/ACWI once
+  cached): final $, %/yr, worst loss ONLY; (3) RESEARCH — one line per
+  experiment: name, verdict, ≤10-word reason; plus one line for anything
+  added/removed (data, tools); (4) STATUS — the 4 graduation checks as a
+  single ✓/✗ line each + live-clock months; (5) news digest max 2 sentences;
+  (6) short sign-off + logo. No long prose sections. Charts only when
+  something changed.
 - BENCHMARK PANEL: once the expanded cache lands, every session's report and
   briefing scoreboard must compare the champion/live track not only to SPY/
   QQQ/DIA/Mag-7 but also to the Canadian market (EWC total-return proxy;
