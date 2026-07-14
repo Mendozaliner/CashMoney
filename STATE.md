@@ -1,17 +1,39 @@
 # STATE — CashMoney research system
 
-Updated: 2026-07-13 (session 2)
+Updated: 2026-07-14 (infrastructure session — data pipeline + statistical honesty layer)
+
+## PHASE 2 — PROVE (entered 2026-07-14)
+Champion **v2 is FROZEN** as the live exam strategy. The live-outperformance
+clock starts **2026-07-14** (first fresh mark once the data Action has run;
+3 consecutive months of beating SPY, MaxDD < 20%, is the Phase-2 bar).
+All new research runs in SEPARATE SLEEVES and must NOT touch the frozen live
+track. Champion changes are allowed only if v2 decisively fails (trails SPY by
+>5% over 6+ weeks live). See SKILL.md for keep/revert + significance gates.
 
 ## Environment constraints
-- Research sandbox: only github.com reachable (git protocol); GitHub REST API
-  and all market-data APIs blocked.
-- Primary data: snapshot of SteelCerberus/us-market-data — daily SPY
-  total-return proxy + T-bill return index, 1885-03-20 → 2025-12-19
-  (`data/cache/us_market_data.csv`). Upstream NOT updated since session 1;
-  refresh attempted each session via `data.loader.refresh_spy_proxy_cache()`.
-- NEW (session 2): daily VIX OHLC 1990 → 2026-07-10 from datasets/finance-vix
-  (`data/cache/vix_daily.csv`, `data.loader.load_vix()`).
-- Benchmarks DIA, QQQ, Mag-7: still NOT AVAILABLE (no multi-asset OHLCV found).
+- Research sandbox: only github.com reachable; all market-data APIs blocked.
+  This is why data now arrives via git, not direct fetch.
+- PRIMARY DATA (new 2026-07-14): daily OHLCV for the full universe, 2000-01-01
+  → present, in `data/cache/ohlcv/` — refreshed EVERY WEEKDAY by a GitHub
+  Action (`.github/workflows/update-data.yml` → `scripts/fetch_data.py`) that
+  runs on GitHub's servers (full internet). Read via `data.loader.load_ohlcv()`
+  / `load_universe()`; check `data.loader.data_freshness()` each session.
+  Coverage confirmed 28/28 tickers on first run.
+- Universe now AVAILABLE (was blocked): SPY DIA QQQ IWM; XLK XLF XLE XLV XLY
+  XLP XLI XLU XLB XLRE XLC; TLT IEF SHY GLD; AAPL MSFT GOOGL AMZN NVDA META
+  TSLA; ^VIX; ^IRX. Multi-asset strategies (dual/cross-sectional momentum,
+  rotation) are no longer blocked.
+- Deep-history SPY total-return proxy (1885→, `load_spy_proxy()`) retained for
+  long-horizon robustness checks only. VIX snapshot retained.
+
+## Statistical-honesty tooling (new 2026-07-14)
+- `backtest/evaluation.py` — deflated Sharpe ratio (penalizes # of trials),
+  bootstrap CIs on a metric and on strategy-minus-SPY difference, after-tax and
+  do-nothing comparisons. 8/8 tests in `tests/test_evaluation.py`.
+- `research/preregister.py` — pre-registration log + hard cap of
+  MAX_CONFIGS_PER_IDEA=12; records to `research/hypotheses.jsonl`.
+- Keep/revert now requires: pre-registered hypothesis, deflated Sharpe >= 0.95,
+  AND a bootstrap difference-vs-SPY CI that clears zero. No crowning on noise.
 
 ## Champion (v2, adopted session 2)
 **vol_target(target_vol=0.18, lookback=20)** — exposure = SMA200/3%-band trend
@@ -42,3 +64,10 @@ cost, marked at dataset close 2025-12-19 (stale-data caveat in file).
   (neighbors 0.920-0.939); E3 both 0.967, MaxDD -17.9%. KEPT E3 as v2.
   Caveats: tv at grid edge; rf gain regime-dependent. Initialized portfolio.
   Negative: tv 0.10-0.12 over-delevers IS (Sharpe 0.69-0.76).
+- 2026-07-14 infra — Fixed the "no live data" wall: built self-refreshing
+  GitHub Actions data pipeline (2000→present, 28 tickers, verified). Added
+  multi-asset loader, deflated-Sharpe + bootstrap significance + after-tax /
+  do-nothing evaluation, pre-registration harness with config cap. FROZE
+  champion v2 and entered Phase 2 (live clock started). Archived legacy
+  MACD/AMZN prototype to archive/. Testing protocol → 2000-present walk-forward
+  with a locked final 12-month holdout. No strategy experiments this session.
