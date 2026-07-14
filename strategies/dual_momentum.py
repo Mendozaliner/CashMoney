@@ -39,14 +39,15 @@ DEFAULTS = {"lookback": 252, "skip": 21}
 
 
 def multi_signals(price_panel: pd.DataFrame, lookback: int = 252,
-                  skip: int = 21) -> pd.DataFrame:
+                  skip: int = 21, defensive: str | None = None) -> pd.DataFrame:
     """Return a weight DataFrame (date × ticker) for Dual Momentum.
 
     Only tickers present in price_panel.columns are used. Rows before the
     warmup period (first lookback days) are left at zero (stay in cash).
     """
     available_eq = [t for t in EQUITY_ASSETS if t in price_panel.columns]
-    defensive = DEFENSIVE_ASSET if DEFENSIVE_ASSET in price_panel.columns else None
+    defensive = defensive or DEFENSIVE_ASSET
+    defensive = defensive if defensive in price_panel.columns else None
     abs_bar = ABSOLUTE_BAR_ASSET if ABSOLUTE_BAR_ASSET in price_panel.columns else None
 
     weights = pd.DataFrame(0.0, index=price_panel.index,

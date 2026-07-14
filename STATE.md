@@ -1,6 +1,6 @@
 # STATE — CashMoney research system
 
-Updated: 2026-07-14 s5 (philosophy expansion: Dual Momentum, Kill-Switch, Sector Momentum — all discarded)
+Updated: 2026-07-14 s6 (GTAA sleeve candidate, DM-SHY retry, conservative kill-switch — all discarded; GTAA on ensemble watch-list)
 
 ## PHASE 2 — PROVE (entered 2026-07-14)
 Champion **v2 is FROZEN** as the live exam strategy. The live-outperformance
@@ -82,6 +82,13 @@ portfolio.json created session 2 (session 1 omitted it): $1,000 inception
 2026-07-13, fully invested per v2 (exposure 1.0), value $999.00 after entry
 cost, marked at dataset close 2025-12-19 (stale-data caveat in file).
 
+## Watch-list (not adopted; revisit under stated conditions)
+- **GTAA(w150,b0) SPY/IWM/IEF/GLD** (E6, s6): mean WF Sharpe 0.892 (v2 0.844),
+  worst-fold DD -12.6% — best risk profile tested to date, robust across 6 cfgs,
+  but DSR 0.897 and diff-vs-SPY CI [-0.76,+0.98] fail the gate. Condition to
+  revisit: as ensemble diversifier once any sleeve clears significance, or
+  low-correlation memo (roadmap #2) motivates a combined-sleeve registration.
+
 ## Session log
 - 2026-07-13 s1 — Scaffold; SMA trend grid; champion v1 = SMA200/b3. KEPT.
 - 2026-07-13 s2 — Roadmap #2+#3 (+#1 attempt). Built fractional vector engine
@@ -118,3 +125,14 @@ cost, marked at dataset close 2025-12-19 (stale-data caveat in file).
   momentum crash in 2000-2009 dot-com fold (XLK dominated entering bubble top).
   $1k test: v2 $8,374 > SPY $7,043 > DIA $7,008 > QQQ $7,417. v2 wins all realistic
   benchmarks. No portfolio change. Cumulative registered configs: 46.
+- 2026-07-14 s6 — Roadmap items 1-3. New strategies/gtaa.py (+3 causality
+  tests, 18/18 pass). E6 GTAA (5d45ec36b7, 6 cfg): best w150/b0 mean WF 0.892,
+  worst DD -12.6% — best risk profile to date but DSR 0.897 / CI straddles 0 →
+  DISCARDED, moved to watch-list as future ensemble diversifier. E7 DM-SHY
+  (cfc6112ed7, 4 cfg): mean 0.539, DD -36.7% → DISCARDED; dual momentum 0-for-2,
+  rotation itself (not just TLT harbor) is the failure. E8 kill-switch -20/-10
+  (f117a77dbb, 2 cfg): zero DD improvement, fold-2 Sharpe -0.095 → DISCARDED;
+  kill-switch item closed permanently (vol targeting already de-risks).
+  Do-nothing check unchanged: after-tax B&H won 2020-2025H ($1.92 vs $1.59).
+  No new close (cache still 2026-07-13); mark unchanged $999.00, no trades.
+  Cumulative registered configs: 58.

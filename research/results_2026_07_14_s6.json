@@ -1,0 +1,607 @@
+{
+ "session": "2026-07-14-s6",
+ "data_freshness": {
+  "available": true,
+  "newest_close": "2026-07-13",
+  "stale_days": 1,
+  "tickers_ok": 28,
+  "updated_utc": "2026-07-14T02:54:39+00:00"
+ },
+ "v2_baseline_wf_sharpes": [
+  0.859,
+  0.784,
+  0.889
+ ],
+ "E6": [
+  {
+   "cfg": {
+    "window": 150,
+    "band": 0.0
+   },
+   "wf_sharpes": [
+    0.952,
+    0.893,
+    0.832
+   ],
+   "mean": 0.892,
+   "folds": [
+    {
+     "label": "GTAA w150 b0.0 2000-2009",
+     "CAGR": 6.66,
+     "Sharpe": 0.952,
+     "Sortino": 1.218,
+     "MaxDD": -10.47,
+     "AvgInvested": 0.492,
+     "Turnover/yr": 1.6,
+     "End$per1k": 1904.08
+    },
+    {
+     "label": "GTAA w150 b0.0 2010-2019",
+     "CAGR": 5.97,
+     "Sharpe": 0.893,
+     "Sortino": 1.179,
+     "MaxDD": -10.41,
+     "AvgInvested": 0.72,
+     "Turnover/yr": 2.0,
+     "End$per1k": 1784.68
+    },
+    {
+     "label": "GTAA w150 b0.0 2020-2025H",
+     "CAGR": 6.53,
+     "Sharpe": 0.832,
+     "Sortino": 1.083,
+     "MaxDD": -12.57,
+     "AvgInvested": 0.644,
+     "Turnover/yr": 2.54,
+     "End$per1k": 1418.21
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "window": 150,
+    "band": 0.03
+   },
+   "wf_sharpes": [
+    0.867,
+    0.409,
+    1.089
+   ],
+   "mean": 0.788,
+   "folds": [
+    {
+     "label": "GTAA w150 b0.03 2000-2009",
+     "CAGR": 5.19,
+     "Sharpe": 0.867,
+     "Sortino": 0.963,
+     "MaxDD": -10.22,
+     "AvgInvested": 0.317,
+     "Turnover/yr": 1.85,
+     "End$per1k": 1657.74
+    },
+    {
+     "label": "GTAA w150 b0.03 2010-2019",
+     "CAGR": 2.27,
+     "Sharpe": 0.409,
+     "Sortino": 0.476,
+     "MaxDD": -8.73,
+     "AvgInvested": 0.449,
+     "Turnover/yr": 2.85,
+     "End$per1k": 1251.11
+    },
+    {
+     "label": "GTAA w150 b0.03 2020-2025H",
+     "CAGR": 7.45,
+     "Sharpe": 1.089,
+     "Sortino": 1.3,
+     "MaxDD": -7.66,
+     "AvgInvested": 0.454,
+     "Turnover/yr": 2.17,
+     "End$per1k": 1487.44
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "window": 200,
+    "band": 0.0
+   },
+   "wf_sharpes": [
+    0.947,
+    0.746,
+    0.745
+   ],
+   "mean": 0.813,
+   "folds": [
+    {
+     "label": "GTAA w200 b0.0 2000-2009",
+     "CAGR": 6.55,
+     "Sharpe": 0.947,
+     "Sortino": 1.176,
+     "MaxDD": -10.47,
+     "AvgInvested": 0.499,
+     "Turnover/yr": 1.05,
+     "End$per1k": 1884.38
+    },
+    {
+     "label": "GTAA w200 b0.0 2010-2019",
+     "CAGR": 5.12,
+     "Sharpe": 0.746,
+     "Sortino": 0.977,
+     "MaxDD": -8.43,
+     "AvgInvested": 0.734,
+     "Turnover/yr": 1.75,
+     "End$per1k": 1646.45
+    },
+    {
+     "label": "GTAA w200 b0.0 2020-2025H",
+     "CAGR": 5.75,
+     "Sharpe": 0.745,
+     "Sortino": 0.962,
+     "MaxDD": -15.23,
+     "AvgInvested": 0.646,
+     "Turnover/yr": 2.63,
+     "End$per1k": 1361.47
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "window": 200,
+    "band": 0.03
+   },
+   "wf_sharpes": [
+    0.802,
+    0.694,
+    0.983
+   ],
+   "mean": 0.826,
+   "folds": [
+    {
+     "label": "GTAA w200 b0.03 2000-2009",
+     "CAGR": 4.96,
+     "Sharpe": 0.802,
+     "Sortino": 0.916,
+     "MaxDD": -10.51,
+     "AvgInvested": 0.348,
+     "Turnover/yr": 1.58,
+     "End$per1k": 1621.48
+    },
+    {
+     "label": "GTAA w200 b0.03 2010-2019",
+     "CAGR": 4.26,
+     "Sharpe": 0.694,
+     "Sortino": 0.849,
+     "MaxDD": -8.82,
+     "AvgInvested": 0.523,
+     "Turnover/yr": 2.13,
+     "End$per1k": 1516.38
+    },
+    {
+     "label": "GTAA w200 b0.03 2020-2025H",
+     "CAGR": 7.13,
+     "Sharpe": 0.983,
+     "Sortino": 1.21,
+     "MaxDD": -6.54,
+     "AvgInvested": 0.49,
+     "Turnover/yr": 1.72,
+     "End$per1k": 1463.14
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "window": 250,
+    "band": 0.0
+   },
+   "wf_sharpes": [
+    1.005,
+    0.723,
+    0.892
+   ],
+   "mean": 0.873,
+   "folds": [
+    {
+     "label": "GTAA w250 b0.0 2000-2009",
+     "CAGR": 6.82,
+     "Sharpe": 1.005,
+     "Sortino": 1.249,
+     "MaxDD": -10.47,
+     "AvgInvested": 0.5,
+     "Turnover/yr": 0.75,
+     "End$per1k": 1933.89
+    },
+    {
+     "label": "GTAA w250 b0.0 2010-2019",
+     "CAGR": 5.02,
+     "Sharpe": 0.723,
+     "Sortino": 0.953,
+     "MaxDD": -8.89,
+     "AvgInvested": 0.753,
+     "Turnover/yr": 1.6,
+     "End$per1k": 1630.93
+    },
+    {
+     "label": "GTAA w250 b0.0 2020-2025H",
+     "CAGR": 7.11,
+     "Sharpe": 0.892,
+     "Sortino": 1.136,
+     "MaxDD": -10.15,
+     "AvgInvested": 0.661,
+     "Turnover/yr": 1.99,
+     "End$per1k": 1461.41
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "window": 250,
+    "band": 0.03
+   },
+   "wf_sharpes": [
+    0.812,
+    0.7,
+    0.897
+   ],
+   "mean": 0.803,
+   "folds": [
+    {
+     "label": "GTAA w250 b0.03 2000-2009",
+     "CAGR": 5.02,
+     "Sharpe": 0.812,
+     "Sortino": 0.937,
+     "MaxDD": -9.36,
+     "AvgInvested": 0.377,
+     "Turnover/yr": 1.38,
+     "End$per1k": 1631.44
+    },
+    {
+     "label": "GTAA w250 b0.03 2010-2019",
+     "CAGR": 4.63,
+     "Sharpe": 0.7,
+     "Sortino": 0.865,
+     "MaxDD": -8.09,
+     "AvgInvested": 0.577,
+     "Turnover/yr": 1.65,
+     "End$per1k": 1571.38
+    },
+    {
+     "label": "GTAA w250 b0.03 2020-2025H",
+     "CAGR": 6.48,
+     "Sharpe": 0.897,
+     "Sortino": 1.133,
+     "MaxDD": -10.31,
+     "AvgInvested": 0.516,
+     "Turnover/yr": 1.9,
+     "End$per1k": 1414.08
+    }
+   ]
+  }
+ ],
+ "E7": [
+  {
+   "cfg": {
+    "lookback": 126,
+    "skip": 0
+   },
+   "wf_sharpes": [
+    0.439,
+    0.387,
+    0.428
+   ],
+   "mean": 0.418,
+   "folds": [
+    {
+     "label": "DM-SHY lb126 sk0 2000-2009",
+     "CAGR": 4.77,
+     "Sharpe": 0.439,
+     "Sortino": 0.477,
+     "MaxDD": -30.29,
+     "AvgInvested": 0.693,
+     "Turnover/yr": 22.72,
+     "End$per1k": 1593.27
+    },
+    {
+     "label": "DM-SHY lb126 sk0 2010-2019",
+     "CAGR": 4.47,
+     "Sharpe": 0.387,
+     "Sortino": 0.471,
+     "MaxDD": -26.67,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 32.34,
+     "End$per1k": 1547.1
+    },
+    {
+     "label": "DM-SHY lb126 sk0 2020-2025H",
+     "CAGR": 6.32,
+     "Sharpe": 0.428,
+     "Sortino": 0.525,
+     "MaxDD": -35.68,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 44.0,
+     "End$per1k": 1402.43
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "lookback": 126,
+    "skip": 21
+   },
+   "wf_sharpes": [
+    0.243,
+    0.187,
+    0.337
+   ],
+   "mean": 0.256,
+   "folds": [
+    {
+     "label": "DM-SHY lb126 sk21 2000-2009",
+     "CAGR": 2.35,
+     "Sharpe": 0.243,
+     "Sortino": 0.25,
+     "MaxDD": -42.83,
+     "AvgInvested": 0.693,
+     "Turnover/yr": 31.92,
+     "End$per1k": 1261.84
+    },
+    {
+     "label": "DM-SHY lb126 sk21 2010-2019",
+     "CAGR": 1.69,
+     "Sharpe": 0.187,
+     "Sortino": 0.228,
+     "MaxDD": -29.09,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 39.95,
+     "End$per1k": 1182.43
+    },
+    {
+     "label": "DM-SHY lb126 sk21 2020-2025H",
+     "CAGR": 5.0,
+     "Sharpe": 0.337,
+     "Sortino": 0.398,
+     "MaxDD": -35.76,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 38.57,
+     "End$per1k": 1309.55
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "lookback": 252,
+    "skip": 0
+   },
+   "wf_sharpes": [
+    0.522,
+    0.558,
+    0.536
+   ],
+   "mean": 0.539,
+   "folds": [
+    {
+     "label": "DM-SHY lb252 sk0 2000-2009",
+     "CAGR": 5.02,
+     "Sharpe": 0.522,
+     "Sortino": 0.52,
+     "MaxDD": -16.79,
+     "AvgInvested": 0.643,
+     "Turnover/yr": 7.91,
+     "End$per1k": 1631.68
+    },
+    {
+     "label": "DM-SHY lb252 sk0 2010-2019",
+     "CAGR": 7.92,
+     "Sharpe": 0.558,
+     "Sortino": 0.691,
+     "MaxDD": -29.95,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 22.93,
+     "End$per1k": 2140.62
+    },
+    {
+     "label": "DM-SHY lb252 sk0 2020-2025H",
+     "CAGR": 9.13,
+     "Sharpe": 0.536,
+     "Sortino": 0.669,
+     "MaxDD": -36.71,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 35.67,
+     "End$per1k": 1620.26
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "lookback": 252,
+    "skip": 21
+   },
+   "wf_sharpes": [
+    0.366,
+    0.603,
+    0.302
+   ],
+   "mean": 0.424,
+   "folds": [
+    {
+     "label": "DM-SHY lb252 sk21 2000-2009",
+     "CAGR": 3.42,
+     "Sharpe": 0.366,
+     "Sortino": 0.361,
+     "MaxDD": -25.0,
+     "AvgInvested": 0.643,
+     "Turnover/yr": 10.91,
+     "End$per1k": 1398.78
+    },
+    {
+     "label": "DM-SHY lb252 sk21 2010-2019",
+     "CAGR": 9.01,
+     "Sharpe": 0.603,
+     "Sortino": 0.76,
+     "MaxDD": -22.8,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 26.73,
+     "End$per1k": 2367.18
+    },
+    {
+     "label": "DM-SHY lb252 sk21 2020-2025H",
+     "CAGR": 4.31,
+     "Sharpe": 0.302,
+     "Sortino": 0.369,
+     "MaxDD": -39.48,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 46.9,
+     "End$per1k": 1262.22
+    }
+   ]
+  }
+ ],
+ "E8": [
+  {
+   "cfg": {
+    "kill_dd": -0.2,
+    "recovery_dd": -0.1
+   },
+   "wf_sharpes": [
+    0.859,
+    0.689,
+    0.889
+   ],
+   "mean": 0.812,
+   "folds": [
+    {
+     "label": "KS -0.2/-0.1 2000-2009",
+     "CAGR": 7.34,
+     "Sharpe": 0.859,
+     "Sortino": 0.828,
+     "MaxDD": -11.89,
+     "DayWin%": 55.8,
+     "Turnover/yr": 0.81,
+     "AvgExposure": 0.486,
+     "End$per1k": 2030.5
+    },
+    {
+     "label": "KS -0.2/-0.1 2010-2019",
+     "CAGR": 7.29,
+     "Sharpe": 0.689,
+     "Sortino": 0.764,
+     "MaxDD": -20.49,
+     "DayWin%": 55.4,
+     "Turnover/yr": 1.6,
+     "AvgExposure": 0.79,
+     "End$per1k": 2018.59
+    },
+    {
+     "label": "KS -0.2/-0.1 2020-2025H",
+     "CAGR": 10.94,
+     "Sharpe": 0.889,
+     "Sortino": 1.014,
+     "MaxDD": -18.11,
+     "DayWin%": 56.3,
+     "Turnover/yr": 2.31,
+     "AvgExposure": 0.75,
+     "End$per1k": 1773.86
+    }
+   ],
+   "sharpe_drops_vs_v2": [
+    0.0,
+    0.095,
+    0.0
+   ],
+   "days_killed": 117
+  },
+  {
+   "cfg": {
+    "kill_dd": -0.18,
+    "recovery_dd": -0.09
+   },
+   "wf_sharpes": [
+    0.859,
+    0.71,
+    0.723
+   ],
+   "mean": 0.764,
+   "folds": [
+    {
+     "label": "KS -0.18/-0.09 2000-2009",
+     "CAGR": 7.34,
+     "Sharpe": 0.859,
+     "Sortino": 0.828,
+     "MaxDD": -11.89,
+     "DayWin%": 55.8,
+     "Turnover/yr": 0.81,
+     "AvgExposure": 0.486,
+     "End$per1k": 2030.5
+    },
+    {
+     "label": "KS -0.18/-0.09 2010-2019",
+     "CAGR": 7.39,
+     "Sharpe": 0.71,
+     "Sortino": 0.772,
+     "MaxDD": -18.55,
+     "DayWin%": 55.6,
+     "Turnover/yr": 1.4,
+     "AvgExposure": 0.758,
+     "End$per1k": 2038.82
+    },
+    {
+     "label": "KS -0.18/-0.09 2020-2025H",
+     "CAGR": 8.43,
+     "Sharpe": 0.723,
+     "Sortino": 0.789,
+     "MaxDD": -22.3,
+     "DayWin%": 56.1,
+     "Turnover/yr": 2.64,
+     "AvgExposure": 0.701,
+     "End$per1k": 1563.42
+    }
+   ],
+   "sharpe_drops_vs_v2": [
+    0.0,
+    0.074,
+    0.166
+   ],
+   "days_killed": 265
+  }
+ ],
+ "E6_sig": {
+  "best_cfg": {
+   "window": 150,
+   "band": 0.0
+  },
+  "mean_wf": 0.892,
+  "dsr": 0.8973,
+  "ci": [
+   -0.758,
+   0.979
+  ],
+  "clears": false,
+  "worst_dd": -12.57
+ },
+ "E7_sig": {
+  "best_cfg": {
+   "lookback": 252,
+   "skip": 0
+  },
+  "mean_wf": 0.539,
+  "dsr": 0.7713,
+  "ci": [
+   -0.765,
+   0.383
+  ],
+  "clears": false,
+  "worst_dd": -36.71,
+  "oos_dd": -36.71
+ },
+ "E8_sig": {
+  "best_cfg": {
+   "kill_dd": -0.2,
+   "recovery_dd": -0.1
+  },
+  "dsr": 0.9624,
+  "worst_dd": -20.49,
+  "v2_worst_dd": -20.49,
+  "dd_improvement_pts": 0.0,
+  "max_fold_sharpe_drop": 0.095
+ }
+}

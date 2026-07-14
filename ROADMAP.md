@@ -1,17 +1,13 @@
-# ROADMAP (reprioritized 2026-07-14 s5)
+# ROADMAP (reprioritized 2026-07-14 s6)
 
-1. **Trend-following across multiple assets (Faber GTAA)** — NEW SLEEVE.
-   SPY + IEF + GLD + IWM each independently gated on their own SMA200; hold
-   equal-weight subset with trend-on; rest in T-bills. Key improvement over
-   Dual Momentum: no forced bond-as-safe-haven. Pre-register with DSR ≥ 0.95
-   bar; own $1k sub-portfolio if it clears.
-2. **Refined Dual Momentum (SHY defensive, not TLT)** — revisit with reduced
-   duration risk. Replace TLT with SHY (3-month T-bills) as the defensive harbor.
-   The 2022 TLT crash killed the vanilla GEM. Hypothesis: SHY defensive + US
-   absolute momentum (SPY/QQQ vs SHY) avoids the bond-duration problem.
-3. **v2 + conservative kill-switch (-20%/-10%)** — retry E4 at kill level
-   BELOW v2's worst-fold DD (-20.5%), so it fires only in GFC/COVID scenarios.
-   Pre-register separately; 2 configs only.
+1. **Criterion-1 significance on v2** — bootstrap diff-vs-SPY on the FULL
+   2000-2025H walk-forward sample (not just the 2020+ fold). Larger n may
+   clear the noise band. Pure analysis, no new configs.
+2. **GTAA ensemble feasibility memo** — correlation of GTAA(w150,b0) daily
+   returns vs v2 across folds, using existing E6 runs (no new configs).
+   If weakly correlated, register a combined-sleeve test (equal-risk weights).
+3. **Vol targeting ON the GTAA sleeve** (≤6 cfg, separate registration) —
+   only if #2 shows low correlation; else skip to fractional Kelly.
 4. **Sector momentum + trend gate** — retry E5 with individual-sector SMA200
    filter: a sector must be above its own 200-day MA to qualify for top-N.
    Addresses the momentum-crash problem (XLK above SMA200 entering dot-com peak
@@ -24,6 +20,12 @@
    needed — pipeline doesn't carry it yet).
 
 ## Negative results (do NOT re-test in the original form)
+- Dual Momentum with SHY harbor (E7, s6): mean WF Sharpe 0.539, DD -36.7%.
+  The SPY/QQQ/DIA rotation whipsaws regardless of harbor. Family closed.
+- Kill-switch on v2 at ANY setting — tight -12/-15 (E4) and loose -20/-10
+  (E8, s6) both failed: no DD improvement, Sharpe cost. Closed permanently.
+- Faber GTAA as a STANDALONE champion (E6, s6): fails significance vs SPY
+  (DSR 0.897). NOT closed as an ensemble component — see watch-list.
 - Raw daily SMA crossover (band=0); 50d SMA windows (noise).
 - Vol targets ≤0.12 on trend-gated SPY (over-delever; Sharpe 0.69-0.76).
 - Wider vol targets 0.21-0.30: flat surface, no gain over v2 (E1, 2026-07-14).
