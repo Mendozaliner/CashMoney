@@ -88,3 +88,73 @@ def load_vix(start=None, end=None) -> pd.DataFrame:
     df = pd.read_csv(VIX_CSV, parse_dates=["DATE"], index_col="DATE")
     df.index.name = "Date"
     return df.loc[start:end]
+
+
+# ---------------------------------------------------------------------------
+# Multi-asset daily OHLCV (added 2026-07-13) -- refreshed by GitHub Actions
+# (scripts/fetch_data.py) and committed to data/cache/ohlcv/. The research
+# sandbox reads these via `git pull`; it never fetches them directly.
+# Scope: 2000-01-01 -> present. Post-decimalization era (chosen deliberately;
+# see SKILL.md testing protocol).
+# ---------------------------------------------------------------------------
+import json as _json
+
+OHLCV_DIR = CACHE / "ohlcv"
+DATA_MANIFEST = CACHE / "last_updated.json"
+
+
+def _ohlcv_path(ticker: str) -> Path:
+    return OHLCV_DIR / f"{ticker.replace('^', '_')}.csv"
+
+
+def load_ohlcv(ticker: str, start="2000-01-01", end=None) -> pd.DataFrame:
+    """Daily OHLCV for one instrument from the committed cache.
+
+    Columns: Open, High, Low, Close, Volume (adjusted close as Close).
+    Raises FileNotFoundError with a helpful hint if the cache is missing.
+    """
+    p = _ohlcv_path(ticker)
+    if not p.exists():
+        raise FileNotFoundError(
+            f"No cached OHLCV for {ticker!r} at {p}. The GitHub Action "
+            "'Update market data' populates data/cache/ohlcv/ -- run it "
+            "(Actions tab -> Run workflow) or `git pull` after it has run."
+        )
+    df = pd.read_csv(p, parse_dates=["Date"], index_col="Date")
+    return df.loc[start:end]
+
+
+def load_universe(tickers=None, field="Close", start="2000-01-01",
+                  end=None) -> pd.DataFrame:
+    """Wide DataFrame of one field (default Close) across many tickers,
+    aligned on the trading calendar. Missing tickers are skipped with a note."""
+    if tickers is None:
+        tickers = [p.stem.replace("_", "^") if p.stem.startswith("_")
+                   else p.stem for p in sorted(OHLCV_DIR.glob("*.csv"))]
+    cols = {}
+    for t in tickers:
+        try:
+            cols[t] = load_ohlcv(t, start, end)[field]
+        except (FileNotFoundError, KeyError) as e:
+            print(f"load_universe: skipping {t}: {e}")
+    return pd.DataFrame(cols).sort_index()
+
+
+def data_freshness() -> dict:
+    """Return the data manifest (or an empty dict) plus a staleness flag.
+
+    Use at session start: if `stale_days` is large the Action hasn't run, so
+    marks/backtests are dated -- say so in the report rather than pretending."""
+    if not DATA_MANIFEST.exists():
+        return {"available": False, "stale_days": None,
+                "note": "No data manifest; pipeline has not run yet."}
+    meta = _json.loads(DATA_MANIFEST.read_text())
+    last_dates = [v["last"] for v in meta.get("tickers", {}).values() if v.get("last")]
+    newest = max(last_dates) if last_dates else None
+    stale = None
+    if newest:
+        stale = (pd.Timestamp.utcnow().normalize()
+                 - pd.Timestamp(newest)).days
+    return {"available": True, "newest_close": newest, "stale_days": stale,
+            "tickers_ok": meta.get("tickers_ok"),
+            "updated_utc": meta.get("updated_utc")}
