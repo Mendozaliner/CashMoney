@@ -1,0 +1,43 @@
+name: Update market data
+
+# Runs on GitHub's own runners (full internet), which the research sandbox
+# cannot reach. Fetches daily EOD data and commits it so the bot can git-pull.
+on:
+  schedule:
+    - cron: "30 23 * * 1-5"   # 23:30 UTC on weekdays, after the US close
+  workflow_dispatch: {}        # manual "Run workflow" button
+  push:
+    paths:                     # first run happens the moment this lands on main
+      - "scripts/fetch_data.py"
+      - ".github/workflows/update-data.yml"
+
+permissions:
+  contents: write              # allow the built-in GITHUB_TOKEN to commit data
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install deps
+        run: pip install --quiet yfinance pandas
+      - name: Fetch market data
+        run: python scripts/fetch_data.py
+      - name: Commit refreshed data
+        run: |
+          git config user.name  "Menendez Capital Data Bot"
+          git config user.email "90nojo@gmail.com"
+          git add data/cache/ohlcv data/cache/ohlcv_panel.csv data/cache/last_updated.json
+          if git diff --cached --quiet; then
+            echo "No data changes."
+          else
+            git commit -m "data: daily EOD refresh $(date -u +%F)"
+            git push
+          fi
