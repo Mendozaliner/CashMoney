@@ -23,6 +23,18 @@ Portfolio re-based from SPY_PROXY (stale, ended 2025-12-19) to real SPY cache:
 $999.00 carried, 1.333476 SPY units @ 749.17 (2026-07-13 close). Live clock and
 all live-vs-SPY comparisons measure from this mark. Costs standard now 0.15%.
 
+## Standing briefing instructions (per Mr. Menéndez, 2026-07-14)
+- MARKET CONTEXT in every daily briefing must include a short CROSS-SOURCE NEWS
+  DIGEST compiled autonomously via web search: start from wire services
+  (Reuters, AP) for the factual baseline, then check outlets across the
+  spectrum (e.g. WSJ, FT, Bloomberg, plus at least one left- and one
+  right-leaning mainstream outlet). Where coverage disagrees, REPORT the
+  disagreement rather than averaging it away. Name the sources used each day.
+- The digest is briefing color ONLY. It must never feed the trading model or
+  influence rebalancing — strategy inputs remain prices/vol/T-bill yield.
+- Performance-review charts (assets/charts/) may be refreshed and embedded in
+  briefings via raw.githubusercontent URLs when relevant.
+
 ## Environment constraints
 - Research sandbox: only github.com reachable; all market-data APIs blocked.
   This is why data now arrives via git, not direct fetch.
