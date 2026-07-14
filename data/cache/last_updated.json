@@ -1,0 +1,176 @@
+{
+  "updated_utc": "2026-07-14T02:44:29+00:00",
+  "start": "2000-01-01",
+  "tickers_ok": 28,
+  "tickers_total": 28,
+  "tickers": {
+    "SPY": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "DIA": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "QQQ": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "IWM": {
+      "rows": 6569,
+      "first": "2000-05-26",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "XLK": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "XLF": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "XLE": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "XLV": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "XLY": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "XLP": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "XLI": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "XLU": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "XLB": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "XLRE": {
+      "rows": 2704,
+      "first": "2015-10-08",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "XLC": {
+      "rows": 2026,
+      "first": "2018-06-19",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "TLT": {
+      "rows": 6026,
+      "first": "2002-07-30",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "IEF": {
+      "rows": 6026,
+      "first": "2002-07-30",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "SHY": {
+      "rows": 6026,
+      "first": "2002-07-30",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "GLD": {
+      "rows": 5444,
+      "first": "2004-11-18",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "AAPL": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "MSFT": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "GOOGL": {
+      "rows": 5508,
+      "first": "2004-08-19",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "AMZN": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "NVDA": {
+      "rows": 6670,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "META": {
+      "rows": 3556,
+      "first": "2012-05-18",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "TSLA": {
+      "rows": 4033,
+      "first": "2010-06-29",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "^VIX": {
+      "rows": 6671,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "^IRX": {
+      "rows": 6664,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
+      "source": "yf"
+    }
+  }
+}
