@@ -29,6 +29,8 @@ def load_spy_proxy(start=None, end=None) -> pd.DataFrame:
       Close   -- total-return adjusted close (dividends reinvested)
       PriceClose -- price-only close
       RiskFreeRate -- annualized risk-free rate, percent
+      RiskFreeIndex -- cumulative T-bill total-return index (daily ratio
+                       = daily risk-free return; used for cash-sleeve yield)
     """
     df = pd.read_csv(US_MARKET_CSV, parse_dates=["Date"], index_col="Date")
     out = pd.DataFrame(
@@ -36,6 +38,7 @@ def load_spy_proxy(start=None, end=None) -> pd.DataFrame:
             "Close": df["Adjusted Close"],
             "PriceClose": df["Close"],
             "RiskFreeRate": df["Risk Free Rate"],
+            "RiskFreeIndex": df["Risk Free Return"],
         }
     )
     return out.loc[start:end]
@@ -74,3 +77,14 @@ def load_yfinance(ticker: str, start="2000-01-01", end=None) -> pd.DataFrame:
     raise RuntimeError(
         f"No network access to Yahoo and no cache for {ticker}."
     )
+
+
+VIX_CSV = CACHE / "vix_daily.csv"
+
+
+def load_vix(start=None, end=None) -> pd.DataFrame:
+    """Daily VIX OHLC (CBOE via github.com/datasets/finance-vix snapshot,
+    1990 -> present; refresh by re-cloning that repo). Added session 2."""
+    df = pd.read_csv(VIX_CSV, parse_dates=["DATE"], index_col="DATE")
+    df.index.name = "Date"
+    return df.loc[start:end]

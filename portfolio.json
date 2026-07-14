@@ -1,0 +1,42 @@
+{
+ "inception": "2026-07-13",
+ "note": "Virtual paper portfolio, $1,000 inception. Data limitation: the SPY-proxy dataset ends 2025-12-19, so marks use the latest available close, not today's calendar date. T-bill yield accrues on the cash sleeve from champion v2 onward (applied at each mark).",
+ "champion": "vol_target(target_vol=0.18, lookback=20) x SMA200/b3 gate, T-bill cash",
+ "positions": {
+  "SPY_PROXY": {
+   "units": 0.0025585236598546063,
+   "last_px": 390459.9416750242
+  }
+ },
+ "cash": -0.0,
+ "last_mark": {
+  "date": "2025-12-19",
+  "value": 999.0,
+  "spy_close": 390459.9416750242
+ },
+ "history": [
+  {
+   "date": "2026-07-13",
+   "session": 2,
+   "mark_date": "2025-12-19",
+   "value": 999.0,
+   "chg_dollar": -1.0,
+   "chg_pct": -0.1,
+   "spy_pct_same_window": 0.0,
+   "all_time_pct": -0.1,
+   "note": "Inception + initial allocation (session 1 omitted portfolio init; fixed this session)."
+  }
+ ],
+ "trades": [
+  {
+   "date": "2026-07-13",
+   "action": "BUY",
+   "asset": "SPY_PROXY",
+   "units": 0.0025585236598546063,
+   "px": 390459.9416750242,
+   "notional": 999.0,
+   "cost": 0.999,
+   "reason": "Initial allocation per champion v2 target exposure 1.0000 (trend on, 20d vol below 18% target)"
+  }
+ ]
+}

@@ -1,34 +1,44 @@
 # STATE — CashMoney research system
 
-Updated: 2026-07-13 (session 1)
+Updated: 2026-07-13 (session 2)
 
-## Environment constraints (discovered session 1)
-- Research sandbox: only github.com reachable; all market-data APIs blocked.
-- Data source: committed snapshot of SteelCerberus/us-market-data —
-  daily SPY total-return proxy, 1885-03-20 -> 2025-12-19 (`data/cache/us_market_data.csv`).
-  Refresh via `data.loader.refresh_spy_proxy_cache()`.
-- Benchmarks DIA, QQQ, Mag-7: NOT AVAILABLE yet (no multi-asset data). SPY B&H only.
+## Environment constraints
+- Research sandbox: only github.com reachable (git protocol); GitHub REST API
+  and all market-data APIs blocked.
+- Primary data: snapshot of SteelCerberus/us-market-data — daily SPY
+  total-return proxy + T-bill return index, 1885-03-20 → 2025-12-19
+  (`data/cache/us_market_data.csv`). Upstream NOT updated since session 1;
+  refresh attempted each session via `data.loader.refresh_spy_proxy_cache()`.
+- NEW (session 2): daily VIX OHLC 1990 → 2026-07-10 from datasets/finance-vix
+  (`data/cache/vix_daily.csv`, `data.loader.load_vix()`).
+- Benchmarks DIA, QQQ, Mag-7: still NOT AVAILABLE (no multi-asset OHLCV found).
 
-## Champion
-**sma_trend(window=200, band=0.03)** — long SPY-proxy when Close > 1.03×SMA200,
-flat when Close < 0.97×SMA200, else hold state. Costs 0.1%/side, cash yields 0%.
+## Champion (v2, adopted session 2)
+**vol_target(target_vol=0.18, lookback=20)** — exposure = SMA200/3%-band trend
+gate × min(1, 0.18 / realized_vol_20d), cap 1.0, T-bill yield on cash sleeve,
+0.1% costs on traded notional. Engine: backtest/vector_engine.py (fractional;
+cross-validated vs backtesting.py).
+Prior champion v1: sma_trend(200, 0.03), cash at 0%.
 
-## Baselines & champion metrics (this dataset, costs included)
-| Config | Period | CAGR % | Sharpe | Sortino | MaxDD % | Trades/yr | $1k -> |
+## Baselines & champion metrics (vector engine, costs included)
+| Config | Period | CAGR % | Sharpe | Sortino | MaxDD % | Turnover/yr | $1k → |
 |---|---|---|---|---|---|---|---|
-| SPY B&H | IS 2010-2019 | 13.20 | 0.918 | 1.149 | -19.35 | 0.1 | 3450 |
-| SMA200/b3 | IS 2010-2019 | 8.54 | 0.763 | 0.867 | -20.45 | 0.6 | — |
-| SPY B&H | OOS 2020 -> 2025-12-19 | 14.91 | 0.774 | 0.951 | -33.72 | 0.2 | 2290 |
-| **SMA200/b3** | OOS 2020 -> 2025-12-19 | 11.49 | **0.871** | 0.957 | **-20.76** | 0.8 | 1913 |
-| SPY B&H | T12M (2024-12-19 -> 2025-12-19) | — | — | — | -18.76 | — | 1155.57 |
-| SMA200/b3 | T12M | — | — | — | -10.69 | — | 1089.06 |
+| SPY B&H | IS 2010-2019 | 13.22 | 0.920 | 1.151 | -19.35 | 0.1 | 3456 |
+| v2 | IS 2010-2019 | 8.63 | 0.790 | 0.902 | -20.33 | 1.4 | 2286 |
+| SPY B&H | OOS 2020 → 2025-12-19 | 15.00 | 0.778 | 0.956 | -33.72 | 0.2 | 2301 |
+| v1 (prior) | OOS | 11.58 | 0.876 | 0.963 | -20.76 | 1.5 | 1922 |
+| **v2** | OOS | 11.95 | **0.967** | 1.111 | **-17.90** | 2.1 | 1960 |
 
-Keep/revert precedent: champion selected in-sample by neighborhood-average Sharpe
-(robustness), kept because OOS Sharpe 0.871 > B&H 0.774 and OOS MaxDD improved.
+## Portfolio
+portfolio.json created session 2 (session 1 omitted it): $1,000 inception
+2026-07-13, fully invested per v2 (exposure 1.0), value $999.00 after entry
+cost, marked at dataset close 2025-12-19 (stale-data caveat in file).
 
 ## Session log
-- 2026-07-13 — Scaffolded repo (strategies/backtest/data/research/reports/tests).
-  Built SMA trend filter w/ hysteresis band (Faber 2007; Zakamulin 2014/2018).
-  Grid 6 windows × 4 bands IS 2010-2019; picked SMA200/b3 by neighborhood Sharpe.
-  KEPT (first champion). No-lookahead unit tests added (causality + t+1 execution
-  + cost application). Data pipeline limitation documented.
+- 2026-07-13 s1 — Scaffold; SMA trend grid; champion v1 = SMA200/b3. KEPT.
+- 2026-07-13 s2 — Roadmap #2+#3 (+#1 attempt). Built fractional vector engine
+  (validated vs backtesting.py), vol_target strategy, rf-cash accounting;
+  acquired VIX 1990→2026-07. E1 rf-cash OOS Sharpe 0.914; E2 vt18/lb20 0.925
+  (neighbors 0.920-0.939); E3 both 0.967, MaxDD -17.9%. KEPT E3 as v2.
+  Caveats: tv at grid edge; rf gain regime-dependent. Initialized portfolio.
+  Negative: tv 0.10-0.12 over-delevers IS (Sharpe 0.69-0.76).
