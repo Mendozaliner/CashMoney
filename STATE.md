@@ -24,6 +24,12 @@ $999.00 carried, 1.333476 SPY units @ 749.17 (2026-07-13 close). Live clock and
 all live-vs-SPY comparisons measure from this mark. Costs standard now 0.15%.
 
 ## Standing briefing instructions (per Mr. Menéndez, 2026-07-14)
+- BENCHMARK PANEL: once the expanded cache lands, every session's report and
+  briefing scoreboard must compare the champion/live track not only to SPY/
+  QQQ/DIA/Mag-7 but also to the Canadian market (EWC total-return proxy;
+  ^GSPTSE price index) and major international indexes (^FTSE, ^N225,
+  ^GDAXI, ^HSI, ACWI). Note plainly which markets beat the strategy over the
+  comparison window. Price indexes exclude dividends — say so when citing them.
 - MARKET CONTEXT in every daily briefing must include a short CROSS-SOURCE NEWS
   DIGEST compiled autonomously via web search: start from wire services
   (Reuters, AP) for the factual baseline, then check outlets across the

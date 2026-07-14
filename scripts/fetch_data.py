@@ -43,7 +43,9 @@ UNIVERSE = {
     "sector":    ["XLK", "XLF", "XLE", "XLV", "XLY",
                   "XLP", "XLI", "XLU", "XLB", "XLRE", "XLC"],
     "defensive": ["TLT", "IEF", "SHY", "GLD", "AGG"],
-    "global":    ["EFA", "EEM"],          # developed intl, emerging (unblocks true GEM/GTAA)
+    "global":    ["EFA", "EEM", "ACWI"],  # developed intl, emerging, all-world (unblocks true GEM/GTAA)
+    "country":   ["EWC", "EWJ", "EWU", "EWG"],  # Canada, Japan, UK, Germany (tradable, dividends included)
+    "intl_idx":  ["^GSPTSE", "^FTSE", "^N225", "^GDAXI", "^HSI"],  # TSX, FTSE 100, Nikkei, DAX, Hang Seng (benchmark-only, price indexes)
     "real":      ["DBC", "VNQ"],          # commodities, US real estate (full Faber 5)
     "mega":      ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA"],
     "vol":       ["^VIX"],
