@@ -153,8 +153,8 @@ def data_freshness() -> dict:
     newest = max(last_dates) if last_dates else None
     stale = None
     if newest:
-        stale = (pd.Timestamp.utcnow().normalize()
-                 - pd.Timestamp(newest)).days
+        today_utc = pd.Timestamp.now(tz="UTC").normalize().tz_localize(None)
+        stale = (today_utc - pd.Timestamp(newest)).days
     return {"available": True, "newest_close": newest, "stale_days": stale,
             "tickers_ok": meta.get("tickers_ok"),
             "updated_utc": meta.get("updated_utc")}

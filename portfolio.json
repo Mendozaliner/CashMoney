@@ -1,18 +1,18 @@
 {
  "inception": "2026-07-13",
- "note": "Virtual paper portfolio, $1,000 inception. Data limitation: the SPY-proxy dataset ends 2025-12-19, so marks use the latest available close, not today's calendar date. T-bill yield accrues on the cash sleeve from champion v2 onward (applied at each mark).",
+ "note": "Virtual paper portfolio, $1,000 inception 2026-07-13. 2026-07-14 migration: live track re-based from the stale SPY_PROXY dataset (ended 2025-12-19) to real SPY closes from the self-refreshing cache. Value carried at $999.00 (no P&L recognized for the stale gap); units converted at the 2026-07-13 close. Live-outperformance clock starts at this mark, per STATE.md. T-bill yield accrues on any cash sleeve.",
  "champion": "vol_target(target_vol=0.18, lookback=20) x SMA200/b3 gate, T-bill cash",
  "positions": {
-  "SPY_PROXY": {
-   "units": 0.0025585236598546063,
-   "last_px": 390459.9416750242
+  "SPY": {
+   "units": 1.3334757435413753,
+   "last_px": 749.1699829101562
   }
  },
- "cash": -0.0,
+ "cash": 0.0,
  "last_mark": {
-  "date": "2025-12-19",
+  "date": "2026-07-13",
   "value": 999.0,
-  "spy_close": 390459.9416750242
+  "spy_close": 749.1699829101562
  },
  "history": [
   {
@@ -25,6 +25,17 @@
    "spy_pct_same_window": 0.0,
    "all_time_pct": -0.1,
    "note": "Inception + initial allocation (session 1 omitted portfolio init; fixed this session)."
+  },
+  {
+   "date": "2026-07-14",
+   "session": 4,
+   "mark_date": "2026-07-13",
+   "value": 999.0,
+   "chg_dollar": 0.0,
+   "chg_pct": 0.0,
+   "spy_pct_same_window": 0.0,
+   "all_time_pct": -0.1,
+   "note": "MIGRATION MARK: SPY_PROXY -> real SPY at 749.17 (2026-07-13 close). Bookkeeping conversion, no cost, no market P&L recognized. v2 exposure 1.0000 (close 749.17 > SMA200+3% band 712.3; 20d vol 14.1% < 18% target). No rebalance needed."
   }
  ],
  "trades": [
@@ -37,6 +48,21 @@
    "notional": 999.0,
    "cost": 0.999,
    "reason": "Initial allocation per champion v2 target exposure 1.0000 (trend on, 20d vol below 18% target)"
+  },
+  {
+   "date": "2026-07-14",
+   "action": "CONVERT",
+   "asset": "SPY_PROXY->SPY",
+   "units": 1.3334757435413753,
+   "px": 749.1699829101562,
+   "notional": 999.0,
+   "cost": 0.0,
+   "reason": "Data-migration bookkeeping conversion to real SPY cache; not a strategy trade."
   }
- ]
+ ],
+ "baseline_for_live_clock": {
+  "date": "2026-07-13",
+  "portfolio": 999.0,
+  "spy_close": 749.1699829101562
+ }
 }

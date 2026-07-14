@@ -1,6 +1,6 @@
 # STATE — CashMoney research system
 
-Updated: 2026-07-14 (infrastructure session — data pipeline + statistical honesty layer)
+Updated: 2026-07-14 s4 (first live-data session: migration mark, real-data re-baseline, E1/E2)
 
 ## PHASE 2 — PROVE (entered 2026-07-14)
 Champion **v2 is FROZEN** as the live exam strategy. The live-outperformance
@@ -9,6 +9,19 @@ clock starts **2026-07-14** (first fresh mark once the data Action has run;
 All new research runs in SEPARATE SLEEVES and must NOT touch the frozen live
 track. Champion changes are allowed only if v2 decisively fails (trails SPY by
 >5% over 6+ weeks live). See SKILL.md for keep/revert + significance gates.
+
+## Graduation tracker (updated 2026-07-14 s4)
+1. Beats S&P risk-adjusted OOS: POINT-PASS / SIGNIFICANCE-FAIL — real-data
+   2020-2025H v2 Sharpe 0.889 vs SPY 0.736, but diff CI [-0.56,+0.89] straddles 0.
+2. Live 3-mo outperformance: clock STARTED 2026-07-13 mark (0/3 months).
+3. MaxDD < 20%: live 0.0%; worst backtest fold -20.5% (borderline — watch).
+4. Full costs (0.15%/trade): PASS — negligible drag at ~2 trades/yr.
+Phase-transition: not met (needs 3 live months + significance on #1).
+
+## Live track baseline (migration 2026-07-14)
+Portfolio re-based from SPY_PROXY (stale, ended 2025-12-19) to real SPY cache:
+$999.00 carried, 1.333476 SPY units @ 749.17 (2026-07-13 close). Live clock and
+all live-vs-SPY comparisons measure from this mark. Costs standard now 0.15%.
 
 ## Environment constraints
 - Research sandbox: only github.com reachable; all market-data APIs blocked.
@@ -42,7 +55,19 @@ gate × min(1, 0.18 / realized_vol_20d), cap 1.0, T-bill yield on cash sleeve,
 cross-validated vs backtesting.py).
 Prior champion v1: sma_trend(200, 0.03), cash at 0%.
 
-## Baselines & champion metrics (vector engine, costs included)
+## Baselines & champion metrics — REAL DATA (2026-07-14 s4, 0.15% costs, WF folds 2000-09/2010-19/2020-2025H, 12-mo holdout locked)
+| Config | Sharpe by fold | Worst DD |
+|---|---|---|
+| SPY B&H | 0.088 / 0.919 / 0.736 | -55.2% |
+| QQQ B&H | -0.011 / 1.031 / 0.818 | -83.0% |
+| Mag-7 eqw | 0.668 / 1.252 / 1.151 | -63.9% |
+| v1 trend | 0.865 / 0.769 / 0.842 | -20.6% |
+| v2 champion | 0.859 / 0.784 / 0.889 | -20.5% |
+v2 mean WF Sharpe 0.844 (v1: 0.825). v2 DSR 0.966 vs 18 trials; v2-minus-SPY CI
+[-0.56,+0.89] — not yet significant. After-tax do-nothing check 2020-2025H:
+buy-and-hold won ($1.92 vs $1.56 per $1). Legacy PROXY-data table below kept for history.
+
+## Baselines & champion metrics (LEGACY proxy data, vector engine, costs included)
 | Config | Period | CAGR % | Sharpe | Sortino | MaxDD % | Turnover/yr | $1k → |
 |---|---|---|---|---|---|---|---|
 | SPY B&H | IS 2010-2019 | 13.22 | 0.920 | 1.151 | -19.35 | 0.1 | 3456 |
@@ -64,6 +89,15 @@ cost, marked at dataset close 2025-12-19 (stale-data caveat in file).
   (neighbors 0.920-0.939); E3 both 0.967, MaxDD -17.9%. KEPT E3 as v2.
   Caveats: tv at grid edge; rf gain regime-dependent. Initialized portfolio.
   Negative: tv 0.10-0.12 over-delevers IS (Sharpe 0.69-0.76).
+- 2026-07-14 s4 — First live-data session. Fixed data_freshness() tz crash
+  (15/15 tests). MIGRATION MARK: live track re-based to real SPY, $999.00 @
+  749.17, exposure 1.0, no trade; live clock started. Re-baselined all
+  benchmarks on real data at 0.15% costs (END-GOAL bar). E1 (25d3eaf2fb,
+  12 cfg): tv=0.18 confirmed plateau, not artifact — no wider config beats v2
+  (all 0.81-0.84); no change. E2 (d5c820392c, 6 cfg): VIX percentile overlay
+  FAILED pre-registered bar (DD -1.27pts < 2; DSR 0.9455; CI straddles 0) —
+  all DISCARDED, as the skeptical prior predicted. Honest findings: v2's edge
+  vs SPY not yet statistically significant; after-tax do-nothing won 2020-2025H.
 - 2026-07-14 infra — Fixed the "no live data" wall: built self-refreshing
   GitHub Actions data pipeline (2000→present, 28 tickers, verified). Added
   multi-asset loader, deflated-Sharpe + bootstrap significance + after-tax /

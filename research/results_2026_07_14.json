@@ -1,0 +1,485 @@
+{
+ "baselines": {
+  "SPY B&H": [
+   {
+    "label": "SPY B&H 2000-2009",
+    "CAGR": -0.53,
+    "Sharpe": 0.088,
+    "Sortino": 0.119,
+    "MaxDD": -55.19,
+    "DayWin%": 53.1,
+    "Turnover/yr": 0.1,
+    "AvgExposure": 0.999,
+    "End$per1k": 948.72
+   },
+   {
+    "label": "SPY B&H 2010-2019",
+    "CAGR": 13.21,
+    "Sharpe": 0.919,
+    "Sortino": 1.15,
+    "MaxDD": -19.35,
+    "DayWin%": 55.5,
+    "Turnover/yr": 0.1,
+    "AvgExposure": 0.999,
+    "End$per1k": 3454.42
+   },
+   {
+    "label": "SPY B&H 2020-2025H",
+    "CAGR": 14.34,
+    "Sharpe": 0.736,
+    "Sortino": 0.909,
+    "MaxDD": -33.72,
+    "DayWin%": 55.1,
+    "Turnover/yr": 0.18,
+    "AvgExposure": 0.999,
+    "End$per1k": 2095.86
+   }
+  ],
+  "v1 sma200/b3": [
+   {
+    "label": "v1 sma200/b3 2000-2009",
+    "CAGR": 7.6,
+    "Sharpe": 0.865,
+    "Sortino": 0.832,
+    "MaxDD": -12.88,
+    "DayWin%": 55.8,
+    "Turnover/yr": 0.5,
+    "AvgExposure": 0.493,
+    "End$per1k": 2080.19
+   },
+   {
+    "label": "v1 sma200/b3 2010-2019",
+    "CAGR": 8.61,
+    "Sharpe": 0.769,
+    "Sortino": 0.874,
+    "MaxDD": -20.56,
+    "DayWin%": 55.5,
+    "Turnover/yr": 1.1,
+    "AvgExposure": 0.846,
+    "End$per1k": 2281.23
+   },
+   {
+    "label": "v1 sma200/b3 2020-2025H",
+    "CAGR": 11.19,
+    "Sharpe": 0.842,
+    "Sortino": 0.918,
+    "MaxDD": -19.13,
+    "DayWin%": 56.3,
+    "Turnover/yr": 1.63,
+    "AvgExposure": 0.769,
+    "End$per1k": 1796.04
+   }
+  ],
+  "v2 vt18/lb20": [
+   {
+    "label": "v2 vt18/lb20 2000-2009",
+    "CAGR": 7.34,
+    "Sharpe": 0.859,
+    "Sortino": 0.828,
+    "MaxDD": -11.89,
+    "DayWin%": 55.8,
+    "Turnover/yr": 0.81,
+    "AvgExposure": 0.486,
+    "End$per1k": 2030.5
+   },
+   {
+    "label": "v2 vt18/lb20 2010-2019",
+    "CAGR": 8.55,
+    "Sharpe": 0.784,
+    "Sortino": 0.895,
+    "MaxDD": -20.49,
+    "DayWin%": 55.5,
+    "Turnover/yr": 1.42,
+    "AvgExposure": 0.836,
+    "End$per1k": 2269.66
+   },
+   {
+    "label": "v2 vt18/lb20 2020-2025H",
+    "CAGR": 10.94,
+    "Sharpe": 0.889,
+    "Sortino": 1.014,
+    "MaxDD": -18.11,
+    "DayWin%": 56.3,
+    "Turnover/yr": 2.31,
+    "AvgExposure": 0.75,
+    "End$per1k": 1773.86
+   }
+  ],
+  "DIA B&H": [
+   {
+    "label": "DIA 2000-2009",
+    "CAGR": 1.63,
+    "Sharpe": 0.182,
+    "Sortino": 0.25,
+    "MaxDD": -51.87,
+    "DayWin%": 52.4,
+    "Turnover/yr": 0.1,
+    "AvgExposure": 0.999,
+    "End$per1k": 1175.57
+   },
+   {
+    "label": "DIA 2010-2019",
+    "CAGR": 13.08,
+    "Sharpe": 0.949,
+    "Sortino": 1.198,
+    "MaxDD": -18.14,
+    "DayWin%": 55.3,
+    "Turnover/yr": 0.1,
+    "AvgExposure": 0.999,
+    "End$per1k": 3412.56
+   },
+   {
+    "label": "DIA 2020-2025H",
+    "CAGR": 10.27,
+    "Sharpe": 0.579,
+    "Sortino": 0.691,
+    "MaxDD": -36.7,
+    "DayWin%": 54.2,
+    "Turnover/yr": 0.18,
+    "AvgExposure": 0.999,
+    "End$per1k": 1716.07
+   }
+  ],
+  "QQQ B&H": [
+   {
+    "label": "QQQ 2000-2009",
+    "CAGR": -6.1,
+    "Sharpe": -0.011,
+    "Sortino": -0.015,
+    "MaxDD": -82.96,
+    "DayWin%": 52.1,
+    "Turnover/yr": 0.1,
+    "AvgExposure": 0.999,
+    "End$per1k": 533.41
+   },
+   {
+    "label": "QQQ 2010-2019",
+    "CAGR": 17.68,
+    "Sharpe": 1.031,
+    "Sortino": 1.338,
+    "MaxDD": -22.8,
+    "DayWin%": 55.8,
+    "Turnover/yr": 0.1,
+    "AvgExposure": 0.999,
+    "End$per1k": 5085.44
+   },
+   {
+    "label": "QQQ 2020-2025H",
+    "CAGR": 19.5,
+    "Sharpe": 0.818,
+    "Sortino": 1.08,
+    "MaxDD": -35.12,
+    "DayWin%": 55.9,
+    "Turnover/yr": 0.18,
+    "AvgExposure": 0.999,
+    "End$per1k": 2675.02
+   }
+  ],
+  "Mag7 eqw": [
+   {
+    "label": "Mag7 2000-2009",
+    "CAGR": 20.96,
+    "Sharpe": 0.668,
+    "Sortino": 0.99,
+    "MaxDD": -63.86,
+    "DayWin%": 53.5,
+    "Turnover/yr": 0.1,
+    "AvgExposure": 0.999,
+    "End$per1k": 6697.48
+   },
+   {
+    "label": "Mag7 2010-2019",
+    "CAGR": 28.91,
+    "Sharpe": 1.252,
+    "Sortino": 1.755,
+    "MaxDD": -28.72,
+    "DayWin%": 56.1,
+    "Turnover/yr": 0.1,
+    "AvgExposure": 0.999,
+    "End$per1k": 12633.86
+   },
+   {
+    "label": "Mag7 2020-2025H",
+    "CAGR": 38.99,
+    "Sharpe": 1.151,
+    "Sortino": 1.588,
+    "MaxDD": -49.38,
+    "DayWin%": 54.7,
+    "Turnover/yr": 0.18,
+    "AvgExposure": 0.999,
+    "End$per1k": 6159.47
+   }
+  ]
+ },
+ "E1": [
+  {
+   "tv": 0.21,
+   "lb": 20,
+   "wf_sharpes": [
+    0.858,
+    0.793,
+    0.877
+   ],
+   "mean": 0.843
+  },
+  {
+   "tv": 0.21,
+   "lb": 60,
+   "wf_sharpes": [
+    0.878,
+    0.77,
+    0.844
+   ],
+   "mean": 0.831
+  },
+  {
+   "tv": 0.21,
+   "lb": 120,
+   "wf_sharpes": [
+    0.857,
+    0.756,
+    0.806
+   ],
+   "mean": 0.806
+  },
+  {
+   "tv": 0.24,
+   "lb": 20,
+   "wf_sharpes": [
+    0.867,
+    0.789,
+    0.875
+   ],
+   "mean": 0.844
+  },
+  {
+   "tv": 0.24,
+   "lb": 60,
+   "wf_sharpes": [
+    0.878,
+    0.769,
+    0.845
+   ],
+   "mean": 0.831
+  },
+  {
+   "tv": 0.24,
+   "lb": 120,
+   "wf_sharpes": [
+    0.864,
+    0.764,
+    0.81
+   ],
+   "mean": 0.813
+  },
+  {
+   "tv": 0.27,
+   "lb": 20,
+   "wf_sharpes": [
+    0.866,
+    0.778,
+    0.869
+   ],
+   "mean": 0.838
+  },
+  {
+   "tv": 0.27,
+   "lb": 60,
+   "wf_sharpes": [
+    0.871,
+    0.769,
+    0.851
+   ],
+   "mean": 0.83
+  },
+  {
+   "tv": 0.27,
+   "lb": 120,
+   "wf_sharpes": [
+    0.868,
+    0.767,
+    0.812
+   ],
+   "mean": 0.816
+  },
+  {
+   "tv": 0.3,
+   "lb": 20,
+   "wf_sharpes": [
+    0.865,
+    0.773,
+    0.862
+   ],
+   "mean": 0.833
+  },
+  {
+   "tv": 0.3,
+   "lb": 60,
+   "wf_sharpes": [
+    0.867,
+    0.769,
+    0.854
+   ],
+   "mean": 0.83
+  },
+  {
+   "tv": 0.3,
+   "lb": 120,
+   "wf_sharpes": [
+    0.87,
+    0.768,
+    0.815
+   ],
+   "mean": 0.818
+  }
+ ],
+ "E2": [
+  {
+   "pct": 0.7,
+   "scale": 0.5,
+   "wf_sharpes": [
+    0.836,
+    0.755,
+    0.8
+   ],
+   "mean": 0.797,
+   "worstDD": -18.08
+  },
+  {
+   "pct": 0.7,
+   "scale": 0.0,
+   "wf_sharpes": [
+    0.741,
+    0.645,
+    0.57
+   ],
+   "mean": 0.652,
+   "worstDD": -19.93
+  },
+  {
+   "pct": 0.8,
+   "scale": 0.5,
+   "wf_sharpes": [
+    0.896,
+    0.726,
+    0.818
+   ],
+   "mean": 0.813,
+   "worstDD": -19.61
+  },
+  {
+   "pct": 0.8,
+   "scale": 0.0,
+   "wf_sharpes": [
+    0.886,
+    0.615,
+    0.651
+   ],
+   "mean": 0.717,
+   "worstDD": -22.0
+  },
+  {
+   "pct": 0.9,
+   "scale": 0.5,
+   "wf_sharpes": [
+    0.892,
+    0.686,
+    0.925
+   ],
+   "mean": 0.834,
+   "worstDD": -19.22
+  },
+  {
+   "pct": 0.9,
+   "scale": 0.0,
+   "wf_sharpes": [
+    0.884,
+    0.558,
+    0.928
+   ],
+   "mean": 0.79,
+   "worstDD": -20.62
+  }
+ ],
+ "v2_cost10bp": [
+  {
+   "label": "v2 @0.10% 2000-2009",
+   "CAGR": 7.39,
+   "Sharpe": 0.864,
+   "Sortino": 0.832,
+   "MaxDD": -11.77,
+   "DayWin%": 55.8,
+   "Turnover/yr": 0.81,
+   "AvgExposure": 0.486,
+   "End$per1k": 2038.75
+  },
+  {
+   "label": "v2 @0.10% 2010-2019",
+   "CAGR": 8.63,
+   "Sharpe": 0.79,
+   "Sortino": 0.902,
+   "MaxDD": -20.33,
+   "DayWin%": 55.5,
+   "Turnover/yr": 1.42,
+   "AvgExposure": 0.836,
+   "End$per1k": 2285.85
+  },
+  {
+   "label": "v2 @0.10% 2020-2025H",
+   "CAGR": 11.07,
+   "Sharpe": 0.898,
+   "Sortino": 1.024,
+   "MaxDD": -17.93,
+   "DayWin%": 56.4,
+   "Turnover/yr": 2.31,
+   "AvgExposure": 0.75,
+   "End$per1k": 1785.22
+  }
+ ],
+ "v2_wf": {
+  "sharpes": [
+   0.859,
+   0.784,
+   0.889
+  ],
+  "mean": 0.844
+ },
+ "v1_wf": {
+  "sharpes": [
+   0.865,
+   0.769,
+   0.842
+  ],
+  "mean": 0.825
+ },
+ "E2_sig": {
+  "best": {
+   "pct": 0.9,
+   "scale": 0.5,
+   "mean": 0.834,
+   "worstDD": -19.22
+  },
+  "dsr_best": 0.9455,
+  "ci_vs_spy": {
+   "point": 0.1903134322081057,
+   "lo": -0.5491849215466668,
+   "hi": 0.9352584960538449,
+   "p_le_zero": 0.3047
+  },
+  "ci_vs_v2": {
+   "point": 0.03618562872908504,
+   "lo": -0.1234506867529143,
+   "hi": 0.20455898897212202,
+   "p_le_zero": 0.3408
+  }
+ },
+ "v2_vs_spy_oos": {
+  "dsr_v2": 0.9661,
+  "ci_vs_spy": {
+   "point": 0.15412780347902066,
+   "lo": -0.5607718598204623,
+   "hi": 0.8875221267407062,
+   "p_le_zero": 0.3319
+  }
+ }
+}
