@@ -36,6 +36,17 @@
    "spy_pct_same_window": 0.0,
    "all_time_pct": -0.1,
    "note": "MIGRATION MARK: SPY_PROXY -> real SPY at 749.17 (2026-07-13 close). Bookkeeping conversion, no cost, no market P&L recognized. v2 exposure 1.0000 (close 749.17 > SMA200+3% band 712.3; 20d vol 14.1% < 18% target). No rebalance needed."
+  },
+  {
+   "date": "2026-07-14",
+   "session": 5,
+   "mark_date": "2026-07-13",
+   "value": 999.0,
+   "chg_dollar": 0.0,
+   "chg_pct": 0.0,
+   "spy_pct_same_window": 0.0,
+   "all_time_pct": -0.1,
+   "note": "Session 5: Philosophy expansion. Tested Dual Momentum (E3), Kill-Switch (E4), Sector Momentum (E5). All 3 discarded — did not meet pre-registered performance bars. No strategy or portfolio change. SPY last close 749.17 (2026-07-13); no new closes yet. v2 exposure 1.0 confirmed (price > SMA200+3%; vol < 18% target). $1k backtest: v2 $8,374 > SPY $7,043 > DIA $7,008 > QQQ $7,417 over 2000-2026-07-13."
   }
  ],
  "trades": [

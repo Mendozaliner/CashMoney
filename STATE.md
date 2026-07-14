@@ -1,6 +1,6 @@
 # STATE — CashMoney research system
 
-Updated: 2026-07-14 s4 (first live-data session: migration mark, real-data re-baseline, E1/E2)
+Updated: 2026-07-14 s5 (philosophy expansion: Dual Momentum, Kill-Switch, Sector Momentum — all discarded)
 
 ## PHASE 2 — PROVE (entered 2026-07-14)
 Champion **v2 is FROZEN** as the live exam strategy. The live-outperformance
@@ -10,7 +10,7 @@ All new research runs in SEPARATE SLEEVES and must NOT touch the frozen live
 track. Champion changes are allowed only if v2 decisively fails (trails SPY by
 >5% over 6+ weeks live). See SKILL.md for keep/revert + significance gates.
 
-## Graduation tracker (updated 2026-07-14 s4)
+## Graduation tracker (updated 2026-07-14 s5)
 1. Beats S&P risk-adjusted OOS: POINT-PASS / SIGNIFICANCE-FAIL — real-data
    2020-2025H v2 Sharpe 0.889 vs SPY 0.736, but diff CI [-0.56,+0.89] straddles 0.
 2. Live 3-mo outperformance: clock STARTED 2026-07-13 mark (0/3 months).
@@ -63,9 +63,10 @@ Prior champion v1: sma_trend(200, 0.03), cash at 0%.
 | Mag-7 eqw | 0.668 / 1.252 / 1.151 | -63.9% |
 | v1 trend | 0.865 / 0.769 / 0.842 | -20.6% |
 | v2 champion | 0.859 / 0.784 / 0.889 | -20.5% |
-v2 mean WF Sharpe 0.844 (v1: 0.825). v2 DSR 0.966 vs 18 trials; v2-minus-SPY CI
-[-0.56,+0.89] — not yet significant. After-tax do-nothing check 2020-2025H:
-buy-and-hold won ($1.92 vs $1.56 per $1). Legacy PROXY-data table below kept for history.
+v2 mean WF Sharpe 0.844 (v1: 0.825). v2 DSR 0.966 vs 18 trials (s4); vs 32 trials (s5)
+v2-minus-SPY CI [-0.56,+0.89] — not yet significant. After-tax do-nothing check 2020-2025H:
+buy-and-hold won ($1.92 vs $1.56 per $1). $1k test (2000→2026-07-13): v2 $8,374 vs
+SPY $7,043, DIA $7,008, QQQ $7,417 — v2 wins on Sharpe AND terminal value. Legacy PROXY-data table below kept for history.
 
 ## Baselines & champion metrics (LEGACY proxy data, vector engine, costs included)
 | Config | Period | CAGR % | Sharpe | Sortino | MaxDD % | Turnover/yr | $1k → |
@@ -105,3 +106,15 @@ cost, marked at dataset close 2025-12-19 (stale-data caveat in file).
   champion v2 and entered Phase 2 (live clock started). Archived legacy
   MACD/AMZN prototype to archive/. Testing protocol → 2000-present walk-forward
   with a locked final 12-month holdout. No strategy experiments this session.
+- 2026-07-14 s5 — Philosophy expansion. Built multi_engine.py (multi-asset
+  portfolio returns). Implemented 3 new strategies: dual_momentum.py (Antonacci
+  2014 GEM), drawdown_kill.py (kill-switch overlay on v2), sector_momentum.py
+  (cross-sectional XL* sector rotation). All 3 DISCARDED:
+  E3 Dual Momentum (6 cfg): DSR=0.741, CI=[-0.90,+0.47], worst DD -42.6% — all bars
+  missed; TLT harbor failed in 2022 rising-rate regime.
+  E4 Kill-Switch (4 cfg): DSR=0.898, max-fold Sharpe drop 0.176 (>0.08 bar) — whipsaw
+  at -15% trigger inside v2's normal DD range; concept sound but parameters too tight.
+  E5 Sector Momentum (4 cfg): DSR=0.685, fold-1 Sharpe=0.090, worst DD -51.8% —
+  momentum crash in 2000-2009 dot-com fold (XLK dominated entering bubble top).
+  $1k test: v2 $8,374 > SPY $7,043 > DIA $7,008 > QQQ $7,417. v2 wins all realistic
+  benchmarks. No portfolio change. Cumulative registered configs: 46.
