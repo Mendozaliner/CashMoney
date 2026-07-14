@@ -42,7 +42,9 @@ UNIVERSE = {
     "broad":     ["SPY", "DIA", "QQQ", "IWM"],
     "sector":    ["XLK", "XLF", "XLE", "XLV", "XLY",
                   "XLP", "XLI", "XLU", "XLB", "XLRE", "XLC"],
-    "defensive": ["TLT", "IEF", "SHY", "GLD"],
+    "defensive": ["TLT", "IEF", "SHY", "GLD", "AGG"],
+    "global":    ["EFA", "EEM"],          # developed intl, emerging (unblocks true GEM/GTAA)
+    "real":      ["DBC", "VNQ"],          # commodities, US real estate (full Faber 5)
     "mega":      ["AAPL", "MSFT", "GOOGL", "AMZN", "NVDA", "META", "TSLA"],
     "vol":       ["^VIX"],
     "rates":     ["^IRX"],   # 13-week T-bill discount rate -> cash-sleeve yield

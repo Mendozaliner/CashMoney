@@ -1,5 +1,12 @@
 # ROADMAP (reprioritized 2026-07-14 s6)
 
+0. **Universe expansion landed 2026-07-14**: EFA, EEM, AGG, DBC, VNQ added to
+   the nightly data pipeline (first fresh cache after the next Action run).
+   Once cached: re-register TRUE Antonacci GEM (SPY vs EFA/EEM vs SHY) and
+   TRUE Faber GTAA-5 (SPY/EFA/IEF/VNQ/DBC) as new experiments — these were
+   previously blocked by the US-only universe. Watch histories: EFA 2001+,
+   EEM/AGG 2003+, VNQ 2004+, DBC 2006+.
+
 1. **Criterion-1 significance on v2** — bootstrap diff-vs-SPY on the FULL
    2000-2025H walk-forward sample (not just the 2020+ fold). Larger n may
    clear the noise band. Pure analysis, no new configs.
