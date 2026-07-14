@@ -11,8 +11,11 @@ track. Champion changes are allowed only if v2 decisively fails (trails SPY by
 >5% over 6+ weeks live). See SKILL.md for keep/revert + significance gates.
 
 ## Graduation tracker (updated 2026-07-14 s5)
-1. Beats S&P risk-adjusted OOS: POINT-PASS / SIGNIFICANCE-FAIL — real-data
-   2020-2025H v2 Sharpe 0.889 vs SPY 0.736, but diff CI [-0.56,+0.89] straddles 0.
+1. Beats S&P risk-adjusted OOS: POINT-PASS / SIGNIFICANCE-FAIL — 2020-2025H
+   diff CI [-0.56,+0.89] straddles 0. FULL-SAMPLE update (s6b, 2000→2025-07,
+   n=6,418 days): diff CI [-0.009,+0.708] — misses clearing zero by 0.009.
+   Tantalizingly close but NOT passed; do not round up. Ensemble diversification
+   is the likeliest way to push the lower bound through zero.
 2. Live 3-mo outperformance: clock STARTED 2026-07-13 mark (0/3 months).
 3. MaxDD < 20%: live 0.0%; worst backtest fold -20.5% (borderline — watch).
 4. Full costs (0.15%/trade): PASS — negligible drag at ~2 trades/yr.

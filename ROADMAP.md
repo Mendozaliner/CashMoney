@@ -7,9 +7,9 @@
    previously blocked by the US-only universe. Watch histories: EFA 2001+,
    EEM/AGG 2003+, VNQ 2004+, DBC 2006+.
 
-1. **Criterion-1 significance on v2** — bootstrap diff-vs-SPY on the FULL
-   2000-2025H walk-forward sample (not just the 2020+ fold). Larger n may
-   clear the noise band. Pure analysis, no new configs.
+1. ~~Criterion-1 significance on v2~~ DONE s6b: full-sample (n=6,418) diff CI
+   [-0.009, +0.708] — misses zero by 0.009. Not passed; next lever is the
+   GTAA/GEM ensemble (item 2) to widen the edge rather than the sample.
 2. **GTAA ensemble feasibility memo** — correlation of GTAA(w150,b0) daily
    returns vs v2 across folds, using existing E6 runs (no new configs).
    If weakly correlated, register a combined-sleeve test (equal-risk weights).
