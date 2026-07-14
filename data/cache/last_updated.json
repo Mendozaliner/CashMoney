@@ -1,8 +1,8 @@
 {
-  "updated_utc": "2026-07-14T20:50:37+00:00",
+  "updated_utc": "2026-07-14T20:54:13+00:00",
   "start": "2000-01-01",
-  "tickers_ok": 33,
-  "tickers_total": 33,
+  "tickers_ok": 43,
+  "tickers_total": 43,
   "tickers": {
     "SPY": {
       "rows": 6671,
@@ -134,6 +134,66 @@
       "rows": 5849,
       "first": "2003-04-14",
       "last": "2026-07-14",
+      "source": "yf"
+    },
+    "ACWI": {
+      "rows": 4602,
+      "first": "2008-03-28",
+      "last": "2026-07-14",
+      "source": "yf"
+    },
+    "EWC": {
+      "rows": 6671,
+      "first": "2000-01-03",
+      "last": "2026-07-14",
+      "source": "yf"
+    },
+    "EWJ": {
+      "rows": 6671,
+      "first": "2000-01-03",
+      "last": "2026-07-14",
+      "source": "yf"
+    },
+    "EWU": {
+      "rows": 6671,
+      "first": "2000-01-03",
+      "last": "2026-07-14",
+      "source": "yf"
+    },
+    "EWG": {
+      "rows": 6671,
+      "first": "2000-01-03",
+      "last": "2026-07-14",
+      "source": "yf"
+    },
+    "^GSPTSE": {
+      "rows": 6664,
+      "first": "2000-01-04",
+      "last": "2026-07-14",
+      "source": "yf"
+    },
+    "^FTSE": {
+      "rows": 6701,
+      "first": "2000-01-04",
+      "last": "2026-07-14",
+      "source": "yf"
+    },
+    "^N225": {
+      "rows": 6497,
+      "first": "2000-01-04",
+      "last": "2026-07-13",
+      "source": "yf"
+    },
+    "^GDAXI": {
+      "rows": 6736,
+      "first": "2000-01-03",
+      "last": "2026-07-14",
+      "source": "yf"
+    },
+    "^HSI": {
+      "rows": 6533,
+      "first": "2000-01-03",
+      "last": "2026-07-13",
       "source": "yf"
     },
     "DBC": {
