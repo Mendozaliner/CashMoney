@@ -5,14 +5,14 @@
  "positions": {
   "SPY": {
    "units": 1.3334757435413753,
-   "last_px": 749.1699829101562
+   "last_px": 751.8300170898438
   }
  },
  "cash": 0.0,
  "last_mark": {
-  "date": "2026-07-13",
-  "value": 999.0,
-  "spy_close": 749.1699829101562
+  "date": "2026-07-14",
+  "value": 1002.55,
+  "spy_close": 751.8300170898438
  },
  "history": [
   {
@@ -46,7 +46,7 @@
    "chg_pct": 0.0,
    "spy_pct_same_window": 0.0,
    "all_time_pct": -0.1,
-   "note": "Session 5: Philosophy expansion. Tested Dual Momentum (E3), Kill-Switch (E4), Sector Momentum (E5). All 3 discarded \u2014 did not meet pre-registered performance bars. No strategy or portfolio change. SPY last close 749.17 (2026-07-13); no new closes yet. v2 exposure 1.0 confirmed (price > SMA200+3%; vol < 18% target). $1k backtest: v2 $8,374 > SPY $7,043 > DIA $7,008 > QQQ $7,417 over 2000-2026-07-13."
+   "note": "Session 5: Philosophy expansion. Tested Dual Momentum (E3), Kill-Switch (E4), Sector Momentum (E5). All 3 discarded — did not meet pre-registered performance bars. No strategy or portfolio change. SPY last close 749.17 (2026-07-13); no new closes yet. v2 exposure 1.0 confirmed (price > SMA200+3%; vol < 18% target). $1k backtest: v2 $8,374 > SPY $7,043 > DIA $7,008 > QQQ $7,417 over 2000-2026-07-13."
   },
   {
    "date": "2026-07-14",
@@ -57,7 +57,18 @@
    "chg_pct": 0.0,
    "spy_pct_same_window": 0.0,
    "all_time_pct": -0.1,
-   "note": "Session 6 (third run of 2026-07-14): no new close since s4/s5 \u2014 cache newest close still 2026-07-13 (data Action runs 23:30 UTC). Mark unchanged, not presented as a live daily move. v2 exposure 1.0 re-confirmed (749.17 > SMA200+3% band; 20d vol 14.1% < 18% target). No trades."
+   "note": "Session 6 (third run of 2026-07-14): no new close since s4/s5 — cache newest close still 2026-07-13 (data Action runs 23:30 UTC). Mark unchanged, not presented as a live daily move. v2 exposure 1.0 re-confirmed (749.17 > SMA200+3% band; 20d vol 14.1% < 18% target). No trades."
+  },
+  {
+   "date": "2026-07-15",
+   "session": 7,
+   "mark_date": "2026-07-14",
+   "value": 1002.55,
+   "chg_dollar": 3.55,
+   "chg_pct": 0.355,
+   "spy_pct_same_window": 0.355,
+   "all_time_pct": 0.255,
+   "note": "Session 7 (2026-07-15): First live market P&L since inception. SPY closed 751.83 on 2026-07-14, up from 749.17 (2026-07-13), +0.355%. v2 exposure 1.0 confirmed (751.83 > SMA200+3% band; 20d vol within 18% target). No trades. Strategy tracking SPY 1:1 while fully invested. E9 GEM international FAIL (DSR=0.30, mean WF 0.435), E10 GTAA-5 FAIL (DSR=0.77, mean WF 0.822 but CI misses), E11 SectorTrend FAIL (DSR=0.65, worst DD -47.4%). All 3 experiments discarded; champion v2 unchanged. $1k test (2000→2026-07-14): v2 $9,257.88 > QQQ $9,014.44 > SPY $8,249.83 > DIA $8,138.90."
   }
  ],
  "trades": [

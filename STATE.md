@@ -1,6 +1,6 @@
 # STATE — CashMoney research system
 
-Updated: 2026-07-14 s6 (GTAA sleeve candidate, DM-SHY retry, conservative kill-switch — all discarded; GTAA on ensemble watch-list)
+Updated: 2026-07-15 s7 (True GEM, GTAA-5, SectorTrend+gate — all discarded; GTAA-5 added to watch-list; ensemble not yet viable; first live P&L +$3.55)
 
 ## PHASE 2 — PROVE (entered 2026-07-14)
 Champion **v2 is FROZEN** as the live exam strategy. The live-outperformance
@@ -10,14 +10,14 @@ All new research runs in SEPARATE SLEEVES and must NOT touch the frozen live
 track. Champion changes are allowed only if v2 decisively fails (trails SPY by
 >5% over 6+ weeks live). See SKILL.md for keep/revert + significance gates.
 
-## Graduation tracker (updated 2026-07-14 s5)
-1. Beats S&P risk-adjusted OOS: POINT-PASS / SIGNIFICANCE-FAIL — 2020-2025H
-   diff CI [-0.56,+0.89] straddles 0. FULL-SAMPLE update (s6b, 2000→2025-07,
-   n=6,418 days): diff CI [-0.009,+0.708] — misses clearing zero by 0.009.
-   Tantalizingly close but NOT passed; do not round up. Ensemble diversification
-   is the likeliest way to push the lower bound through zero.
-2. Live 3-mo outperformance: clock STARTED 2026-07-13 mark (0/3 months).
-3. MaxDD < 20%: live 0.0%; worst backtest fold -20.5% (borderline — watch).
+## Graduation tracker (updated 2026-07-15 s7)
+1. Beats S&P risk-adjusted OOS: POINT-PASS / SIGNIFICANCE-FAIL — full-sample
+   diff CI [-0.009,+0.708] — misses clearing zero by 0.009. Not passed.
+   Ensemble not yet feasible (GTAA/v2 correlation 0.721 > 0.70 threshold;
+   ensemble $1k = $6,542 vs v2 $9,258 — raw return drag too large).
+2. Live 3-mo outperformance: clock running (0/3 months). Day 2: portfolio
+   $1,002.55 vs SPY +0.355% (tracking 1:1 while fully invested — expected).
+3. MaxDD < 20%: live +0.355% since inception; worst backtest fold -20.5%.
 4. Full costs (0.15%/trade): PASS — negligible drag at ~2 trades/yr.
 Phase-transition: not met (needs 3 live months + significance on #1).
 
@@ -25,6 +25,9 @@ Phase-transition: not met (needs 3 live months + significance on #1).
 Portfolio re-based from SPY_PROXY (stale, ended 2025-12-19) to real SPY cache:
 $999.00 carried, 1.333476 SPY units @ 749.17 (2026-07-13 close). Live clock and
 all live-vs-SPY comparisons measure from this mark. Costs standard now 0.15%.
+**Latest mark (2026-07-14 close, session 7):** 1.333476 SPY × $751.83 = **$1,002.55**
+(+$3.55, +0.355% from last mark; +0.255% all-time from $1,000 inception).
+v2 exposure confirmed 1.0 (price > SMA200+3% band; 20d vol < 18% target).
 
 ## Standing briefing instructions (per Mr. Menéndez, 2026-07-14)
 - FORMAT (added later on 2026-07-14, SUPERSEDES the long template): the daily
@@ -97,8 +100,9 @@ Prior champion v1: sma_trend(200, 0.03), cash at 0%.
 | v2 champion | 0.859 / 0.784 / 0.889 | -20.5% |
 v2 mean WF Sharpe 0.844 (v1: 0.825). v2 DSR 0.966 vs 18 trials (s4); vs 32 trials (s5)
 v2-minus-SPY CI [-0.56,+0.89] — not yet significant. After-tax do-nothing check 2020-2025H:
-buy-and-hold won ($1.92 vs $1.56 per $1). $1k test (2000→2026-07-13): v2 $8,374 vs
-SPY $7,043, DIA $7,008, QQQ $7,417 — v2 wins on Sharpe AND terminal value. Legacy PROXY-data table below kept for history.
+buy-and-hold won ($1.92 vs $1.56 per $1). **$1k test (2000→2026-07-14, real data s7):**
+v2 $9,257.88 > QQQ $9,014.44 > SPY $8,249.83 > DIA $8,138.90 — v2 WINS on Sharpe AND
+terminal value. Mag-7 eqw $83,104 (2012+ only, concentrated tech). Legacy PROXY-data table below kept for history.
 
 ## Baselines & champion metrics (LEGACY proxy data, vector engine, costs included)
 | Config | Period | CAGR % | Sharpe | Sortino | MaxDD % | Turnover/yr | $1k → |
@@ -111,15 +115,24 @@ SPY $7,043, DIA $7,008, QQQ $7,417 — v2 wins on Sharpe AND terminal value. Leg
 
 ## Portfolio
 portfolio.json created session 2 (session 1 omitted it): $1,000 inception
-2026-07-13, fully invested per v2 (exposure 1.0), value $999.00 after entry
-cost, marked at dataset close 2025-12-19 (stale-data caveat in file).
+2026-07-13, fully invested per v2 (exposure 1.0), value $999.00 after entry cost.
+**Current value: $1,002.55** (2026-07-14 close, session 7 mark). 1.333476 SPY units
+@ $751.83. All-time: +$2.55 / +0.255% from $1,000 inception. No rebalance needed;
+exposure 1.0 confirmed.
 
 ## Watch-list (not adopted; revisit under stated conditions)
 - **GTAA(w150,b0) SPY/IWM/IEF/GLD** (E6, s6): mean WF Sharpe 0.892 (v2 0.844),
   worst-fold DD -12.6% — best risk profile tested to date, robust across 6 cfgs,
-  but DSR 0.897 and diff-vs-SPY CI [-0.76,+0.98] fail the gate. Condition to
-  revisit: as ensemble diversifier once any sleeve clears significance, or
-  low-correlation memo (roadmap #2) motivates a combined-sleeve registration.
+  but DSR 0.897 and diff-vs-SPY CI [-0.76,+0.98] fail the gate. Correlation with
+  v2: 0.721 (M1 memo, s7) — above 0.70 threshold; ensemble $1k $6,542 vs v2 $9,258.
+  Condition to revisit: only if correlation drops below 0.60 on more data, or if
+  a fundamentally different sleeve with LOW correlation to v2 is found first.
+- **GTAA-5(w200,b0.02) SPY/EFA/IEF/VNQ/DBC** (E10, s7): mean WF Sharpe 0.822,
+  worst-fold DD **-9.9%** — best drawdown profile EVER tested (<v2's -20.5%), robust
+  across 6 cfgs. DSR 0.7657 and diff-vs-SPY CI [-0.691,+0.991] fail gate (DBC history
+  truncates fold-1 severely). Condition to revisit: after 3-5 more years of live DBC
+  data extend fold-1 significance; or as ensemble component if v2 correlation proves
+  lower on expanded data. Do NOT retry standalone — needs more DBC history to pass DSR.
 
 ## Session log
 - 2026-07-13 s1 — Scaffold; SMA trend grid; champion v1 = SMA200/b3. KEPT.
@@ -168,3 +181,20 @@ cost, marked at dataset close 2025-12-19 (stale-data caveat in file).
   Do-nothing check unchanged: after-tax B&H won 2020-2025H ($1.92 vs $1.59).
   No new close (cache still 2026-07-13); mark unchanged $999.00, no trades.
   Cumulative registered configs: 58.
+- 2026-07-15 s7 — Roadmap items 0 and 4; GTAA correlation memo (item 2).
+  New strategies: gem.py (True Antonacci GEM, international), sector_trend.py
+  (sector momentum + per-sector SMA200 gate). First live P&L: +$3.55 (+0.355%).
+  E9 True GEM SPY/EFA/EEM→AGG (5e83ad9d86, 6 cfg): best lb126/sk0 mean WF 0.435,
+  DD -32.5%, DSR=0.301, CI=[-1.175,+0.319] → DISCARDED. International rotation
+  underperformed badly in fold-2 (2010-2019 US bull market); EEM/EFA drag was severe.
+  E10 GTAA-5 SPY/EFA/IEF/VNQ/DBC (c6a6ffb9c0, 6 cfg): best w200/b0.02 mean WF 0.822,
+  DD -9.9% (best ever!), DSR=0.766, CI=[-0.691,+0.991] → DISCARDED on significance.
+  Added to watch-list; DBC history truncates fold-1 severely, DSR can't clear gate yet.
+  E11 Sector+Trend gate (fa06fbdf2b, 6 cfg): best lb252/n1 mean WF 0.235, DD -47.4%,
+  DSR=0.652 → DISCARDED. Trend gate did NOT fix E5 failure; worst DD still -47.4%.
+  Sector family closed permanently (both E5 standalone and E11 trend-gated failed).
+  M1 Correlation memo: v2/GTAA-4 correlation 0.721 (>0.70 threshold). 50/50 ensemble
+  OOS Sharpe 0.946 but $1k = $6,542 vs v2 $9,258 — raw return drag too large.
+  Ensemble not recommended at current correlation. $1k test (2000→2026-07-14):
+  v2 $9,257.88 > QQQ $9,014.44 > SPY $8,249.83 > DIA $8,138.90. v2 wins.
+  Champion v2 unchanged. Cumulative registered configs: 94.

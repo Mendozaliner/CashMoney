@@ -1,0 +1,899 @@
+{
+ "session": "2026-07-15-s7",
+ "data_freshness": {
+  "available": true,
+  "newest_close": "2026-07-14",
+  "stale_days": 1,
+  "tickers_ok": 43,
+  "updated_utc": "2026-07-15T00:13:36+00:00"
+ },
+ "v2_baseline_wf_sharpes": [
+  0.859,
+  0.784,
+  0.889
+ ],
+ "E9": [
+  {
+   "cfg": {
+    "lookback": 126,
+    "skip": 0
+   },
+   "wf_sharpes": [
+    0.863,
+    0.152,
+    0.29
+   ],
+   "mean": 0.435,
+   "folds": [
+    {
+     "label": "GEM lb126 sk0 2000-2009",
+     "CAGR": 15.02,
+     "Sharpe": 0.863,
+     "Sortino": 0.944,
+     "MaxDD": -29.38,
+     "AvgInvested": 0.693,
+     "Turnover/yr": 20.31,
+     "End$per1k": 4049.42
+    },
+    {
+     "label": "GEM lb126 sk0 2010-2019",
+     "CAGR": 1.15,
+     "Sharpe": 0.152,
+     "Sortino": 0.19,
+     "MaxDD": -26.28,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 31.34,
+     "End$per1k": 1120.87
+    },
+    {
+     "label": "GEM lb126 sk0 2020-2025H",
+     "CAGR": 3.23,
+     "Sharpe": 0.29,
+     "Sortino": 0.359,
+     "MaxDD": -32.52,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 26.26,
+     "End$per1k": 1192.15
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "lookback": 126,
+    "skip": 21
+   },
+   "wf_sharpes": [
+    0.723,
+    0.034,
+    0.343
+   ],
+   "mean": 0.367,
+   "folds": [
+    {
+     "label": "GEM lb126 sk21 2000-2009",
+     "CAGR": 12.55,
+     "Sharpe": 0.723,
+     "Sortino": 0.783,
+     "MaxDD": -33.37,
+     "AvgInvested": 0.693,
+     "Turnover/yr": 25.92,
+     "End$per1k": 3259.77
+    },
+    {
+     "label": "GEM lb126 sk21 2010-2019",
+     "CAGR": -0.62,
+     "Sharpe": 0.034,
+     "Sortino": 0.041,
+     "MaxDD": -28.58,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 41.55,
+     "End$per1k": 939.54
+    },
+    {
+     "label": "GEM lb126 sk21 2020-2025H",
+     "CAGR": 4.76,
+     "Sharpe": 0.343,
+     "Sortino": 0.406,
+     "MaxDD": -32.07,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 25.53,
+     "End$per1k": 1293.01
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "lookback": 210,
+    "skip": 0
+   },
+   "wf_sharpes": [
+    0.598,
+    0.056,
+    0.334
+   ],
+   "mean": 0.329,
+   "folds": [
+    {
+     "label": "GEM lb210 sk0 2000-2009",
+     "CAGR": 9.58,
+     "Sharpe": 0.598,
+     "Sortino": 0.637,
+     "MaxDD": -36.2,
+     "AvgInvested": 0.66,
+     "Turnover/yr": 16.71,
+     "End$per1k": 2494.11
+    },
+    {
+     "label": "GEM lb210 sk0 2010-2019",
+     "CAGR": -0.25,
+     "Sharpe": 0.056,
+     "Sortino": 0.068,
+     "MaxDD": -34.46,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 30.14,
+     "End$per1k": 975.43
+    },
+    {
+     "label": "GEM lb210 sk0 2020-2025H",
+     "CAGR": 4.15,
+     "Sharpe": 0.334,
+     "Sortino": 0.402,
+     "MaxDD": -23.17,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 16.12,
+     "End$per1k": 1251.78
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "lookback": 210,
+    "skip": 21
+   },
+   "wf_sharpes": [
+    0.731,
+    0.108,
+    0.251
+   ],
+   "mean": 0.363,
+   "folds": [
+    {
+     "label": "GEM lb210 sk21 2000-2009",
+     "CAGR": 12.28,
+     "Sharpe": 0.731,
+     "Sortino": 0.775,
+     "MaxDD": -32.48,
+     "AvgInvested": 0.66,
+     "Turnover/yr": 15.71,
+     "End$per1k": 3181.73
+    },
+    {
+     "label": "GEM lb210 sk21 2010-2019",
+     "CAGR": 0.48,
+     "Sharpe": 0.108,
+     "Sortino": 0.133,
+     "MaxDD": -28.02,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 32.34,
+     "End$per1k": 1048.82
+    },
+    {
+     "label": "GEM lb210 sk21 2020-2025H",
+     "CAGR": 3.03,
+     "Sharpe": 0.251,
+     "Sortino": 0.3,
+     "MaxDD": -33.72,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 20.46,
+     "End$per1k": 1179.05
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "lookback": 252,
+    "skip": 0
+   },
+   "wf_sharpes": [
+    0.655,
+    0.048,
+    0.129
+   ],
+   "mean": 0.277,
+   "folds": [
+    {
+     "label": "GEM lb252 sk0 2000-2009",
+     "CAGR": 10.86,
+     "Sharpe": 0.655,
+     "Sortino": 0.692,
+     "MaxDD": -26.24,
+     "AvgInvested": 0.643,
+     "Turnover/yr": 12.91,
+     "End$per1k": 2801.75
+    },
+    {
+     "label": "GEM lb252 sk0 2010-2019",
+     "CAGR": -0.47,
+     "Sharpe": 0.048,
+     "Sortino": 0.059,
+     "MaxDD": -35.24,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 29.54,
+     "End$per1k": 954.5
+    },
+    {
+     "label": "GEM lb252 sk0 2020-2025H",
+     "CAGR": 0.74,
+     "Sharpe": 0.129,
+     "Sortino": 0.149,
+     "MaxDD": -33.29,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 24.45,
+     "End$per1k": 1041.43
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "lookback": 252,
+    "skip": 21
+   },
+   "wf_sharpes": [
+    0.582,
+    0.089,
+    0.127
+   ],
+   "mean": 0.266,
+   "folds": [
+    {
+     "label": "GEM lb252 sk21 2000-2009",
+     "CAGR": 9.4,
+     "Sharpe": 0.582,
+     "Sortino": 0.615,
+     "MaxDD": -32.88,
+     "AvgInvested": 0.643,
+     "Turnover/yr": 16.91,
+     "End$per1k": 2454.59
+    },
+    {
+     "label": "GEM lb252 sk21 2010-2019",
+     "CAGR": 0.13,
+     "Sharpe": 0.089,
+     "Sortino": 0.113,
+     "MaxDD": -28.72,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 36.55,
+     "End$per1k": 1012.63
+    },
+    {
+     "label": "GEM lb252 sk21 2020-2025H",
+     "CAGR": 0.55,
+     "Sharpe": 0.127,
+     "Sortino": 0.152,
+     "MaxDD": -33.72,
+     "AvgInvested": 0.999,
+     "Turnover/yr": 21.55,
+     "End$per1k": 1030.72
+    }
+   ]
+  }
+ ],
+ "E10": [
+  {
+   "cfg": {
+    "window": 150,
+    "band": 0.0
+   },
+   "wf_sharpes": [
+    1.024,
+    0.534,
+    0.748
+   ],
+   "mean": 0.769,
+   "folds": [
+    {
+     "label": "GTAA5 w150 b0.0 2000-2009",
+     "CAGR": 6.75,
+     "Sharpe": 1.024,
+     "Sortino": 1.158,
+     "MaxDD": -11.16,
+     "AvgInvested": 0.416,
+     "Turnover/yr": 1.18,
+     "End$per1k": 1920.57
+    },
+    {
+     "label": "GTAA5 w150 b0.0 2010-2019",
+     "CAGR": 3.59,
+     "Sharpe": 0.534,
+     "Sortino": 0.671,
+     "MaxDD": -10.46,
+     "AvgInvested": 0.686,
+     "Turnover/yr": 2.12,
+     "End$per1k": 1422.22
+    },
+    {
+     "label": "GTAA5 w150 b0.0 2020-2025H",
+     "CAGR": 5.44,
+     "Sharpe": 0.748,
+     "Sortino": 0.926,
+     "MaxDD": -8.79,
+     "AvgInvested": 0.607,
+     "Turnover/yr": 2.72,
+     "End$per1k": 1339.59
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "window": 150,
+    "band": 0.02
+   },
+   "wf_sharpes": [
+    1.074,
+    0.43,
+    0.79
+   ],
+   "mean": 0.765,
+   "folds": [
+    {
+     "label": "GTAA5 w150 b0.02 2000-2009",
+     "CAGR": 6.29,
+     "Sharpe": 1.074,
+     "Sortino": 1.124,
+     "MaxDD": -10.43,
+     "AvgInvested": 0.331,
+     "Turnover/yr": 1.34,
+     "End$per1k": 1839.09
+    },
+    {
+     "label": "GTAA5 w150 b0.02 2010-2019",
+     "CAGR": 2.59,
+     "Sharpe": 0.43,
+     "Sortino": 0.503,
+     "MaxDD": -9.08,
+     "AvgInvested": 0.518,
+     "Turnover/yr": 2.38,
+     "End$per1k": 1290.45
+    },
+    {
+     "label": "GTAA5 w150 b0.02 2020-2025H",
+     "CAGR": 5.29,
+     "Sharpe": 0.79,
+     "Sortino": 0.941,
+     "MaxDD": -7.34,
+     "AvgInvested": 0.488,
+     "Turnover/yr": 2.43,
+     "End$per1k": 1329.55
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "window": 200,
+    "band": 0.0
+   },
+   "wf_sharpes": [
+    0.907,
+    0.398,
+    0.716
+   ],
+   "mean": 0.674,
+   "folds": [
+    {
+     "label": "GTAA5 w200 b0.0 2000-2009",
+     "CAGR": 5.85,
+     "Sharpe": 0.907,
+     "Sortino": 1.015,
+     "MaxDD": -17.42,
+     "AvgInvested": 0.418,
+     "Turnover/yr": 0.78,
+     "End$per1k": 1765.25
+    },
+    {
+     "label": "GTAA5 w200 b0.0 2010-2019",
+     "CAGR": 2.91,
+     "Sharpe": 0.398,
+     "Sortino": 0.478,
+     "MaxDD": -16.15,
+     "AvgInvested": 0.709,
+     "Turnover/yr": 1.88,
+     "End$per1k": 1332.29
+    },
+    {
+     "label": "GTAA5 w200 b0.0 2020-2025H",
+     "CAGR": 5.3,
+     "Sharpe": 0.716,
+     "Sortino": 0.906,
+     "MaxDD": -8.86,
+     "AvgInvested": 0.622,
+     "Turnover/yr": 2.39,
+     "End$per1k": 1330.09
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "window": 200,
+    "band": 0.02
+   },
+   "wf_sharpes": [
+    1.127,
+    0.473,
+    0.865
+   ],
+   "mean": 0.822,
+   "folds": [
+    {
+     "label": "GTAA5 w200 b0.02 2000-2009",
+     "CAGR": 6.32,
+     "Sharpe": 1.127,
+     "Sortino": 1.203,
+     "MaxDD": -7.77,
+     "AvgInvested": 0.337,
+     "Turnover/yr": 1.1,
+     "End$per1k": 1844.06
+    },
+    {
+     "label": "GTAA5 w200 b0.02 2010-2019",
+     "CAGR": 2.99,
+     "Sharpe": 0.473,
+     "Sortino": 0.564,
+     "MaxDD": -9.93,
+     "AvgInvested": 0.563,
+     "Turnover/yr": 2.24,
+     "End$per1k": 1342.14
+    },
+    {
+     "label": "GTAA5 w200 b0.02 2020-2025H",
+     "CAGR": 5.8,
+     "Sharpe": 0.865,
+     "Sortino": 1.063,
+     "MaxDD": -7.34,
+     "AvgInvested": 0.509,
+     "Turnover/yr": 2.28,
+     "End$per1k": 1365.09
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "window": 250,
+    "band": 0.0
+   },
+   "wf_sharpes": [
+    1.241,
+    0.36,
+    0.719
+   ],
+   "mean": 0.773,
+   "folds": [
+    {
+     "label": "GTAA5 w250 b0.0 2000-2009",
+     "CAGR": 6.87,
+     "Sharpe": 1.241,
+     "Sortino": 1.437,
+     "MaxDD": -8.05,
+     "AvgInvested": 0.401,
+     "Turnover/yr": 0.5,
+     "End$per1k": 1943.21
+    },
+    {
+     "label": "GTAA5 w250 b0.0 2010-2019",
+     "CAGR": 2.61,
+     "Sharpe": 0.36,
+     "Sortino": 0.434,
+     "MaxDD": -13.2,
+     "AvgInvested": 0.722,
+     "Turnover/yr": 1.72,
+     "End$per1k": 1294.02
+    },
+    {
+     "label": "GTAA5 w250 b0.0 2020-2025H",
+     "CAGR": 5.51,
+     "Sharpe": 0.719,
+     "Sortino": 0.889,
+     "MaxDD": -10.66,
+     "AvgInvested": 0.62,
+     "Turnover/yr": 2.17,
+     "End$per1k": 1344.9
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "window": 250,
+    "band": 0.02
+   },
+   "wf_sharpes": [
+    1.242,
+    0.365,
+    0.826
+   ],
+   "mean": 0.811,
+   "folds": [
+    {
+     "label": "GTAA5 w250 b0.02 2000-2009",
+     "CAGR": 6.58,
+     "Sharpe": 1.242,
+     "Sortino": 1.411,
+     "MaxDD": -7.75,
+     "AvgInvested": 0.345,
+     "Turnover/yr": 0.74,
+     "End$per1k": 1890.01
+    },
+    {
+     "label": "GTAA5 w250 b0.02 2010-2019",
+     "CAGR": 2.54,
+     "Sharpe": 0.365,
+     "Sortino": 0.423,
+     "MaxDD": -14.05,
+     "AvgInvested": 0.605,
+     "Turnover/yr": 1.92,
+     "End$per1k": 1284.08
+    },
+    {
+     "label": "GTAA5 w250 b0.02 2020-2025H",
+     "CAGR": 5.69,
+     "Sharpe": 0.826,
+     "Sortino": 0.991,
+     "MaxDD": -9.48,
+     "AvgInvested": 0.508,
+     "Turnover/yr": 2.06,
+     "End$per1k": 1357.7
+    }
+   ]
+  }
+ ],
+ "E11": [
+  {
+   "cfg": {
+    "lookback": 126,
+    "top_n": 1
+   },
+   "wf_sharpes": [
+    0.07,
+    -0.233,
+    0.212
+   ],
+   "mean": 0.016,
+   "folds": [
+    {
+     "label": "SecTrend lb126 n1 2000-2009",
+     "CAGR": -0.49,
+     "Sharpe": 0.07,
+     "Sortino": 0.089,
+     "MaxDD": -45.37,
+     "AvgInvested": 0.749,
+     "Turnover/yr": 47.53,
+     "End$per1k": 952.31
+    },
+    {
+     "label": "SecTrend lb126 n1 2010-2019",
+     "CAGR": -4.88,
+     "Sharpe": -0.233,
+     "Sortino": -0.312,
+     "MaxDD": -53.85,
+     "AvgInvested": 0.968,
+     "Turnover/yr": 68.18,
+     "End$per1k": 607.03
+    },
+    {
+     "label": "SecTrend lb126 n1 2020-2025H",
+     "CAGR": 2.23,
+     "Sharpe": 0.212,
+     "Sortino": 0.269,
+     "MaxDD": -37.55,
+     "AvgInvested": 0.955,
+     "Turnover/yr": 69.72,
+     "End$per1k": 1129.28
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "lookback": 126,
+    "top_n": 2
+   },
+   "wf_sharpes": [
+    -0.087,
+    0.038,
+    0.183
+   ],
+   "mean": 0.045,
+   "folds": [
+    {
+     "label": "SecTrend lb126 n2 2000-2009",
+     "CAGR": -2.54,
+     "Sharpe": -0.087,
+     "Sortino": -0.107,
+     "MaxDD": -43.96,
+     "AvgInvested": 0.749,
+     "Turnover/yr": 43.93,
+     "End$per1k": 773.67
+    },
+    {
+     "label": "SecTrend lb126 n2 2010-2019",
+     "CAGR": -0.49,
+     "Sharpe": 0.038,
+     "Sortino": 0.05,
+     "MaxDD": -34.53,
+     "AvgInvested": 0.968,
+     "Turnover/yr": 52.06,
+     "End$per1k": 952.12
+    },
+    {
+     "label": "SecTrend lb126 n2 2020-2025H",
+     "CAGR": 1.67,
+     "Sharpe": 0.183,
+     "Sortino": 0.233,
+     "MaxDD": -31.99,
+     "AvgInvested": 0.955,
+     "Turnover/yr": 52.88,
+     "End$per1k": 1095.7
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "lookback": 126,
+    "top_n": 3
+   },
+   "wf_sharpes": [
+    -0.052,
+    0.104,
+    0.247
+   ],
+   "mean": 0.1,
+   "folds": [
+    {
+     "label": "SecTrend lb126 n3 2000-2009",
+     "CAGR": -1.77,
+     "Sharpe": -0.052,
+     "Sortino": -0.063,
+     "MaxDD": -41.87,
+     "AvgInvested": 0.749,
+     "Turnover/yr": 37.36,
+     "End$per1k": 836.69
+    },
+    {
+     "label": "SecTrend lb126 n3 2010-2019",
+     "CAGR": 0.48,
+     "Sharpe": 0.104,
+     "Sortino": 0.132,
+     "MaxDD": -32.63,
+     "AvgInvested": 0.968,
+     "Turnover/yr": 46.62,
+     "End$per1k": 1048.72
+    },
+    {
+     "label": "SecTrend lb126 n3 2020-2025H",
+     "CAGR": 2.85,
+     "Sharpe": 0.247,
+     "Sortino": 0.3,
+     "MaxDD": -29.21,
+     "AvgInvested": 0.955,
+     "Turnover/yr": 45.94,
+     "End$per1k": 1168.1
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "lookback": 252,
+    "top_n": 1
+   },
+   "wf_sharpes": [
+    0.102,
+    0.049,
+    0.554
+   ],
+   "mean": 0.235,
+   "folds": [
+    {
+     "label": "SecTrend lb252 n1 2000-2009",
+     "CAGR": 0.15,
+     "Sharpe": 0.102,
+     "Sortino": 0.127,
+     "MaxDD": -47.42,
+     "AvgInvested": 0.728,
+     "Turnover/yr": 46.33,
+     "End$per1k": 1014.67
+    },
+    {
+     "label": "SecTrend lb252 n1 2010-2019",
+     "CAGR": -0.52,
+     "Sharpe": 0.049,
+     "Sortino": 0.062,
+     "MaxDD": -32.85,
+     "AvgInvested": 0.968,
+     "Turnover/yr": 57.37,
+     "End$per1k": 949.71
+    },
+    {
+     "label": "SecTrend lb252 n1 2020-2025H",
+     "CAGR": 11.06,
+     "Sharpe": 0.554,
+     "Sortino": 0.723,
+     "MaxDD": -27.86,
+     "AvgInvested": 0.955,
+     "Turnover/yr": 54.14,
+     "End$per1k": 1784.39
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "lookback": 252,
+    "top_n": 2
+   },
+   "wf_sharpes": [
+    -0.084,
+    0.275,
+    0.276
+   ],
+   "mean": 0.156,
+   "folds": [
+    {
+     "label": "SecTrend lb252 n2 2000-2009",
+     "CAGR": -2.49,
+     "Sharpe": -0.084,
+     "Sortino": -0.102,
+     "MaxDD": -44.91,
+     "AvgInvested": 0.728,
+     "Turnover/yr": 37.63,
+     "End$per1k": 777.65
+    },
+    {
+     "label": "SecTrend lb252 n2 2010-2019",
+     "CAGR": 2.97,
+     "Sharpe": 0.275,
+     "Sortino": 0.345,
+     "MaxDD": -27.46,
+     "AvgInvested": 0.968,
+     "Turnover/yr": 37.25,
+     "End$per1k": 1339.12
+    },
+    {
+     "label": "SecTrend lb252 n2 2020-2025H",
+     "CAGR": 3.52,
+     "Sharpe": 0.276,
+     "Sortino": 0.348,
+     "MaxDD": -27.04,
+     "AvgInvested": 0.955,
+     "Turnover/yr": 43.64,
+     "End$per1k": 1210.61
+    }
+   ]
+  },
+  {
+   "cfg": {
+    "lookback": 252,
+    "top_n": 3
+   },
+   "wf_sharpes": [
+    -0.202,
+    0.409,
+    0.295
+   ],
+   "mean": 0.167,
+   "folds": [
+    {
+     "label": "SecTrend lb252 n3 2000-2009",
+     "CAGR": -3.68,
+     "Sharpe": -0.202,
+     "Sortino": -0.24,
+     "MaxDD": -48.02,
+     "AvgInvested": 0.728,
+     "Turnover/yr": 37.29,
+     "End$per1k": 687.3
+    },
+    {
+     "label": "SecTrend lb252 n3 2010-2019",
+     "CAGR": 4.73,
+     "Sharpe": 0.409,
+     "Sortino": 0.514,
+     "MaxDD": -26.06,
+     "AvgInvested": 0.968,
+     "Turnover/yr": 30.94,
+     "End$per1k": 1586.57
+    },
+    {
+     "label": "SecTrend lb252 n3 2020-2025H",
+     "CAGR": 3.75,
+     "Sharpe": 0.295,
+     "Sortino": 0.368,
+     "MaxDD": -27.33,
+     "AvgInvested": 0.955,
+     "Turnover/yr": 34.1,
+     "End$per1k": 1225.41
+    }
+   ]
+  }
+ ],
+ "benchmark_test": {
+  "SPY B&H": 8249.83,
+  "DIA B&H": 8138.9,
+  "QQQ B&H": 9014.44,
+  "v2 (champ)": 9257.88,
+  "Mag-7 eqw (2012+)": 83104.46,
+  "SPY B&H (2012+)": 7517.84
+ },
+ "E9_sig": {
+  "best_cfg": {
+   "lookback": 126,
+   "skip": 0
+  },
+  "mean_wf": 0.435,
+  "dsr": 0.3009,
+  "ci": [
+   -1.175,
+   0.319
+  ],
+  "clears": false,
+  "worst_dd": -32.52
+ },
+ "E9_verdict": "FAIL",
+ "E10_sig": {
+  "best_cfg": {
+   "window": 200,
+   "band": 0.02
+  },
+  "mean_wf": 0.822,
+  "dsr": 0.7657,
+  "ci": [
+   -0.691,
+   0.991
+  ],
+  "clears": false,
+  "worst_dd": -9.93
+ },
+ "E10_verdict": "FAIL",
+ "E11_sig": {
+  "best_cfg": {
+   "lookback": 252,
+   "top_n": 1
+  },
+  "mean_wf": 0.235,
+  "dsr": 0.6522,
+  "ci": [
+   -0.954,
+   0.599
+  ],
+  "clears": false,
+  "worst_dd": -47.42
+ },
+ "E11_verdict": "FAIL",
+ "M1_correlation_memo": {
+  "full_period_corr": 0.721,
+  "fold_corrs": [
+   {
+    "fold": "2000-2009",
+    "corr": 0.712
+   },
+   {
+    "fold": "2010-2019",
+    "corr": 0.764
+   },
+   {
+    "fold": "2020-2025H",
+    "corr": 0.693
+   }
+  ],
+  "oos_sharpe_v2": 0.892,
+  "oos_sharpe_gtaa": 0.847,
+  "oos_sharpe_ensemble_50_50": 0.946,
+  "ensemble_dollar_since_2000": 6542.39,
+  "ensemble_max_dd_pct": -14.21,
+  "ensemble_feasible": false,
+  "recommendation": "Ensemble not recommended \u2014 high correlation implies limited diversification."
+ },
+ "portfolio_mark": {
+  "date": "2026-07-14",
+  "spy_close": 751.8300170898438,
+  "units": 1.333476,
+  "value": 1002.55,
+  "chg_dollar": 3.55,
+  "chg_pct": 0.355,
+  "v2_exposure": 1.0
+ }
+}
