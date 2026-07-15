@@ -1,0 +1,59 @@
+{
+ "best": {
+  "label": "ENS v2:30%/RP:70%",
+  "folds": [
+   1.011,
+   0.97,
+   1.274
+  ],
+  "meanWF": 1.085,
+  "worstDD": -7.73,
+  "oos_sharpe": 1.274,
+  "end1k": 4173.58
+ },
+ "dsr": 0.9797,
+ "diff_ci": [
+  -0.269,
+  1.364
+ ],
+ "end1k_spy": 6767.99,
+ "end1k_v2": 8373.81,
+ "all_rows": [
+  {
+   "label": "ENS v2:30%/RP:70%",
+   "folds": [
+    1.011,
+    0.97,
+    1.274
+   ],
+   "meanWF": 1.085,
+   "worstDD": -7.73,
+   "oos_sharpe": 1.274,
+   "end1k": 4173.58
+  },
+  {
+   "label": "ENS v2:50%/RP:50%",
+   "folds": [
+    0.982,
+    0.923,
+    1.138
+   ],
+   "meanWF": 1.014,
+   "worstDD": -10.78,
+   "oos_sharpe": 1.138,
+   "end1k": 5149.49
+  },
+  {
+   "label": "ENS v2:70%/RP:30%",
+   "folds": [
+    0.932,
+    0.868,
+    1.02
+   ],
+   "meanWF": 0.94,
+   "worstDD": -14.59,
+   "oos_sharpe": 1.02,
+   "end1k": 6297.12
+  }
+ ]
+}

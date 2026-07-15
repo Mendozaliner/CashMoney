@@ -18,11 +18,11 @@
    fix E5: worst DD still -47.4%. Sector family PERMANENTLY CLOSED (both E5 and E11
    failed; further sector rotation is excluded from the research agenda).
 
-5. **Risk Parity / Equal-Risk Contribution**: allocate across a multi-asset panel
-   (v2's SPY + IEF + GLD) with weights proportional to inverse volatility.
-   Unlike 50/50 ensemble (too correlated), risk parity uses realized vol to
-   dynamically size across truly uncorrelated asset classes. v2's trend gate
-   kept: only include assets in trend. 6 configs max. Pre-register before running.
+5. ~~Risk Parity SPY/IEF/GLD~~ DONE s8 (E12, DISCARDED on diff-CI; first-ever
+   DSR pass at 0.982, worst DD -7.6%, corr to v2 0.467 — watch-listed).
+   Ensemble revisit condition (corr < 0.50) was consumed the same session:
+   ~~v2/RP ensemble~~ DONE s8 (E13, DISCARDED — CI straddles zero, raw terminal
+   lags SPY). Do NOT re-tune mixture weights; see watch-list conditions.
 
 6. **Momentum + Value tilt on sector basket**: overlay a simple price-to-earnings
    or price-to-book screen on top of sector momentum. Requires fundamentals data
@@ -38,12 +38,25 @@
    SPY live (0/3 months as of 2026-07-15). No research action — just wait and mark
    monthly. First check: ~2026-08-13.
 
+10. **v2 full-sample significance re-check (monthly)**: the s6b diff-vs-SPY CI
+    missed zero by 0.009. Each month of fresh live data extends the sample; re-run
+    the full-sample CI on the first session after each data-month completes.
+    Cheap, no new configs, directly attacks criterion 1. Next: early August 2026.
+
 ## Priority order for next sessions
-1. (#9) Monthly live mark — simple tracking, highest priority for Phase-2 graduation
-2. (#5) Risk parity on multi-asset panel — the best remaining untested strategy family
-3. (#6) Value tilt — needs fundamentals data pipeline first (out-of-session work)
+1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
+2. (#10) Monthly v2 full-sample significance re-check — first week of August
+3. (#6) Value tilt — needs fundamentals data pipeline first (out-of-session work);
+   otherwise the research queue is effectively exhausted pending more live data —
+   prefer NO new strategy families over re-tuning old ones (103 configs burned).
 
 ## Negative results (do NOT re-test in the original form)
+- **Trend-gated naive risk parity SPY/IEF/GLD** (E12, s8): best lb60/b0.03 —
+  mean WF 1.018, DD -7.6%, DSR 0.982 (passed), but diff-vs-SPY CI straddles zero
+  and $1k terminal $2,995 vs SPY $6,768. NOT closed — watch-listed (see STATE.md);
+  no standalone re-test, no grid widening.
+- **v2/RP fixed-mix ensemble** (E13, s8): 30/70-70/30 all fail diff-CI; best
+  terminal $4,174 < SPY. Mixture weights exhausted — do not re-tune.
 - **True Antonacci GEM with international equity** (E9, s7): SPY/EFA/EEM rotation,
   AGG harbor. Mean WF Sharpe 0.435, DD -32.5%, DSR 0.301. FAIL. International
   rotation hurts badly in the 2010-2019 US equity bull market (fold-2 Sharpe 0.152).

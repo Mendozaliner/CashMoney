@@ -1,6 +1,6 @@
 # STATE — CashMoney research system
 
-Updated: 2026-07-15 s7 (True GEM, GTAA-5, SectorTrend+gate — all discarded; GTAA-5 added to watch-list; ensemble not yet viable; first live P&L +$3.55)
+Updated: 2026-07-15 s8 (Risk parity E12 + v2/RP ensemble E13 — both discarded on the diff-vs-SPY CI; RP is the FIRST family to pass the DSR bar (0.982) and corr to v2 is 0.467; both on watch-list. No new close; mark unchanged $1,002.55)
 
 ## PHASE 2 — PROVE (entered 2026-07-14)
 Champion **v2 is FROZEN** as the live exam strategy. The live-outperformance
@@ -10,13 +10,15 @@ All new research runs in SEPARATE SLEEVES and must NOT touch the frozen live
 track. Champion changes are allowed only if v2 decisively fails (trails SPY by
 >5% over 6+ weeks live). See SKILL.md for keep/revert + significance gates.
 
-## Graduation tracker (updated 2026-07-15 s7)
+## Graduation tracker (updated 2026-07-15 s8)
 1. Beats S&P risk-adjusted OOS: POINT-PASS / SIGNIFICANCE-FAIL — full-sample
    diff CI [-0.009,+0.708] — misses clearing zero by 0.009. Not passed.
-   Ensemble not yet feasible (GTAA/v2 correlation 0.721 > 0.70 threshold;
-   ensemble $1k = $6,542 vs v2 $9,258 — raw return drag too large).
-2. Live 3-mo outperformance: clock running (0/3 months). Day 2: portfolio
-   $1,002.55 vs SPY +0.355% (tracking 1:1 while fully invested — expected).
+   GTAA ensemble blocked (corr 0.721). NEW s8: RP sleeve corr 0.467 (< 0.50
+   threshold) and passes DSR (0.982), but v2/RP ensemble (E13) still fails the
+   diff-vs-SPY CI ([-0.269,+1.364]) and lags SPY on raw terminal value
+   ($4,174-$6,297 vs $6,768 per $1k since 2000). Not passed.
+2. Live 3-mo outperformance: clock running (0/3 months). Day 2 mark carried
+   in s8 (no new close intraday); $1,002.55, tracking SPY 1:1 fully invested.
 3. MaxDD < 20%: live +0.355% since inception; worst backtest fold -20.5%.
 4. Full costs (0.15%/trade): PASS — negligible drag at ~2 trades/yr.
 Phase-transition: not met (needs 3 live months + significance on #1).
@@ -25,9 +27,9 @@ Phase-transition: not met (needs 3 live months + significance on #1).
 Portfolio re-based from SPY_PROXY (stale, ended 2025-12-19) to real SPY cache:
 $999.00 carried, 1.333476 SPY units @ 749.17 (2026-07-13 close). Live clock and
 all live-vs-SPY comparisons measure from this mark. Costs standard now 0.15%.
-**Latest mark (2026-07-14 close, session 7):** 1.333476 SPY × $751.83 = **$1,002.55**
-(+$3.55, +0.355% from last mark; +0.255% all-time from $1,000 inception).
-v2 exposure confirmed 1.0 (price > SMA200+3% band; 20d vol < 18% target).
+**Latest mark (2026-07-14 close, carried in session 8 — no new close):**
+1.333476 SPY × $751.83 = **$1,002.55** (+0.255% all-time from $1,000 inception).
+v2 exposure confirmed 1.0 (751.83 > SMA200+3% band 712.79; 20d vol 14.0% < 18%).
 
 ## Standing briefing instructions (per Mr. Menéndez, 2026-07-14)
 - FORMAT (added later on 2026-07-14, SUPERSEDES the long template): the daily
@@ -121,6 +123,20 @@ portfolio.json created session 2 (session 1 omitted it): $1,000 inception
 exposure 1.0 confirmed.
 
 ## Watch-list (not adopted; revisit under stated conditions)
+- **Trend-gated risk parity RP(lb60,b0.03) SPY/IEF/GLD** (E12, s8): mean WF
+  Sharpe 1.018 (> v2 0.844), worst-fold DD **-7.6%** (new best), OOS Sharpe 1.291,
+  **DSR 0.982 — FIRST family ever to pass the deflation bar.** Failed: diff-vs-SPY
+  CI [-0.461,+1.629] straddles zero; unlevered raw return badly lags ($2,995 per
+  $1k since 2000 vs SPY $6,768 — IEF/GLD late listings put early years in cash).
+  Corr to v2: 0.467 OOS. Condition to revisit: as ensemble component if a
+  significance path emerges on longer data; or standalone for a capital-
+  preservation (not growth) mandate.
+- **v2/RP fixed-mix ensemble** (E13, s8): best 30/70 mean WF Sharpe 1.085
+  (highest ever tested), worst DD -7.7%, DSR 0.980. Failed: diff-vs-SPY CI
+  [-0.269,+1.364] straddles zero AND terminal $1k $4,174 < SPY $6,768 (raw-return
+  giveaway, same flaw as the GTAA ensemble). Condition to revisit: only if the
+  live era or extended data shows the Sharpe edge translating into a diff-CI that
+  clears zero; do NOT re-tune mixture weights (3 weights already burned).
 - **GTAA(w150,b0) SPY/IWM/IEF/GLD** (E6, s6): mean WF Sharpe 0.892 (v2 0.844),
   worst-fold DD -12.6% — best risk profile tested to date, robust across 6 cfgs,
   but DSR 0.897 and diff-vs-SPY CI [-0.76,+0.98] fail the gate. Correlation with
@@ -198,3 +214,17 @@ exposure 1.0 confirmed.
   Ensemble not recommended at current correlation. $1k test (2000→2026-07-14):
   v2 $9,257.88 > QQQ $9,014.44 > SPY $8,249.83 > DIA $8,138.90. v2 wins.
   Champion v2 unchanged. Cumulative registered configs: 94.
+- 2026-07-15 s8 — Roadmap item 5 (risk parity) + ensemble revisit (trigger met:
+  corr < 0.50). New strategies/risk_parity.py (+4 causality tests, 22/22 pass;
+  installed pytest/backtesting in fresh sandbox). No new close (cache still
+  2026-07-14); mark carried $1,002.55, no trades, exposure 1.0 re-confirmed.
+  E12 RP SPY/IEF/GLD (64e6e20d9c, 6 cfg): best lb60/b0.03 mean WF 1.018, worst
+  DD -7.6% (best ever), OOS Sharpe 1.291, DSR 0.9823 — FIRST DSR PASS — but
+  diff-vs-SPY CI [-0.461,+1.629] straddles zero → DISCARDED per pre-registered
+  bar; watch-listed. E13 v2/RP ensemble (082d45e3fc, 3 cfg): best 30/70 mean WF
+  1.085 (highest ever), DD -7.7%, DSR(9 trials) 0.9797, but CI [-0.269,+1.364]
+  fails AND $1k $4,174 < SPY $6,768 → DISCARDED; watch-listed. Do-nothing check
+  unchanged: after-tax B&H won 2020-2025H ($1.94 vs $1.61 per $1). Intl
+  benchmark panel first computed: v2 $9,258 beats SPY/QQQ/EWC/ACWI from 2000;
+  QQQ/SPY/EWC/ACWI all beat v2 from 2010 and 2020 (bull-market lag, expected).
+  Cumulative registered configs: 103.
