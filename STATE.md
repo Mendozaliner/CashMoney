@@ -1,6 +1,6 @@
 # STATE — CashMoney research system
 
-Updated: 2026-07-16 s9 (3 new philosophy experiments — E14 Permanent Portfolio (Browne), E15 Blended Momentum, E16 Adaptive Asset Allocation — all DISCARDED on diff-vs-SPY CI. E14 PP watch-listed: DSR 0.975, corr 0.430 to v2, DD -15.82%. New mark: SPY 754.81 (2026-07-15), portfolio $1,006.52)
+Updated: 2026-07-16 s10 (famous-failures guardrails codified: backtest/guardrails.py G1-G7, 34/34 tests, live book ALL GREEN. No experiments — engineering session; configs stay 135. Mark carried $1,006.52, no new close)
 
 ## PHASE 2 — PROVE (entered 2026-07-14)
 Champion **v2 is FROZEN** as the live exam strategy. The live-outperformance
@@ -75,6 +75,18 @@ v2 exposure confirmed 1.0 (754.81 > SMA200+3% band; 20d vol within 18% target). 
   rotation) are no longer blocked.
 - Deep-history SPY total-return proxy (1885→, `load_spy_proxy()`) retained for
   long-horizon robustness checks only. VIX snapshot retained.
+
+## Operational guardrails (new 2026-07-16 s10)
+- `backtest/guardrails.py` — 7 reporting-only guardrails codified from famous
+  failures (LTCM, Niederhoffer, Quant Quake, Amaranth; see
+  research/2026-07-16-s10-famous-failures-guardrails.md): G1 leverage cap 1.0,
+  G2 instrument whitelist (no derivatives/short-vol), G3 no revenge sizing,
+  G4 concentration caps (stock 20%/sector 30%, broad index exempt), G5 vol-spike
+  monitor (2x 1y-median or 4-sigma day -> AMBER), G6 drawdown ladder
+  -10/-15/-20% AMBER/RED/BREACH (reporting only, never auto-liquidation, per
+  E4/E8 evidence), G7 stale-data guard (>4d: no live marks/rebalance).
+  12 tests in tests/test_guardrails.py. STANDING ITEM: run `run_all()` at every
+  session mark; any non-GREEN goes in the briefing.
 
 ## Statistical-honesty tooling (new 2026-07-14)
 - `backtest/evaluation.py` — deflated Sharpe ratio (penalizes # of trials),
@@ -159,6 +171,16 @@ exposure 1.0 confirmed.
   lower on expanded data. Do NOT retry standalone — needs more DBC history to pass DSR.
 
 ## Session log
+- 2026-07-16 s10 — Second run of 2026-07-16. No new close (newest usable SPY
+  close still 2026-07-15); mark carried $1,006.52, exposure 1.0 re-confirmed,
+  no trades. Session work: last unexplored charter queue item — famous-failures
+  risk guardrails. 7-source research pass (Fed History & PWG on LTCM; WaPo/
+  SteadyOptions on Niederhoffer; Khandani-Lo NBER 14465 on Quant Quake;
+  Chincarini SSRN 1633589 on Amaranth; CFTC/PWG best practices). Built
+  backtest/guardrails.py (G1-G7, reporting-only) + 12 tests; suite 34/34.
+  Live book verdict: ALL GREEN. ENGINEERING session — no pre-registration, no
+  configs burned (135 unchanged), champion untouched. Roadmap gains standing
+  item #14 (guardrails at every mark).
 - 2026-07-13 s1 — Scaffold; SMA trend grid; champion v1 = SMA200/b3. KEPT.
 - 2026-07-13 s2 — Roadmap #2+#3 (+#1 attempt). Built fractional vector engine
   (validated vs backtesting.py), vol_target strategy, rf-cash accounting;

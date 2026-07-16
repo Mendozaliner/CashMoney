@@ -51,11 +51,17 @@
     same momentum-crash failure as E5 sector rotation; momentum without trend gate fails
     in bear markets). Family CLOSED.
 
+14. **Guardrails at every mark** (NEW s10, standing): run `backtest.guardrails.run_all()`
+    at each session's portfolio mark; report any non-GREEN check in the daily briefing.
+    Charter queue item "lessons from famous failures -> risk-limit guardrails" DONE s10
+    (engineering, zero configs).
+
 ## Priority order for next sessions
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
 2. (#10) Monthly v2 full-sample significance re-check — first week of August (s6b CI
    missed zero by 0.009; each live data month extends the sample)
-3. (#6) Value tilt — blocked on fundamentals data pipeline; research queue otherwise
+3. (#14) Guardrails run at every mark — standing, cheap.
+4. (#6) Value tilt — blocked on fundamentals data pipeline; research queue otherwise
    EXHAUSTED pending live data (135 configs burned; 4 families permanently closed:
    sector, kill-switch, blended-mom, AAA). Prefer NO new families over re-tuning.
 
