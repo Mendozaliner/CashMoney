@@ -43,14 +43,34 @@
     the full-sample CI on the first session after each data-month completes.
     Cheap, no new configs, directly attacks criterion 1. Next: early August 2026.
 
+11. ~~Harry Browne Permanent Portfolio~~ DONE s9 (E14, DISCARDED — CI straddles zero,
+    terminal lags; WATCH-LISTED with DSR 0.975, corr 0.430, DD -15.82%).
+12. ~~Blended Multi-Lookback Momentum~~ DONE s9 (E15, DISCARDED — high corr 0.879 to v2,
+    blended composite dilutes the binary SMA200 gate without adding value). Family CLOSED.
+13. ~~Adaptive Asset Allocation (top-N + min-var)~~ DONE s9 (E16, DISCARDED — DD -47.6%,
+    same momentum-crash failure as E5 sector rotation; momentum without trend gate fails
+    in bear markets). Family CLOSED.
+
 ## Priority order for next sessions
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
-2. (#10) Monthly v2 full-sample significance re-check — first week of August
-3. (#6) Value tilt — needs fundamentals data pipeline first (out-of-session work);
-   otherwise the research queue is effectively exhausted pending more live data —
-   prefer NO new strategy families over re-tuning old ones (103 configs burned).
+2. (#10) Monthly v2 full-sample significance re-check — first week of August (s6b CI
+   missed zero by 0.009; each live data month extends the sample)
+3. (#6) Value tilt — blocked on fundamentals data pipeline; research queue otherwise
+   EXHAUSTED pending live data (135 configs burned; 4 families permanently closed:
+   sector, kill-switch, blended-mom, AAA). Prefer NO new families over re-tuning.
 
 ## Negative results (do NOT re-test in the original form)
+- **Harry Browne Permanent Portfolio PP(band=0.10)** (E14, s9): DSR 0.975 (passes),
+  corr 0.430 to v2 (low), DD -15.82% (best ever). Failed CI [-0.575,+0.901]; terminal
+  $4,308 << v2 $9,294. Raw-return giveaway in bull markets. Watch-listed (not closed).
+- **Blended multi-lookback momentum** (E15, s9): composite of 3+12 or 1+3+6+12 month
+  momentum signals. DSR 0.981, DD -18.15%, but CI straddles zero and corr 0.879 with v2 —
+  near-duplicate. The BINARY SMA200 gate is strictly better than a graded composite for
+  risk-off decisions. Family CLOSED — do not retry multi-lookback composites.
+- **Adaptive Asset Allocation top-N/min-var** (E16, s9): momentum selection + minimum-
+  variance weights on SPY/IWM/EFA/IEF/GLD/DBC. DD -47.6% (worst ever for multi-asset),
+  DSR 0.918. Without a trend gate, momentum-picked portfolios crash as badly as sector
+  rotation. Adding correlation-aware weights doesn't fix the timing problem. Family CLOSED.
 - **Trend-gated naive risk parity SPY/IEF/GLD** (E12, s8): best lb60/b0.03 —
   mean WF 1.018, DD -7.6%, DSR 0.982 (passed), but diff-vs-SPY CI straddles zero
   and $1k terminal $2,995 vs SPY $6,768. NOT closed — watch-listed (see STATE.md);

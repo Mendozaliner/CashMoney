@@ -1,6 +1,6 @@
 # STATE — CashMoney research system
 
-Updated: 2026-07-15 s8 (Risk parity E12 + v2/RP ensemble E13 — both discarded on the diff-vs-SPY CI; RP is the FIRST family to pass the DSR bar (0.982) and corr to v2 is 0.467; both on watch-list. No new close; mark unchanged $1,002.55)
+Updated: 2026-07-16 s9 (3 new philosophy experiments — E14 Permanent Portfolio (Browne), E15 Blended Momentum, E16 Adaptive Asset Allocation — all DISCARDED on diff-vs-SPY CI. E14 PP watch-listed: DSR 0.975, corr 0.430 to v2, DD -15.82%. New mark: SPY 754.81 (2026-07-15), portfolio $1,006.52)
 
 ## PHASE 2 — PROVE (entered 2026-07-14)
 Champion **v2 is FROZEN** as the live exam strategy. The live-outperformance
@@ -27,9 +27,9 @@ Phase-transition: not met (needs 3 live months + significance on #1).
 Portfolio re-based from SPY_PROXY (stale, ended 2025-12-19) to real SPY cache:
 $999.00 carried, 1.333476 SPY units @ 749.17 (2026-07-13 close). Live clock and
 all live-vs-SPY comparisons measure from this mark. Costs standard now 0.15%.
-**Latest mark (2026-07-14 close, carried in session 8 — no new close):**
-1.333476 SPY × $751.83 = **$1,002.55** (+0.255% all-time from $1,000 inception).
-v2 exposure confirmed 1.0 (751.83 > SMA200+3% band 712.79; 20d vol 14.0% < 18%).
+**Latest mark (2026-07-15 close, session 9):**
+1.333476 SPY × $754.81 = **$1,006.52** (+0.652% all-time from $1,000 inception).
+v2 exposure confirmed 1.0 (754.81 > SMA200+3% band; 20d vol within 18% target). No trades.
 
 ## Standing briefing instructions (per Mr. Menéndez, 2026-07-14)
 - FORMAT (added later on 2026-07-14, SUPERSEDES the long template): the daily
@@ -123,6 +123,14 @@ portfolio.json created session 2 (session 1 omitted it): $1,000 inception
 exposure 1.0 confirmed.
 
 ## Watch-list (not adopted; revisit under stated conditions)
+- **Harry Browne Permanent Portfolio PP(band=0.10) SPY/TLT/GLD/SHY** (E14, s9): mean WF
+  Sharpe **1.001** (highest multi-asset family ever tested), worst DD **-15.82%** (best
+  ever), OOS Sharpe 0.896, **DSR 0.975 — passes deflation bar**. Failed: diff-vs-SPY
+  CI [-0.575,+0.901] straddles zero; terminal $1k $4,308 vs SPY $8,283 (raw-return
+  giveaway like RP — diversification hurts absolute return in a bull). Corr to v2: 0.430
+  (< 0.50 threshold). Condition to revisit: as ensemble component if a v2/PP ensemble CI
+  can clear zero (same path as E13 RP ensemble — that failed too; do NOT re-try ensemble
+  unless 2+ more years of live data extend the sample meaningfully).
 - **Trend-gated risk parity RP(lb60,b0.03) SPY/IEF/GLD** (E12, s8): mean WF
   Sharpe 1.018 (> v2 0.844), worst-fold DD **-7.6%** (new best), OOS Sharpe 1.291,
   **DSR 0.982 — FIRST family ever to pass the deflation bar.** Failed: diff-vs-SPY
@@ -214,6 +222,28 @@ exposure 1.0 confirmed.
   Ensemble not recommended at current correlation. $1k test (2000→2026-07-14):
   v2 $9,257.88 > QQQ $9,014.44 > SPY $8,249.83 > DIA $8,138.90. v2 wins.
   Champion v2 unchanged. Cumulative registered configs: 94.
+- 2026-07-16 s9 — Three new investing philosophy experiments. Data fresh through
+  2026-07-15 (SPY $754.81, cache stale_days=0). New mark: portfolio $1,006.52
+  (+$3.97, +0.396% from s8; +0.652% all-time). v2 exposure 1.0 re-confirmed; no trades.
+  New strategies: permanent_portfolio.py (fixed-slot PP, CRITICAL BUG FOUND AND FIXED:
+  original draft allocated 100% SPY during 2000-2002 pre-listing warmup; correct version
+  caps each slot at 25% permanently); blended_momentum.py (multi-lookback composite);
+  adaptive_alloc.py (top-N momentum + min-variance weights).
+  E14 Permanent Portfolio (4 cfg, reg 6c4760e6e5): best PP(band=0.10) mean WF Sharpe
+  1.001, worst DD -15.82% (best ever across ALL families), OOS Sharpe 0.896, DSR 0.975
+  — SECOND DSR PASS (after RP). But diff-vs-SPY CI [-0.575,+0.901] straddles zero AND
+  terminal $4,308 < SPY $8,283 → DISCARDED; WATCH-LISTED (corr 0.430 to v2).
+  E15 Blended Momentum (6 cfg, reg 884635fab0): best BM(n_lb=2,tv=0.18) mean WF 0.688,
+  worst DD -18.15%, DSR 0.981 — PASSES but CI [-0.537,+1.093] straddles zero AND
+  corr 0.879 with v2 (near-duplicate). DISCARDED. Blended momentum family closed — it's
+  a diluted v2; the binary SMA200 gate is better than a graded composite signal.
+  E16 Adaptive Asset Allocation (6 cfg, reg 091d3fbc16): best AAA(top3,lb12mo) mean WF
+  0.682, worst DD -47.64% (terrible), DSR 0.918, CI straddles zero → DISCARDED. AAA
+  without a trend gate suffers the same momentum-crash problem as E5 sector rotation
+  and E3 dual momentum. The family is CLOSED.
+  Cumulative registered configs: 135. No new close (mark date 2026-07-15).
+  $1k sim (2000→2026-07-15 fresh data): v2 $9,294 > IWM $9,075 > QQQ $8,990 >
+  SPY $8,283 > DIA $8,158 > AAA $7,705 > PP $4,873 > BlendMom $4,459.
 - 2026-07-15 s8 — Roadmap item 5 (risk parity) + ensemble revisit (trigger met:
   corr < 0.50). New strategies/risk_parity.py (+4 causality tests, 22/22 pass;
   installed pytest/backtesting in fresh sandbox). No new close (cache still

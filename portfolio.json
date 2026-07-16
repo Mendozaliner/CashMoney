@@ -5,14 +5,14 @@
  "positions": {
   "SPY": {
    "units": 1.3334757435413753,
-   "last_px": 751.8300170898438
+   "last_px": 754.8099975585938
   }
  },
  "cash": 0.0,
  "last_mark": {
-  "date": "2026-07-14",
-  "value": 1002.55,
-  "spy_close": 751.8300170898438
+  "date": "2026-07-15",
+  "value": 1006.52,
+  "spy_close": 754.8099975585938
  },
  "history": [
   {
@@ -80,6 +80,17 @@
    "spy_pct_same_window": 0.0,
    "all_time_pct": 0.255,
    "note": "Session 8 (second run of 2026-07-15): no new close since s7 - cache newest close still 2026-07-14 (data Action runs 23:30 UTC). Mark unchanged $1,002.55; not presented as a live daily move. v2 exposure 1.0 re-confirmed (751.83 > SMA200+3% band 712.79; 20d vol 14.0% < 18% target). No trades."
+  },
+  {
+   "date": "2026-07-16",
+   "session": 9,
+   "mark_date": "2026-07-15",
+   "value": 1006.52,
+   "chg_dollar": 3.97,
+   "chg_pct": 0.396,
+   "spy_pct_same_window": 0.396,
+   "all_time_pct": 0.652,
+   "note": "Session 9 (2026-07-16): New SPY close 754.81 (2026-07-15). 1.333476 units x 754.81 = $1,006.52 (+$3.97, +0.396% from $1,002.55). v2 exposure 1.0 confirmed (754.81 > SMA200+3% band; 20d vol within 18% target). No trades. E14 Permanent Portfolio (band=0.10): Sharpe 1.001, DD -15.82%, DSR 0.975, corr 0.430 to v2 — DISCARDED (CI straddles zero) but WATCH-LISTED. E15 Blended Momentum: DISCARDED (corr 0.879 too high). E16 Adaptive Asset Allocation: DISCARDED (DD -47.6%). $1k (2000->2026-07-15): v2 $9,294 > IWM $9,075 > QQQ $8,990 > SPY $8,283 > DIA $8,158."
   }
  ],
  "trades": [
