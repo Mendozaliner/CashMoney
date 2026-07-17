@@ -1,6 +1,6 @@
 # STATE — CashMoney research system
 
-Updated: 2026-07-16 s10 (famous-failures guardrails codified: backtest/guardrails.py G1-G7, 34/34 tests, live book ALL GREEN. No experiments — engineering session; configs stay 135. Mark carried $1,006.52, no new close)
+Updated: 2026-07-17 s11 (mean-reversion family E17/E18/E19 all DISCARDED — charter queue now fully explored 9/9; configs 149. New mark $1,001.07, first live down day −0.542%, guardrails ALL GREEN)
 
 ## PHASE 2 — PROVE (entered 2026-07-14)
 Champion **v2 is FROZEN** as the live exam strategy. The live-outperformance
@@ -27,9 +27,11 @@ Phase-transition: not met (needs 3 live months + significance on #1).
 Portfolio re-based from SPY_PROXY (stale, ended 2025-12-19) to real SPY cache:
 $999.00 carried, 1.333476 SPY units @ 749.17 (2026-07-13 close). Live clock and
 all live-vs-SPY comparisons measure from this mark. Costs standard now 0.15%.
-**Latest mark (2026-07-15 close, session 9):**
-1.333476 SPY × $754.81 = **$1,006.52** (+0.652% all-time from $1,000 inception).
-v2 exposure confirmed 1.0 (754.81 > SMA200+3% band; 20d vol within 18% target). No trades.
+**Latest mark (2026-07-16 close, session 11):**
+1.333476 SPY × $750.72 = **$1,001.07** (−0.542% day, +0.107% all-time from $1,000
+inception; SPY since live baseline +0.207%). First live down day. v2 exposure
+confirmed 1.0 (750.72 > SMA200+3% band 713.81; 20d vol 12.6% < 18%). No trades.
+Guardrails G1–G7 ALL GREEN (first standing run). Peak $1,006.52, worst dip −0.54%.
 
 ## Standing briefing instructions (per Mr. Menéndez, 2026-07-14)
 - FORMAT (added later on 2026-07-14, SUPERSEDES the long template): the daily
@@ -135,6 +137,13 @@ portfolio.json created session 2 (session 1 omitted it): $1,000 inception
 exposure 1.0 confirmed.
 
 ## Watch-list (not adopted; revisit under stated conditions)
+- **Bollinger(20, k=2.5) mean reversion, upper_half exit, SMA200-gated** (E18, s11):
+  mean WF Sharpe 0.896 (> v2 0.851), worst DD **-8.44%**, OOS Sharpe 0.989,
+  **corr to v2 0.364 — lowest of any family tested.** Failed: DSR 0.848 (< 0.95,
+  deflated across the 14-config session grid) and diff-vs-SPY CI [-0.821,+1.359]
+  straddles zero; terminal $1k $2,297 << SPY $6,775 (low avg exposure raw-return
+  giveaway). Condition to revisit: as ensemble diversifier ONLY if longer data
+  yields a significance path; grid burned, no re-tuning, no standalone re-test.
 - **Harry Browne Permanent Portfolio PP(band=0.10) SPY/TLT/GLD/SHY** (E14, s9): mean WF
   Sharpe **1.001** (highest multi-asset family ever tested), worst DD **-15.82%** (best
   ever), OOS Sharpe 0.896, **DSR 0.975 — passes deflation bar**. Failed: diff-vs-SPY
@@ -171,6 +180,21 @@ exposure 1.0 confirmed.
   lower on expanded data. Do NOT retry standalone — needs more DBC history to pass DSR.
 
 ## Session log
+- 2026-07-17 s11 — Mean reversion, the LAST unexplored charter family (RSI-2,
+  Bollinger, IBS as candidate NEW SLEEVE; frozen v2 untouched). 8-source
+  research pass (Connors/QuantifiedStrategies, Price Action Lab skeptic,
+  Pagonidis NAAIM IBS, SSRN 5713082, Atlantis Bollinger, Alvarez decay, MDPI
+  costs, QuantVero). New strategies/mean_reversion.py + 5 tests (suite 39/39).
+  New mark $1,001.07 (2026-07-16 close, −0.542% day, SPY identical; first live
+  down day). Guardrails ALL GREEN. E17 RSI2 (6 cfg, 36774e62aa): best e5/x80
+  mean WF 0.756, DD −7.9%, DSR 0.485 → DISCARDED, family closed (decay pattern
+  confirms the data-mining prior). E18 Bollinger (4 cfg, c8b45926ea): best
+  k2.5/upper_half mean WF 0.896, DD −8.4%, DSR 0.848, CI straddles →
+  DISCARDED but WATCH-LISTED (corr 0.364, lowest ever). E19 IBS (4 cfg,
+  d714733f08): best e0.1/x0.8 mean WF 0.244, DD −22.8%, DSR 0.616 →
+  DISCARDED, family CLOSED (EOD fill gives away the overnight edge). After-tax
+  do-nothing unchanged: B&H wins 2020-2025H $1.94 vs $1.61. Configs 135→149.
+  CHARTER QUEUE COMPLETE (9/9 families explored).
 - 2026-07-16 s10 — Second run of 2026-07-16. No new close (newest usable SPY
   close still 2026-07-15); mark carried $1,006.52, exposure 1.0 re-confirmed,
   no trades. Session work: last unexplored charter queue item — famous-failures

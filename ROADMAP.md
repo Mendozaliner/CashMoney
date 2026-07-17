@@ -56,16 +56,31 @@
     Charter queue item "lessons from famous failures -> risk-limit guardrails" DONE s10
     (engineering, zero configs).
 
+15. ~~Mean reversion (RSI-2, Bollinger, IBS)~~ DONE s11 (E17/E18/E19, all
+    DISCARDED; E18 Bollinger watch-listed corr 0.364; RSI-2 + IBS families
+    CLOSED). CHARTER RESEARCH QUEUE NOW FULLY EXPLORED (9/9).
+
 ## Priority order for next sessions
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
 2. (#10) Monthly v2 full-sample significance re-check — first week of August (s6b CI
    missed zero by 0.009; each live data month extends the sample)
 3. (#14) Guardrails run at every mark — standing, cheap.
-4. (#6) Value tilt — blocked on fundamentals data pipeline; research queue otherwise
-   EXHAUSTED pending live data (135 configs burned; 4 families permanently closed:
-   sector, kill-switch, blended-mom, AAA). Prefer NO new families over re-tuning.
+4. (#6) Value tilt — blocked on fundamentals data pipeline; research queue now
+   FULLY EXHAUSTED pending live data (149 configs burned; 6 families permanently
+   closed: sector, kill-switch, blended-mom, AAA, RSI-2, IBS). Prefer NO new
+   families over re-tuning. Sessions until August significance re-check are
+   mark + guardrails + monitoring only unless something breaks.
 
 ## Negative results (do NOT re-test in the original form)
+- **Connors RSI-2 on SPY, SMA200-gated** (E17, s11): best e5/x80 mean WF 0.756,
+  DD -7.9%, DSR 0.485, CI [-1.27,+0.85]. Strong 2000s fold then monotone decay —
+  the published-edge-decay pattern. Family CLOSED.
+- **Bollinger(20,k) lower-band MR on SPY** (E18, s11): best k2.5/upper_half mean
+  WF 0.896 (> v2), DD -8.4%, corr to v2 0.364 (lowest ever) but DSR 0.848 and CI
+  straddle. NOT closed — WATCH-LISTED as ensemble diversifier; grid burned.
+- **Pagonidis IBS on SPY, SMA200-gated** (E19, s11): best e0.1/x0.8 mean WF 0.244,
+  DD -22.8%, DSR 0.616. EOD next-close fills give away the overnight edge; costs
+  eat the rest. Family CLOSED permanently.
 - **Harry Browne Permanent Portfolio PP(band=0.10)** (E14, s9): DSR 0.975 (passes),
   corr 0.430 to v2 (low), DD -15.82% (best ever). Failed CI [-0.575,+0.901]; terminal
   $4,308 << v2 $9,294. Raw-return giveaway in bull markets. Watch-listed (not closed).
