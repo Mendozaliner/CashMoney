@@ -1,6 +1,6 @@
 # STATE — CashMoney research system
 
-Updated: 2026-07-17 s11 (mean-reversion family E17/E18/E19 all DISCARDED — charter queue now fully explored 9/9; configs 149. New mark $1,001.07, first live down day −0.542%, guardrails ALL GREEN)
+Updated: 2026-07-18 s12 (E20 CTA Multi-Asset Trend + E21 Seasonal both DISCARDED — CI straddles zero as with all 19 prior experiments. CTA sets new records: mean WF Sharpe 1.099, worst DD -6.19%, DSR 0.979. Configs 159. New mark $991.16, SPY -0.990% day, guardrails ALL GREEN)
 
 ## PHASE 2 — PROVE (entered 2026-07-14)
 Champion **v2 is FROZEN** as the live exam strategy. The live-outperformance
@@ -27,11 +27,12 @@ Phase-transition: not met (needs 3 live months + significance on #1).
 Portfolio re-based from SPY_PROXY (stale, ended 2025-12-19) to real SPY cache:
 $999.00 carried, 1.333476 SPY units @ 749.17 (2026-07-13 close). Live clock and
 all live-vs-SPY comparisons measure from this mark. Costs standard now 0.15%.
-**Latest mark (2026-07-16 close, session 11):**
-1.333476 SPY × $750.72 = **$1,001.07** (−0.542% day, +0.107% all-time from $1,000
-inception; SPY since live baseline +0.207%). First live down day. v2 exposure
-confirmed 1.0 (750.72 > SMA200+3% band 713.81; 20d vol 12.6% < 18%). No trades.
-Guardrails G1–G7 ALL GREEN (first standing run). Peak $1,006.52, worst dip −0.54%.
+**Latest mark (2026-07-17 close, session 12):**
+1.333476 SPY × $743.29 = **$991.16** (−0.990% day, −0.884% all-time from $1,000
+inception). SPY since live baseline: −0.789%. Second live down day in a row; portfolio
+tracking SPY 1:1 fully invested. v2 exposure confirmed 1.0 (743.29 > SMA200+3% band
+714.24; 20d vol 12.2% < 18%). No trades. Guardrails G1–G7 ALL GREEN.
+Peak $1,006.52, current drawdown from peak −1.52% (GREEN, above −10% AMBER).
 
 ## Standing briefing instructions (per Mr. Menéndez, 2026-07-14)
 - FORMAT (added later on 2026-07-14, SUPERSEDES the long template): the daily
@@ -137,6 +138,15 @@ portfolio.json created session 2 (session 1 omitted it): $1,000 inception
 exposure 1.0 confirmed.
 
 ## Watch-list (not adopted; revisit under stated conditions)
+- **CTA Multi-Asset Trend SPY/IEF/GLD (vt0.12)** (E20, s12): mean WF Sharpe **1.099**
+  (NEW RECORD vs all 21 experiments), OOS Sharpe 1.112, worst DD **−6.19%** (NEW RECORD),
+  DSR **0.979** (passes). Failed: diff-vs-SPY CI [−0.588,+1.302] straddles zero; corr_v2
+  0.635 > 0.50 ensemble threshold. Terminal $1k from 2000: $3,754 vs v2 $8,382 (raw-return
+  giveaway in bull markets, same flaw as RP/PP). Condition to revisit: as ALTERNATIVE
+  CHAMPION for capital-preservation mandates or risk-reduction sleeves; OR if live data
+  extends the CI lower bound > 0. Also revisit the 0.50 corr threshold — CTA at 0.635
+  is still meaningfully uncorrelated vs v2, and its DSR/Sharpe/DD profile is superior.
+  Do NOT re-tune parameters; grid burned.
 - **Bollinger(20, k=2.5) mean reversion, upper_half exit, SMA200-gated** (E18, s11):
   mean WF Sharpe 0.896 (> v2 0.851), worst DD **-8.44%**, OOS Sharpe 0.989,
   **corr to v2 0.364 — lowest of any family tested.** Failed: DSR 0.848 (< 0.95,
@@ -180,6 +190,26 @@ exposure 1.0 confirmed.
   lower on expanded data. Do NOT retry standalone — needs more DBC history to pass DSR.
 
 ## Session log
+- 2026-07-18 s12 — Two new investing philosophy families beyond the charter queue.
+  New mark $991.16 (2026-07-17 close, −0.990% day, −0.884% all-time). v2 exposure 1.0
+  confirmed; 20d vol 12.2% < 18% target. Guardrails ALL GREEN; drawdown from peak −1.52%.
+  New strategies: strategies/cta_trend.py (Multi-Asset CTA Trend, AQR managed-futures
+  replication) + strategies/seasonal.py (Halloween Effect, Bouman & Jacobsen 2002).
+  E20 CTA (6 cfg, 10 configs total session): best CTA(SPY/IEF/GLD,vt0.12) mean WF
+  Sharpe 1.099 (NEW ALL-TIME RECORD), worst DD −6.19% (NEW ALL-TIME RECORD), OOS Sharpe
+  1.112, DSR 0.9787 (passes) — but diff-vs-SPY CI [−0.588,+1.302] straddles zero, and
+  corr_v2 0.635 > 0.50 watch-list threshold → DISCARDED (not watch-list eligible per
+  current ensemble rules). Other CTA configs: all show mean WF 0.869–1.099; all pass DSR;
+  none clear the CI. SPY/IEF/GLD combination superior to SPY/TLT/GLD (IEF less volatile
+  in 2022 rising-rate regime). CTA is STRONGLY preferred for capital-preservation
+  mandates — see watch-list section below.
+  E21 Seasonal (4 cfg): best Seas(Oct-Apr,out=0.3) mean WF 0.892, DD −18.11%, DSR 0.9267
+  (FAILS 0.95 bar), CI straddles zero, corr_v2 0.917 (near-duplicate of v2). DISCARDED,
+  family CLOSED — the SMA200 trend gate already handles the seasonal timing; adding a
+  calendar gate is a diluted v2 at high correlation.
+  Benchmarks $1k 2000→2026-07-17: v2 $8,382 > QQQ $6,947 > SPY $6,775 > DIA $6,759.
+  Mag-7 eqw from 2012 → $63,681 (survivorship-biased; G4 concentration limit prevents
+  single-stock overweight in live portfolio). Configs 149→159.
 - 2026-07-17 s11 — Mean reversion, the LAST unexplored charter family (RSI-2,
   Bollinger, IBS as candidate NEW SLEEVE; frozen v2 untouched). 8-source
   research pass (Connors/QuantifiedStrategies, Price Action Lab skeptic,

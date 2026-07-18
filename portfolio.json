@@ -5,14 +5,14 @@
  "positions": {
   "SPY": {
    "units": 1.3334757435413753,
-   "last_px": 750.719971
+   "last_px": 743.289978
   }
  },
  "cash": 0.0,
  "last_mark": {
-  "date": "2026-07-16",
-  "value": 1001.07,
-  "spy_close": 750.719971
+  "date": "2026-07-17",
+  "value": 991.16,
+  "spy_close": 743.289978
  },
  "history": [
   {
@@ -113,6 +113,17 @@
    "spy_pct_same_window": -0.542,
    "all_time_pct": 0.107,
    "note": "Session 11 (2026-07-17): New SPY close 750.72 (2026-07-16), -0.542% on the day. 1.333476 units x 750.72 = $1,001.07 (-$5.45). v2 exposure 1.0 confirmed (750.72 > SMA200+3% band 713.81; 20d vol 12.6% < 18% target). No trades. Guardrails G1-G7 ALL GREEN (first standing run per s10 item #14). First live-track down day; portfolio tracking SPY 1:1 fully invested."
+  },
+  {
+   "date": "2026-07-18",
+   "session": 12,
+   "mark_date": "2026-07-17",
+   "value": 991.16,
+   "chg_dollar": -9.91,
+   "chg_pct": -0.990,
+   "spy_pct_same_window": -0.990,
+   "all_time_pct": -0.884,
+   "note": "Session 12 (2026-07-18): New SPY close 743.29 (2026-07-17), -0.990% on the day. 1.333476 units x 743.29 = $991.16 (-$9.91). v2 exposure 1.0 confirmed (743.29 > SMA200+3% band 714.24; 20d vol 12.2% < 18% target). No trades. E20 CTA(SPY/IEF/GLD,vt0.12): DISCARDED (CI straddles zero; corr_v2=0.635 > 0.50 watch-list threshold) but new RECORD on mean WF Sharpe 1.099 and worst DD -6.19%; DSR 0.979 passes. E21 Seasonal: DISCARDED (DSR 0.9267 < 0.95; corr_v2 0.917). Guardrails G1-G7 ALL GREEN. $1k (2000->2026-07-17): v2 $8,382 > QQQ $6,947 > SPY $6,775 > DIA $6,759. Mag-7 eqw $63,681 from 2012."
   }
  ],
  "trades": [

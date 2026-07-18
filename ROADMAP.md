@@ -60,16 +60,28 @@
     DISCARDED; E18 Bollinger watch-listed corr 0.364; RSI-2 + IBS families
     CLOSED). CHARTER RESEARCH QUEUE NOW FULLY EXPLORED (9/9).
 
+16. ~~Multi-Asset CTA Trend~~ DONE s12 (E20, DISCARDED on CI — BUT NEW RECORDS:
+    mean WF Sharpe 1.099, worst DD -6.19%, DSR 0.979; WATCH-LISTED for capital-
+    preservation mandates; corr 0.635 above ensemble threshold). SPY/IEF/GLD is the
+    superior universe (vs SPY/TLT/GLD — IEF less volatile in 2022 rate spike).
+17. ~~Seasonal/Halloween Effect~~ DONE s12 (E21, DISCARDED and CLOSED: DSR 0.9267 <
+    0.95; corr_v2 0.917 near-duplicate of v2; SMA200 gate already handles seasonal
+    timing). Do NOT retry calendar-based overlays.
+
 ## Priority order for next sessions
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
 2. (#10) Monthly v2 full-sample significance re-check — first week of August (s6b CI
    missed zero by 0.009; each live data month extends the sample)
 3. (#14) Guardrails run at every mark — standing, cheap.
 4. (#6) Value tilt — blocked on fundamentals data pipeline; research queue now
-   FULLY EXHAUSTED pending live data (149 configs burned; 6 families permanently
-   closed: sector, kill-switch, blended-mom, AAA, RSI-2, IBS). Prefer NO new
-   families over re-tuning. Sessions until August significance re-check are
+   FULLY EXHAUSTED pending live data (159 configs burned; 7 families permanently
+   closed: sector, kill-switch, blended-mom, AAA, RSI-2, IBS, seasonal). Prefer NO
+   new families over re-tuning. Sessions until August significance re-check are
    mark + guardrails + monitoring only unless something breaks.
+5. Consider relaxing ensemble corr threshold from 0.50 to 0.70 to allow v2+CTA
+   ensemble testing (CTA at 0.635 is still diversifying; prior threshold blocked
+   the potentially strongest combination seen yet). Do NOT test until post-August
+   significance check.
 
 ## Negative results (do NOT re-test in the original form)
 - **Connors RSI-2 on SPY, SMA200-gated** (E17, s11): best e5/x80 mean WF 0.756,
