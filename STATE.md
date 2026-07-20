@@ -1,4 +1,4 @@
-# STATE — CashMoney research system
+Updated: 2026-07-20 s14 (maintenance run, ZERO configs: restored s13's missing report file; corrected s13 stale-data mislabel (Jul 18/19 weekend — cache was CURRENT); M2 standing intl benchmark panel (v2 $8,382/$1k from 2000 beats all broad indexes incl. EWC/^GSPTSE/^FTSE/^N225/^GDAXI/^HSI/ACWI; SPY/QQQ/ACWI beat v2 from 2010/2020 — bull-era giveaway, thesis unchanged); do-nothing verdict unchanged (hold $1.90 vs $1.60). Mark carried $991.16 (Fri 2026-07-17 close, current). Guardrails ALL GREEN. 49/49 tests. Configs 174.)# STATE — CashMoney research system
 
 Updated: 2026-07-20 s13 (E22 Ensemble v2+CTA, E23 Market Breadth, E24 Low-Vol Sector Rotation — all 3 DISCARDED. CI straddles zero on all (24th consecutive failure). Best: E22 Ensemble mean WF Sharpe 1.048, worst DD −10.8%, DSR 0.981 — but CI [−0.493,+1.225] fails and OOS corr to v2 jumped to 0.943. Configs 174. Mark carried $991.16 [data 1 trading day stale]. Guardrails ALL GREEN. 49/49 tests.)
 
@@ -196,6 +196,20 @@ exposure 1.0 confirmed.
   threshold further not recommended without significance improvement.
 
 ## Session log
+- 2026-07-20 s14 — Maintenance run (second of the day; queue exhausted, no new
+  close). FIX: s13 omitted its report file — reconstructed reports/2026-07-20.md
+  from the log + commit 8880e2a; new ROADMAP standing item #21 (report file must
+  exist before push). Correction: s13's "1 trading day stale" was wrong — Jul
+  18/19 were the weekend, Friday's close landed in f573b04; cache CURRENT.
+  Mark carried $991.16; exposure 1.0; no trades; guardrails ALL GREEN; 49/49
+  tests (pytest+backtesting reinstalled in fresh sandbox). M2 standing intl
+  benchmark panel (research/2026-07-20-s14-benchmark-panel.md, holdout-cut):
+  from 2000 v2 $8,382 > QQQ $6,947 > SPY $6,775 > DIA $6,759 > EWC $5,768 >
+  ACWI $3,595 > ^GDAXI $3,557 > ^GSPTSE $3,310 > ^N225 $2,087 > ^HSI $1,412 >
+  ^FTSE $1,339; v2 DD −20.5% vs −50…−83% for indexes. From 2010: SPY/QQQ/DIA/
+  ACWI beat v2 raw. From 2020: SPY/QQQ/^GDAXI/ACWI edge v2 raw; v2 DD half
+  theirs. Canada trails everywhere. Do-nothing (2020→2025H): hold $1.90 vs
+  strat $1.60 after tax — unchanged. ZERO configs burned (174).
 - 2026-07-20 s13 — Three new investing-philosophy families per standing research mandate.
   Data 1 trading day stale (July 18 Action not yet committed); mark carried $991.16.
   Guardrails ALL GREEN; drawdown from peak −1.52% (GREEN). 49/49 tests passing.

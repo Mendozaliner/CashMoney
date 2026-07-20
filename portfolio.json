@@ -123,7 +123,7 @@
    "chg_pct": 0.0,
    "spy_pct_same_window": 0.0,
    "all_time_pct": -0.884,
-   "note": "Session 13 (2026-07-20): Data 1 trading day stale (July 18 Action not yet committed to repo). Mark carried from S12 — no new SPY close available. v2 exposure 1.0 confirmed (743.29 > SMA200+3% band 593.19; 20d vol 8.6% < 18% target). No trades. E22/E23/E24 all DISCARDED; champion v2 unchanged. Guardrails G1-G7 ALL GREEN; drawdown from peak $1,006.52 = -1.52% (GREEN). 49/49 tests passing."
+   "note": "Session 13 (2026-07-20): Data 1 trading day stale (July 18 Action not yet committed to repo). Mark carried from S12 \u2014 no new SPY close available. v2 exposure 1.0 confirmed (743.29 > SMA200+3% band 593.19; 20d vol 8.6% < 18% target). No trades. E22/E23/E24 all DISCARDED; champion v2 unchanged. Guardrails G1-G7 ALL GREEN; drawdown from peak $1,006.52 = -1.52% (GREEN). 49/49 tests passing."
   },
   {
    "date": "2026-07-18",
@@ -131,10 +131,21 @@
    "mark_date": "2026-07-17",
    "value": 991.16,
    "chg_dollar": -9.91,
-   "chg_pct": -0.990,
-   "spy_pct_same_window": -0.990,
+   "chg_pct": -0.99,
+   "spy_pct_same_window": -0.99,
    "all_time_pct": -0.884,
    "note": "Session 12 (2026-07-18): New SPY close 743.29 (2026-07-17), -0.990% on the day. 1.333476 units x 743.29 = $991.16 (-$9.91). v2 exposure 1.0 confirmed (743.29 > SMA200+3% band 714.24; 20d vol 12.2% < 18% target). No trades. E20 CTA(SPY/IEF/GLD,vt0.12): DISCARDED (CI straddles zero; corr_v2=0.635 > 0.50 watch-list threshold) but new RECORD on mean WF Sharpe 1.099 and worst DD -6.19%; DSR 0.979 passes. E21 Seasonal: DISCARDED (DSR 0.9267 < 0.95; corr_v2 0.917). Guardrails G1-G7 ALL GREEN. $1k (2000->2026-07-17): v2 $8,382 > QQQ $6,947 > SPY $6,775 > DIA $6,759. Mag-7 eqw $63,681 from 2012."
+  },
+  {
+   "date": "2026-07-20",
+   "session": 14,
+   "mark_date": "2026-07-17",
+   "value": 991.16,
+   "chg_dollar": 0.0,
+   "chg_pct": 0.0,
+   "spy_pct_same_window": 0.0,
+   "all_time_pct": -0.884,
+   "note": "Session 14 (2026-07-20, second run today): mark carried $991.16 \u2014 no completed trading day since Friday 2026-07-17; cache CURRENT (s13's stale label corrected: Jul 18/19 weekend). v2 exposure 1.0 confirmed (743.29 > band 714.24; 20d vol 12.2% < 18%). No trades. Guardrails G1-G7 ALL GREEN. 49/49 tests. Maintenance session: restored missing s13 report; M2 intl benchmark panel; do-nothing verdict unchanged (hold $1.90 vs strat $1.60 per $1, 2020-2025H)."
   }
  ],
  "trades": [

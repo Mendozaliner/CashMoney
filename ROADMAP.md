@@ -80,6 +80,10 @@
     fold-1 DD −37-48% — low-vol anomaly requires 500+ individual stocks, not 9 sector
     ETFs. Baker-Haugen effect is not observable at sector granularity. Family closed.)
 
+21. **Session-completeness guard** (NEW s14, standing): at every sync, verify the
+    PRIOR session's report file exists in reports/; if missing, reconstruct it from
+    the session log before new work. Write the current report BEFORE pushing.
+
 ## Priority order for next sessions
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
 2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI now
