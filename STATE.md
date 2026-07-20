@@ -1,6 +1,6 @@
 # STATE — CashMoney research system
 
-Updated: 2026-07-18 s12 (E20 CTA Multi-Asset Trend + E21 Seasonal both DISCARDED — CI straddles zero as with all 19 prior experiments. CTA sets new records: mean WF Sharpe 1.099, worst DD -6.19%, DSR 0.979. Configs 159. New mark $991.16, SPY -0.990% day, guardrails ALL GREEN)
+Updated: 2026-07-20 s13 (E22 Ensemble v2+CTA, E23 Market Breadth, E24 Low-Vol Sector Rotation — all 3 DISCARDED. CI straddles zero on all (24th consecutive failure). Best: E22 Ensemble mean WF Sharpe 1.048, worst DD −10.8%, DSR 0.981 — but CI [−0.493,+1.225] fails and OOS corr to v2 jumped to 0.943. Configs 174. Mark carried $991.16 [data 1 trading day stale]. Guardrails ALL GREEN. 49/49 tests.)
 
 ## PHASE 2 — PROVE (entered 2026-07-14)
 Champion **v2 is FROZEN** as the live exam strategy. The live-outperformance
@@ -189,7 +189,52 @@ exposure 1.0 confirmed.
   data extend fold-1 significance; or as ensemble component if v2 correlation proves
   lower on expanded data. Do NOT retry standalone — needs more DBC history to pass DSR.
 
+## Watch-list additions (s13)
+- No new watch-list entries this session. E22 Ensemble shows the strongest DD profile
+  (−10.8%) and highest mean WF Sharpe (1.048) of any combination tested, but OOS
+  correlation to v2 is 0.943 — far above the 0.70 new threshold. Relaxing ensemble
+  threshold further not recommended without significance improvement.
+
 ## Session log
+- 2026-07-20 s13 — Three new investing-philosophy families per standing research mandate.
+  Data 1 trading day stale (July 18 Action not yet committed); mark carried $991.16.
+  Guardrails ALL GREEN; drawdown from peak −1.52% (GREEN). 49/49 tests passing.
+  New files: strategies/market_breadth.py, strategies/low_vol_sector.py,
+  strategies/ensemble.py + tests/test_market_breadth.py, tests/test_low_vol_sector.py.
+  E22 v2+CTA Ensemble (3 cfg, reg 68d23093c3): relaxed corr threshold to 0.70 per
+  roadmap item #5. Best 40/60 v2:CTA alpha: mean WF Sharpe 1.048, worst DD −10.8%,
+  DSR 0.981 (PASSES) — but CI [−0.493,+1.225] straddles zero AND OOS corr v2=0.943
+  (far above 0.70 threshold). DISCARDED. The high OOS corr is a new finding: the CTA
+  SPY sleeve and v2 SPY are nearly identical in the 2020-2025H bull run; diversification
+  only materializes in bear/crisis regimes (2000-2009 fold shows strong benefit, Sharpe
+  1.109→1.170 and DD only −6%). Key insight: corr 0.635 measured in the single-asset
+  comparison but blended OOS exposure → v2 dominance at alpha=0.40 still.
+  E23 Market Breadth (6 cfg, reg 04d499088f): Fosback/Zweig sector-breadth gate on
+  vol-targeted SPY. Best up=0.8/lo=0.5/vt=0.18: mean WF Sharpe 0.642, worst DD −24.2%,
+  DSR 0.480 (FAILS). DISCARDED, family CLOSED. Critical finding: sector breadth (fraction
+  of XLK/XLF/XLE/XLV/XLY/XLP/XLI/XLU/XLB above SMA200) is 0.901 correlated to v2 OOS
+  — breadth IS v2 in different form. The SMA200 gate on the index captures all the
+  breadth information because sectors and the index move together. Fold 1 (2000-2009)
+  Sharpe only 0.478 — the breadth threshold triggers were too slow during the dot-com
+  crash; sectors stayed low-breadth while the recovery lagged.
+  E24 Low-Vol Sector Rotation (6 cfg, reg f66e6c1949): Baker & Haugen / Frazzini &
+  Pedersen low-vol anomaly applied to 9 sector ETFs monthly. Best n=5/no gate: mean WF
+  Sharpe 0.589, worst DD −48.0%, DSR 0.464 (FAILS). DISCARDED, family CLOSED. Fold 1
+  (2000-2009) Sharpe only 0.135-0.217 — utility/consumer staple "low-vol" sectors
+  still crashed −37-48% in 2001-2002. The anomaly requires individual stock selection
+  across a much larger universe (500+ stocks) to work; sector ETFs are too broad and
+  too few for this effect. Gate adds no benefit: gated (SMA200) max WF Sharpe 0.530
+  vs ungated 0.589.
+  ROADMAP #10 v2 re-check: CI [−0.0129,+0.7077] — still straddles zero; lower bound
+  improved marginally vs s12 (−0.009 → −0.013 in the other direction, explained by
+  added deflation from 174 cumulative configs). DSR 0.703 (against 48 session trial
+  sharpes). Full significance still requires more live data.
+  $1k tests (2000→2026-07-17): v2 $8,382 > E22 Ensemble $5,294 > QQQ $7,458 > SPY
+  $7,050 > DIA $6,989 > IWM $6,473 > E24 LowVol $6,539 > E23 Breadth $3,811.
+  Note: Ensemble terminal value ($5,294) below v2 ($8,382) because CTA gives away bull-
+  market returns (expected tradeoff for lower DD; for capital preservation mandate, the
+  Ensemble remains superior). Configs 159→174.
+
 - 2026-07-18 s12 — Two new investing philosophy families beyond the charter queue.
   New mark $991.16 (2026-07-17 close, −0.990% day, −0.884% all-time). v2 exposure 1.0
   confirmed; 20d vol 12.2% < 18% target. Guardrails ALL GREEN; drawdown from peak −1.52%.

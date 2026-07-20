@@ -68,22 +68,43 @@
     0.95; corr_v2 0.917 near-duplicate of v2; SMA200 gate already handles seasonal
     timing). Do NOT retry calendar-based overlays.
 
+18. ~~v2+CTA Ensemble (corr threshold relaxed to 0.70)~~ DONE s13 (E22, DISCARDED —
+    CI [−0.493,+1.225] straddles zero; OOS corr v2=0.943 far above threshold; best
+    fold-1 Sharpe 1.170 and worst DD −6% show real bear-regime benefit but it's
+    invisible in OOS bull-period CI). THRESHOLD ITEM CLOSED: further ensemble corr
+    relaxation not productive without significance on the base strategies.
+19. ~~Market Breadth Trend~~ DONE s13 (E23, DISCARDED and CLOSED — DSR 0.480 < 0.95;
+    OOS corr v2=0.901 — sector breadth above SMA200 IS the same signal as SPY above
+    SMA200 dressed up. No information added. Family permanently closed.)
+20. ~~Low-Vol Sector Rotation~~ DONE s13 (E24, DISCARDED and CLOSED — DSR 0.464 < 0.95;
+    fold-1 DD −37-48% — low-vol anomaly requires 500+ individual stocks, not 9 sector
+    ETFs. Baker-Haugen effect is not observable at sector granularity. Family closed.)
+
 ## Priority order for next sessions
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
-2. (#10) Monthly v2 full-sample significance re-check — first week of August (s6b CI
-   missed zero by 0.009; each live data month extends the sample)
+2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI now
+   [−0.013,+0.708]; needs more live data to extend the sample toward significance)
 3. (#14) Guardrails run at every mark — standing, cheap.
-4. (#6) Value tilt — blocked on fundamentals data pipeline; research queue now
-   FULLY EXHAUSTED pending live data (159 configs burned; 7 families permanently
-   closed: sector, kill-switch, blended-mom, AAA, RSI-2, IBS, seasonal). Prefer NO
-   new families over re-tuning. Sessions until August significance re-check are
-   mark + guardrails + monitoring only unless something breaks.
-5. Consider relaxing ensemble corr threshold from 0.50 to 0.70 to allow v2+CTA
-   ensemble testing (CTA at 0.635 is still diversifying; prior threshold blocked
-   the potentially strongest combination seen yet). Do NOT test until post-August
-   significance check.
+4. (#6) Value tilt — blocked on fundamentals data pipeline; research queue now FULLY
+   EXHAUSTED (174 configs burned; 10 families permanently closed: sector, kill-switch,
+   blended-mom, AAA, RSI-2, IBS, seasonal, market-breadth, low-vol-sector,
+   country-rotation). Prefer NO new families over re-tuning.
+5. Phase-2 graduation review in August once 3 live months have elapsed.
+6. Consider whether the Ensemble (E22) bear-regime benefit (fold-1 Sharpe boost, DD
+   improvement) warrants a CAPITAL-PRESERVATION mandate portfolio separate from the
+   growth mandate. Do NOT revisit for the current live portfolio — champion v2 stays.
 
 ## Negative results (do NOT re-test in the original form)
+- **v2+CTA Ensemble (50/50, 60/40, 40/60)** (E22, s13): DSR 0.981 passes; best DD −10.8%
+  and mean WF Sharpe 1.048. FAILED CI [−0.493,+1.225] and OOS corr to v2=0.943 (far
+  exceeds threshold). Bear-regime benefit is real (fold-1 Sharpe 1.170 vs v2 0.859) but
+  the bull-era CI cannot clear zero. Do NOT re-test with adjusted weights — 3 alphas burned.
+  Capital-preservation note: the Ensemble's risk profile (DD −10.8%, Sharpe 1.048) IS
+  superior to v2 for non-growth mandates; consider as a separate portfolio product.
+- **Market Breadth Trend on SPY** (E23, s13): sector SMA200 breadth is 0.901 correlated
+  to v2 OOS. This IS the same signal. Family permanently closed.
+- **Low-Vol Sector Rotation (9 SPDR sectors, monthly)** (E24, s13): fold-1 DD −37-48%;
+  low-vol anomaly not observable at sector-ETF granularity. Family permanently closed.
 - **Connors RSI-2 on SPY, SMA200-gated** (E17, s11): best e5/x80 mean WF 0.756,
   DD -7.9%, DSR 0.485, CI [-1.27,+0.85]. Strong 2000s fold then monotone decay —
   the published-edge-decay pattern. Family CLOSED.

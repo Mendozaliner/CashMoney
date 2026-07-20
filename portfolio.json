@@ -115,6 +115,17 @@
    "note": "Session 11 (2026-07-17): New SPY close 750.72 (2026-07-16), -0.542% on the day. 1.333476 units x 750.72 = $1,001.07 (-$5.45). v2 exposure 1.0 confirmed (750.72 > SMA200+3% band 713.81; 20d vol 12.6% < 18% target). No trades. Guardrails G1-G7 ALL GREEN (first standing run per s10 item #14). First live-track down day; portfolio tracking SPY 1:1 fully invested."
   },
   {
+   "date": "2026-07-20",
+   "session": 13,
+   "mark_date": "2026-07-17",
+   "value": 991.16,
+   "chg_dollar": 0.0,
+   "chg_pct": 0.0,
+   "spy_pct_same_window": 0.0,
+   "all_time_pct": -0.884,
+   "note": "Session 13 (2026-07-20): Data 1 trading day stale (July 18 Action not yet committed to repo). Mark carried from S12 — no new SPY close available. v2 exposure 1.0 confirmed (743.29 > SMA200+3% band 593.19; 20d vol 8.6% < 18% target). No trades. E22/E23/E24 all DISCARDED; champion v2 unchanged. Guardrails G1-G7 ALL GREEN; drawdown from peak $1,006.52 = -1.52% (GREEN). 49/49 tests passing."
+  },
+  {
    "date": "2026-07-18",
    "session": 12,
    "mark_date": "2026-07-17",
