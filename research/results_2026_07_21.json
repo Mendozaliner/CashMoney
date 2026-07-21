@@ -1,0 +1,167 @@
+{
+ "session": "2026-07-21-s15",
+ "portfolio_mark": {
+  "date": "2026-07-20",
+  "value": 989.56,
+  "spy_close": 742.0900268554688,
+  "spy_day_chg_pct": -0.161,
+  "port_chg_pct": -0.161,
+  "all_time_pct": -1.044,
+  "spy_since_live_pct": -0.945,
+  "v2_exposure": 1.0,
+  "dd_from_peak_pct": -1.69
+ },
+ "guardrails": {
+  "nav": 989.56,
+  "all_ok": true,
+  "checks": [
+   {
+    "guardrail": "G1_leverage",
+    "ok": true,
+    "detail": "gross=1.0000 cap=1.0"
+   },
+   {
+    "guardrail": "G2_instruments",
+    "ok": true,
+    "detail": "all whitelisted"
+   },
+   {
+    "guardrail": "G4_concentration",
+    "ok": true,
+    "detail": "within caps"
+   },
+   {
+    "guardrail": "G6_drawdown",
+    "ok": true,
+    "level": "GREEN",
+    "drawdown": -0.0169
+   },
+   {
+    "guardrail": "G7_staleness",
+    "ok": true,
+    "detail": "stale_days=0 max=4"
+   },
+   {
+    "guardrail": "G5_vol_spike",
+    "ok": true,
+    "detail": "vol20=0.086 med1y=0.142 last_move_4sig=False"
+   }
+  ]
+ },
+ "E25_VAA": {
+  "verdict": "discarded",
+  "best": {
+   "label": "VAA(n3,bp0.50) 2-of-3",
+   "folds": [
+    0.488,
+    0.409,
+    0.982
+   ],
+   "mean_wf": 0.626,
+   "worst_dd": -41.85,
+   "oos_sharpe": 0.981,
+   "end1k": 9202.13
+  },
+  "dsr": 0.9639,
+  "ci": [
+   -0.653,
+   1.144
+  ],
+  "corr_v2_oos": 0.6,
+  "all_rows": [
+   {
+    "label": "VAA(n3,bp0.30) any-1-of-3",
+    "folds": [
+     0.463,
+     0.019,
+     0.902
+    ],
+    "mean_wf": 0.461,
+    "worst_dd": -44.87,
+    "oos_sharpe": 0.901,
+    "end1k": 3905.57
+   },
+   {
+    "label": "VAA(n3,bp0.50) 2-of-3",
+    "folds": [
+     0.488,
+     0.409,
+     0.982
+    ],
+    "mean_wf": 0.626,
+    "worst_dd": -41.85,
+    "oos_sharpe": 0.981,
+    "end1k": 9202.13
+   },
+   {
+    "label": "VAA(n3,bp0.90) all-3",
+    "folds": [
+     0.484,
+     0.269,
+     0.982
+    ],
+    "mean_wf": 0.578,
+    "worst_dd": -39.65,
+    "oos_sharpe": 0.981,
+    "end1k": 7672.56
+   },
+   {
+    "label": "VAA(n4,bp0.20) any-1-of-4",
+    "folds": [
+     0.473,
+     0.151,
+     0.55
+    ],
+    "mean_wf": 0.391,
+    "worst_dd": -39.62,
+    "oos_sharpe": 0.55,
+    "end1k": 3396.91
+   },
+   {
+    "label": "VAA(n4,bp0.50) 2-of-4",
+    "folds": [
+     0.514,
+     0.139,
+     0.837
+    ],
+    "mean_wf": 0.497,
+    "worst_dd": -39.3,
+    "oos_sharpe": 0.837,
+    "end1k": 4797.21
+   },
+   {
+    "label": "VAA(n4,bp0.80) 3-of-4",
+    "folds": [
+     0.396,
+     0.285,
+     0.926
+    ],
+    "mean_wf": 0.536,
+    "worst_dd": -43.84,
+    "oos_sharpe": 0.925,
+    "end1k": 6279.73
+   }
+  ],
+  "watchlist_eligible": false
+ },
+ "v2_significance": {
+  "dsr": 1.0,
+  "diff_ci": [
+   -0.0129,
+   0.7077
+  ],
+  "clears": false
+ },
+ "benchmarks_1k": {
+  "v2": 8381.86,
+  "VAA_best": 9202.13,
+  "SPY": 6774.5,
+  "DIA": 6759.08,
+  "QQQ": 6946.66,
+  "IWM": 6711.99,
+  "EWC": 5768.3,
+  "ACWI": 3594.54,
+  "Mag7_eqw_from2012": 63681.37
+ },
+ "total_configs": 186
+}

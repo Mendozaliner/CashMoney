@@ -1,4 +1,4 @@
-Updated: 2026-07-20 s14 (maintenance run, ZERO configs: restored s13's missing report file; corrected s13 stale-data mislabel (Jul 18/19 weekend — cache was CURRENT); M2 standing intl benchmark panel (v2 $8,382/$1k from 2000 beats all broad indexes incl. EWC/^GSPTSE/^FTSE/^N225/^GDAXI/^HSI/ACWI; SPY/QQQ/ACWI beat v2 from 2010/2020 — bull-era giveaway, thesis unchanged); do-nothing verdict unchanged (hold $1.90 vs $1.60). Mark carried $991.16 (Fri 2026-07-17 close, current). Guardrails ALL GREEN. 49/49 tests. Configs 174.)# STATE — CashMoney research system
+Updated: 2026-07-21 s15 (E25 VAA Vigilant Asset Allocation — DISCARDED and CLOSED. Best VAA(n3,bp0.50) mean WF 0.626 < 0.844 bar, worst DD −41.85% >> −20.5% bar, DSR 0.9639 (✓), corr 0.60 > 0.50 threshold. Not watch-list eligible. VAA family CLOSED — breadth signal too coarse at n=3 assets. Mark $989.56 (2026-07-20 close). Guardrails G1–G7 ALL GREEN. 55/55 tests. Configs 174→180.)# STATE — CashMoney research system
 
 Updated: 2026-07-20 s13 (E22 Ensemble v2+CTA, E23 Market Breadth, E24 Low-Vol Sector Rotation — all 3 DISCARDED. CI straddles zero on all (24th consecutive failure). Best: E22 Ensemble mean WF Sharpe 1.048, worst DD −10.8%, DSR 0.981 — but CI [−0.493,+1.225] fails and OOS corr to v2 jumped to 0.943. Configs 174. Mark carried $991.16 [data 1 trading day stale]. Guardrails ALL GREEN. 49/49 tests.)
 
@@ -27,12 +27,11 @@ Phase-transition: not met (needs 3 live months + significance on #1).
 Portfolio re-based from SPY_PROXY (stale, ended 2025-12-19) to real SPY cache:
 $999.00 carried, 1.333476 SPY units @ 749.17 (2026-07-13 close). Live clock and
 all live-vs-SPY comparisons measure from this mark. Costs standard now 0.15%.
-**Latest mark (2026-07-17 close, session 12):**
-1.333476 SPY × $743.29 = **$991.16** (−0.990% day, −0.884% all-time from $1,000
-inception). SPY since live baseline: −0.789%. Second live down day in a row; portfolio
-tracking SPY 1:1 fully invested. v2 exposure confirmed 1.0 (743.29 > SMA200+3% band
-714.24; 20d vol 12.2% < 18%). No trades. Guardrails G1–G7 ALL GREEN.
-Peak $1,006.52, current drawdown from peak −1.52% (GREEN, above −10% AMBER).
+**Latest mark (2026-07-20 close, session 15):**
+1.333476 SPY × $742.09 = **$989.56** (−0.161% day, −1.044% all-time from $1,000
+inception). SPY since live baseline: −0.945%. Portfolio tracking SPY 1:1 fully invested.
+v2 exposure confirmed 1.0 (742.09 > SMA200+3% band; 20d vol 11.7% < 18%). No trades.
+Guardrails G1–G7 ALL GREEN. Peak $1,006.52, current drawdown from peak −1.69% (GREEN).
 
 ## Standing briefing instructions (per Mr. Menéndez, 2026-07-14)
 - FORMAT (added later on 2026-07-14, SUPERSEDES the long template): the daily
@@ -133,8 +132,8 @@ terminal value. Mag-7 eqw $83,104 (2012+ only, concentrated tech). Legacy PROXY-
 ## Portfolio
 portfolio.json created session 2 (session 1 omitted it): $1,000 inception
 2026-07-13, fully invested per v2 (exposure 1.0), value $999.00 after entry cost.
-**Current value: $1,002.55** (2026-07-14 close, session 7 mark). 1.333476 SPY units
-@ $751.83. All-time: +$2.55 / +0.255% from $1,000 inception. No rebalance needed;
+**Current value: $989.56** (2026-07-20 close, session 15 mark). 1.333476 SPY units
+@ $742.09. All-time: −$10.44 / −1.044% from $1,000 inception. No rebalance needed;
 exposure 1.0 confirmed.
 
 ## Watch-list (not adopted; revisit under stated conditions)
@@ -196,6 +195,14 @@ exposure 1.0 confirmed.
   threshold further not recommended without significance improvement.
 
 ## Session log
+- 2026-07-21 s15 — E25 Vigilant Asset Allocation (VAA, Keller & Keuning 2017).
+  6 configs (n3/n4, bp=0.30/0.50/0.90). Best VAA(n3,bp0.50): mean WF 0.626 (< 0.844
+  bar), worst DD −41.85% (>> −20.5% bar), DSR 0.9639 (passes), diff-CI [−0.653,+1.144]
+  (straddles zero), corr v2 OOS 0.60 (> 0.50 watch-list threshold). DISCARDED.
+  Interesting: terminal $9,202 > v2 $8,382 on raw return, driven by fold-3 OOS Sharpe
+  0.982; but fold-2 (2010-2019 bull) Sharpe 0.409 reveals breadth-signal fragility at
+  n=3 assets. VAA family PERMANENTLY CLOSED. Mark $989.56 (2026-07-20 close).
+  Guardrails ALL GREEN. 55/55 tests. Configs 174→180.
 - 2026-07-20 s14 — Maintenance run (second of the day; queue exhausted, no new
   close). FIX: s13 omitted its report file — reconstructed reports/2026-07-20.md
   from the log + commit 8880e2a; new ROADMAP standing item #21 (report file must

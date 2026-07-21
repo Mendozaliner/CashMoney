@@ -84,21 +84,33 @@
     PRIOR session's report file exists in reports/; if missing, reconstruct it from
     the session log before new work. Write the current report BEFORE pushing.
 
+22. ~~Vigilant Asset Allocation (VAA)~~ DONE s15 (E25, 6 cfg, DISCARDED and CLOSED).
+    Best VAA(n3,bp0.50): mean WF 0.626 < 0.844 bar, worst DD −41.85% >> −20.5%.
+    DSR 0.9639 passes but fails all other gates. Root cause: breadth signal too coarse
+    at n=3 assets (Keller paper used 12+). n=4 with EFA worse (reproduces E9 GEM
+    international drag). VAA family PERMANENTLY CLOSED (180 configs total).
+
 ## Priority order for next sessions
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
 2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI now
    [−0.013,+0.708]; needs more live data to extend the sample toward significance)
 3. (#14) Guardrails run at every mark — standing, cheap.
 4. (#6) Value tilt — blocked on fundamentals data pipeline; research queue now FULLY
-   EXHAUSTED (174 configs burned; 10 families permanently closed: sector, kill-switch,
+   EXHAUSTED (180 configs burned; 11 families permanently closed: sector, kill-switch,
    blended-mom, AAA, RSI-2, IBS, seasonal, market-breadth, low-vol-sector,
-   country-rotation). Prefer NO new families over re-tuning.
+   country-rotation, VAA/breadth-protection). Prefer NO new families over re-tuning.
 5. Phase-2 graduation review in August once 3 live months have elapsed.
 6. Consider whether the Ensemble (E22) bear-regime benefit (fold-1 Sharpe boost, DD
    improvement) warrants a CAPITAL-PRESERVATION mandate portfolio separate from the
    growth mandate. Do NOT revisit for the current live portfolio — champion v2 stays.
 
 ## Negative results (do NOT re-test in the original form)
+- **Vigilant Asset Allocation VAA(n3,bp0.50)** (E25, s15): DSR 0.9639 passes; best
+  mean WF Sharpe 0.626 (< 0.844 bar), worst DD −41.85%, diff-CI [−0.653,+1.144]
+  straddles zero, corr_v2 0.60 > 0.50 threshold. Terminal $9,202 > v2 $8,382 on raw
+  return (driven by fold-3) but fold-2 (2010-2019) Sharpe 0.409 shows the breadth
+  signal collapses in bull markets with only 3 offensive assets. n=4 (EFA) even worse —
+  reproduces GEM's international drag. Family permanently closed.
 - **v2+CTA Ensemble (50/50, 60/40, 40/60)** (E22, s13): DSR 0.981 passes; best DD −10.8%
   and mean WF Sharpe 1.048. FAILED CI [−0.493,+1.225] and OOS corr to v2=0.943 (far
   exceeds threshold). Bear-regime benefit is real (fold-1 Sharpe 1.170 vs v2 0.859) but
