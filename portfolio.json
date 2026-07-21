@@ -5,12 +5,12 @@
  "positions": {
   "SPY": {
    "units": 1.3334757435413753,
-"last_px": 742.0900268554688
+   "last_px": 742.0900268554688
   }
  },
  "cash": 0.0,
  "last_mark": {
-"date": "2026-07-20",
+  "date": "2026-07-20",
   "value": 989.56,
   "spy_close": 742.0900268554688
  },
@@ -146,7 +146,7 @@
    "spy_pct_same_window": 0.0,
    "all_time_pct": -0.884,
    "note": "Session 14 (2026-07-20, second run today): mark carried $991.16 \u2014 no completed trading day since Friday 2026-07-17; cache CURRENT (s13's stale label corrected: Jul 18/19 weekend). v2 exposure 1.0 confirmed (743.29 > band 714.24; 20d vol 12.2% < 18%). No trades. Guardrails G1-G7 ALL GREEN. 49/49 tests. Maintenance session: restored missing s13 report; M2 intl benchmark panel; do-nothing verdict unchanged (hold $1.90 vs strat $1.60 per $1, 2020-2025H)."
-},
+  },
   {
    "date": "2026-07-21",
    "session": 15,
@@ -168,6 +168,17 @@
    "spy_pct_same_window": -0.161,
    "all_time_pct": -1.044,
    "note": "Session 15 (2026-07-21): New SPY close 742.0900 (2026-07-20), -0.161% on the day. 1.333476 units \u00d7 $742.0900 = $989.56 (-0.161%). v2 exposure 1.0000 (close 742.09 > band 714.66; vol 11.7% vs 18% target). No trades. E25 VAA: discarded (best VAA(n3,bp0.50) 2-of-3 mean_wf=0.626, DD=-41.85%, DSR=0.9639, CI=[-0.653,1.144], corr_v2=0.600). Guardrails G1-G7 ALL GREEN. 55/55 tests passing."
+  },
+  {
+   "date": "2026-07-21",
+   "session": 16,
+   "mark_date": "2026-07-20",
+   "value": 989.56,
+   "chg_dollar": 0.0,
+   "chg_pct": 0.0,
+   "spy_pct_same_window": 0.0,
+   "all_time_pct": -1.044,
+   "note": "Session 16 (2026-07-21, second run today): mark carried $989.56 - no new completed close since s15's 2026-07-20 mark (today's partial bar dropped). v2 exposure 1.0 re-confirmed (742.09 > band 714.66; 20d vol 11.7% < 18%). No trades. Guardrails G1-G7 ALL GREEN. 55/55 tests. Zero-config session: M3 exposure-profile memo (v2 fully invested 64.6% of days since 2000, cash 26.9%, avg exposure 0.716)."
   }
  ],
  "trades": [

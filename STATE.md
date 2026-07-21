@@ -1,3 +1,4 @@
+Updated: 2026-07-21 s16 (Zero-config maintenance/analysis run — queue exhausted. M3 exposure-profile memo on frozen v2: since 2000 fully invested 64.6% of days, cash 26.9%, avg exposure 0.716; sat out dot-com −29.8% and GFC −31.8%, cost ~8 whipsaws of +5–12%. Mark carried $989.56 (2026-07-20 close). Guardrails ALL GREEN. 55/55 tests. Configs unchanged 180.)
 Updated: 2026-07-21 s15 (E25 VAA Vigilant Asset Allocation — DISCARDED and CLOSED. Best VAA(n3,bp0.50) mean WF 0.626 < 0.844 bar, worst DD −41.85% >> −20.5% bar, DSR 0.9639 (✓), corr 0.60 > 0.50 threshold. Not watch-list eligible. VAA family CLOSED — breadth signal too coarse at n=3 assets. Mark $989.56 (2026-07-20 close). Guardrails G1–G7 ALL GREEN. 55/55 tests. Configs 174→180.)# STATE — CashMoney research system
 
 Updated: 2026-07-20 s13 (E22 Ensemble v2+CTA, E23 Market Breadth, E24 Low-Vol Sector Rotation — all 3 DISCARDED. CI straddles zero on all (24th consecutive failure). Best: E22 Ensemble mean WF Sharpe 1.048, worst DD −10.8%, DSR 0.981 — but CI [−0.493,+1.225] fails and OOS corr to v2 jumped to 0.943. Configs 174. Mark carried $991.16 [data 1 trading day stale]. Guardrails ALL GREEN. 49/49 tests.)
@@ -195,6 +196,14 @@ exposure 1.0 confirmed.
   threshold further not recommended without significance improvement.
 
 ## Session log
+- 2026-07-21 s16 — Second run of 2026-07-21. No new close; mark carried $989.56.
+  Research queue exhausted (180 configs, 11 families closed) -> zero-config analysis:
+  M3 exposure-profile memo (research/2026-07-21-s16-exposure-profile.md) answering
+  Mr. Menendez's direct question on why the book holds only SPY. v2 is an
+  index-timing strategy by design (SPY vs T-bill cash); historically 64.6% of days
+  fully invested, 26.9% cash, avg exposure 0.716; avoided -29.8% (dot-com) and
+  -31.8% (GFC) at the cost of ~8 missed +5-12% rallies. Exposure 1.0 confirmed;
+  no trades; guardrails ALL GREEN; 55/55 tests. Configs unchanged 180.
 - 2026-07-21 s15 — E25 Vigilant Asset Allocation (VAA, Keller & Keuning 2017).
   6 configs (n3/n4, bp=0.30/0.50/0.90). Best VAA(n3,bp0.50): mean WF 0.626 (< 0.844
   bar), worst DD −41.85% (>> −20.5% bar), DSR 0.9639 (passes), diff-CI [−0.653,+1.144]
