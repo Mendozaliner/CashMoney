@@ -90,6 +90,12 @@
     at n=3 assets (Keller paper used 12+). n=4 with EFA worse (reproduces E9 GEM
     international drag). VAA family PERMANENTLY CLOSED (180 configs total).
 
+23. ~~Phase-3 stress-test harness~~ DONE s17 (engineering, zero configs):
+    backtest/stress.py — bear-regime replay, 2x-cost runner, ±25% perturbation
+    grid, collapse verdict; 8 tests, synthetic data only. STANDING RULE: do NOT
+    run the harness on champion returns until a Phase-3 graduation candidate is
+    declared (leakage guard).
+
 ## Priority order for next sessions
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
 2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI now

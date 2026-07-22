@@ -5,14 +5,14 @@
  "positions": {
   "SPY": {
    "units": 1.3334757435413753,
-   "last_px": 742.0900268554688
+   "last_px": 748.280029296875
   }
  },
  "cash": 0.0,
  "last_mark": {
-  "date": "2026-07-20",
-  "value": 989.56,
-  "spy_close": 742.0900268554688
+  "date": "2026-07-21",
+  "value": 997.81,
+  "spy_close": 748.280029296875
  },
  "history": [
   {
@@ -179,6 +179,17 @@
    "spy_pct_same_window": 0.0,
    "all_time_pct": -1.044,
    "note": "Session 16 (2026-07-21, second run today): mark carried $989.56 - no new completed close since s15's 2026-07-20 mark (today's partial bar dropped). v2 exposure 1.0 re-confirmed (742.09 > band 714.66; 20d vol 11.7% < 18%). No trades. Guardrails G1-G7 ALL GREEN. 55/55 tests. Zero-config session: M3 exposure-profile memo (v2 fully invested 64.6% of days since 2000, cash 26.9%, avg exposure 0.716)."
+  },
+  {
+   "date": "2026-07-22",
+   "session": 17,
+   "mark_date": "2026-07-21",
+   "value": 997.81,
+   "chg_dollar": 8.25,
+   "chg_pct": 0.834,
+   "spy_pct_same_window": 0.834,
+   "all_time_pct": -0.219,
+   "note": "Session 17 (2026-07-22): New SPY close 748.2800 (2026-07-21), +0.834% on the day. 1.333476 units \u00d7 $748.2800 = $997.81 (+$8.25). v2 exposure 1.0 confirmed (748.28 > SMA200+3% band 715.10; 20d vol 12.0% < 18% target). No trades. Zero-config engineering session: Phase-3 stress-test harness (backtest/stress.py) built and unit-tested on synthetic data only; champion untouched. Guardrails G1-G7 ALL GREEN."
   }
  ],
  "trades": [

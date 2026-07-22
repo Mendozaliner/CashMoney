@@ -1,3 +1,4 @@
+Updated: 2026-07-22 s17 (Engineering run, zero configs — Phase-3 stress harness built: backtest/stress.py (regime replay, 2x-cost runner, ±25% perturbation grid, collapse verdict) + 8 synthetic-only tests; suite 63/63. New mark $997.81 (2026-07-21 close, +0.834% day, −0.219% all-time). Exposure 1.0; no trades. Guardrails ALL GREEN. Configs unchanged 180.)
 Updated: 2026-07-21 s16 (Zero-config maintenance/analysis run — queue exhausted. M3 exposure-profile memo on frozen v2: since 2000 fully invested 64.6% of days, cash 26.9%, avg exposure 0.716; sat out dot-com −29.8% and GFC −31.8%, cost ~8 whipsaws of +5–12%. Mark carried $989.56 (2026-07-20 close). Guardrails ALL GREEN. 55/55 tests. Configs unchanged 180.)
 Updated: 2026-07-21 s15 (E25 VAA Vigilant Asset Allocation — DISCARDED and CLOSED. Best VAA(n3,bp0.50) mean WF 0.626 < 0.844 bar, worst DD −41.85% >> −20.5% bar, DSR 0.9639 (✓), corr 0.60 > 0.50 threshold. Not watch-list eligible. VAA family CLOSED — breadth signal too coarse at n=3 assets. Mark $989.56 (2026-07-20 close). Guardrails G1–G7 ALL GREEN. 55/55 tests. Configs 174→180.)# STATE — CashMoney research system
 
@@ -28,11 +29,11 @@ Phase-transition: not met (needs 3 live months + significance on #1).
 Portfolio re-based from SPY_PROXY (stale, ended 2025-12-19) to real SPY cache:
 $999.00 carried, 1.333476 SPY units @ 749.17 (2026-07-13 close). Live clock and
 all live-vs-SPY comparisons measure from this mark. Costs standard now 0.15%.
-**Latest mark (2026-07-20 close, session 15):**
-1.333476 SPY × $742.09 = **$989.56** (−0.161% day, −1.044% all-time from $1,000
-inception). SPY since live baseline: −0.945%. Portfolio tracking SPY 1:1 fully invested.
-v2 exposure confirmed 1.0 (742.09 > SMA200+3% band; 20d vol 11.7% < 18%). No trades.
-Guardrails G1–G7 ALL GREEN. Peak $1,006.52, current drawdown from peak −1.69% (GREEN).
+**Latest mark (2026-07-21 close, session 17):**
+1.333476 SPY × $748.28 = **$997.81** (+0.834% day, −0.219% all-time from $1,000
+inception). SPY since live baseline: −0.119%. Portfolio tracking SPY 1:1 fully invested.
+v2 exposure confirmed 1.0 (748.28 > SMA200+3% band 715.10; 20d vol 12.0% < 18%). No trades.
+Guardrails G1–G7 ALL GREEN. Peak $1,006.52, current drawdown from peak −0.87% (GREEN).
 
 ## Standing briefing instructions (per Mr. Menéndez, 2026-07-14)
 - FORMAT (added later on 2026-07-14, SUPERSEDES the long template): the daily
@@ -133,8 +134,8 @@ terminal value. Mag-7 eqw $83,104 (2012+ only, concentrated tech). Legacy PROXY-
 ## Portfolio
 portfolio.json created session 2 (session 1 omitted it): $1,000 inception
 2026-07-13, fully invested per v2 (exposure 1.0), value $999.00 after entry cost.
-**Current value: $989.56** (2026-07-20 close, session 15 mark). 1.333476 SPY units
-@ $742.09. All-time: −$10.44 / −1.044% from $1,000 inception. No rebalance needed;
+**Current value: $997.81** (2026-07-21 close, session 17 mark). 1.333476 SPY units
+@ $748.28. All-time: −$2.19 / −0.219% from $1,000 inception. No rebalance needed;
 exposure 1.0 confirmed.
 
 ## Watch-list (not adopted; revisit under stated conditions)
@@ -196,6 +197,15 @@ exposure 1.0 confirmed.
   threshold further not recommended without significance improvement.
 
 ## Session log
+- 2026-07-22 s17 — Engineering session (queue exhausted; zero configs, 180
+  unchanged). Built Phase-3 stress harness backtest/stress.py: bear-regime
+  replay (dot-com/GFC/COVID/2022), doubled-cost runner (no-lookahead
+  unit-tested), ±25% perturbation grid (v2 -> 9 configs), collapse verdict
+  (Sharpe < 50% base or DD < -20%). 8 new tests, SYNTHETIC DATA ONLY — module
+  forbidden from touching champion returns before Phase 3 (leakage guard).
+  Suite 63/63. New mark $997.81 (2026-07-21 close, +0.834% day; SPY rebound on
+  3M/GM earnings beats and semiconductor strength). Exposure 1.0; no trades;
+  guardrails ALL GREEN. Notes: research/2026-07-22-s17-stress-harness.md.
 - 2026-07-21 s16 — Second run of 2026-07-21. No new close; mark carried $989.56.
   Research queue exhausted (180 configs, 11 families closed) -> zero-config analysis:
   M3 exposure-profile memo (research/2026-07-21-s16-exposure-profile.md) answering
