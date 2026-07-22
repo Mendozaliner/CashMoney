@@ -5,14 +5,14 @@
  "positions": {
   "SPY": {
    "units": 1.3334757435413753,
-   "last_px": 742.0900268554688
+   "last_px": 748.280029296875
   }
  },
  "cash": 0.0,
  "last_mark": {
-  "date": "2026-07-20",
-  "value": 989.56,
-  "spy_close": 742.0900268554688
+  "date": "2026-07-21",
+  "value": 997.81,
+  "spy_close": 748.280029296875
  },
  "history": [
   {
@@ -179,6 +179,17 @@
    "spy_pct_same_window": 0.0,
    "all_time_pct": -1.044,
    "note": "Session 16 (2026-07-21, second run today): mark carried $989.56 - no new completed close since s15's 2026-07-20 mark (today's partial bar dropped). v2 exposure 1.0 re-confirmed (742.09 > band 714.66; 20d vol 11.7% < 18%). No trades. Guardrails G1-G7 ALL GREEN. 55/55 tests. Zero-config session: M3 exposure-profile memo (v2 fully invested 64.6% of days since 2000, cash 26.9%, avg exposure 0.716)."
+  },
+  {
+   "date": "2026-07-22",
+   "session": 16,
+   "mark_date": "2026-07-21",
+   "value": 997.81,
+   "chg_dollar": 8.25,
+   "chg_pct": 0.834,
+   "spy_pct_same_window": 0.834,
+   "all_time_pct": -0.219,
+   "note": "Session 16 (2026-07-22): SPY close 748.2800 (2026-07-21), +0.834% on the day. 1.333476 units \u00d7 $748.2800 = $997.81 (+0.834%). v2 exposure 1.0000. No trades. E26 Turtle: discarded (best Turtle(ch100,vol0.18) mean_wf=0.644, DD=-14.62%, DSR=0.9513, corr_v2=0.828, watch=False). E27 DAA: discarded (best DAA(cs0.5,n4) mean_wf=0.616, DD=-43.58%, DSR=0.8772, corr_v2=0.411, watch=False). Guardrails ALL GREEN."
   }
  ],
  "trades": [
