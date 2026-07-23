@@ -1,3 +1,4 @@
+Updated: 2026-07-23 s18 (E26 Donchian/Turtle DISCARDED&CLOSED, E27 52wk-High DISCARDED&CLOSED, E28 ADX Trend Strength DISCARDED. 12 new configs (192 total). Best: ADX(p14,t25) DD −9.65% (2nd-best ever), OOS Sharpe 1.003 — but DSR 0.856 <0.95 bar and fold-2 Sharpe 0.463. 52wk-High (George&Hwang 2004) corr_v2=0.937 — near-duplicate of v2. New mark $996.65 (2026-07-22 close, −0.116% day, −0.335% all-time). Exposure 1.0; no trades. Guardrails ALL GREEN. Suite 79/79. v2 CI re-check: [−0.0128,+0.7077] straddles zero.)
 Updated: 2026-07-22 s17 (Engineering run, zero configs — Phase-3 stress harness built: backtest/stress.py (regime replay, 2x-cost runner, ±25% perturbation grid, collapse verdict) + 8 synthetic-only tests; suite 63/63. New mark $997.81 (2026-07-21 close, +0.834% day, −0.219% all-time). Exposure 1.0; no trades. Guardrails ALL GREEN. Configs unchanged 180.)
 Updated: 2026-07-21 s16 (Zero-config maintenance/analysis run — queue exhausted. M3 exposure-profile memo on frozen v2: since 2000 fully invested 64.6% of days, cash 26.9%, avg exposure 0.716; sat out dot-com −29.8% and GFC −31.8%, cost ~8 whipsaws of +5–12%. Mark carried $989.56 (2026-07-20 close). Guardrails ALL GREEN. 55/55 tests. Configs unchanged 180.)
 Updated: 2026-07-21 s15 (E25 VAA Vigilant Asset Allocation — DISCARDED and CLOSED. Best VAA(n3,bp0.50) mean WF 0.626 < 0.844 bar, worst DD −41.85% >> −20.5% bar, DSR 0.9639 (✓), corr 0.60 > 0.50 threshold. Not watch-list eligible. VAA family CLOSED — breadth signal too coarse at n=3 assets. Mark $989.56 (2026-07-20 close). Guardrails G1–G7 ALL GREEN. 55/55 tests. Configs 174→180.)# STATE — CashMoney research system
@@ -29,11 +30,11 @@ Phase-transition: not met (needs 3 live months + significance on #1).
 Portfolio re-based from SPY_PROXY (stale, ended 2025-12-19) to real SPY cache:
 $999.00 carried, 1.333476 SPY units @ 749.17 (2026-07-13 close). Live clock and
 all live-vs-SPY comparisons measure from this mark. Costs standard now 0.15%.
-**Latest mark (2026-07-21 close, session 17):**
-1.333476 SPY × $748.28 = **$997.81** (+0.834% day, −0.219% all-time from $1,000
-inception). SPY since live baseline: −0.119%. Portfolio tracking SPY 1:1 fully invested.
-v2 exposure confirmed 1.0 (748.28 > SMA200+3% band 715.10; 20d vol 12.0% < 18%). No trades.
-Guardrails G1–G7 ALL GREEN. Peak $1,006.52, current drawdown from peak −0.87% (GREEN).
+**Latest mark (2026-07-22 close, session 18):**
+1.333476 SPY × $747.41 = **$996.65** (−0.116% day, −0.335% all-time from $1,000
+inception). SPY since live baseline: −0.235%. Portfolio tracking SPY 1:1 fully invested.
+v2 exposure confirmed 1.0 (747.41 > SMA200+3% band 715.53; 20d vol 10.7% < 18%). No trades.
+Guardrails G1–G7 ALL GREEN. Peak $1,006.52, current drawdown from peak −0.98% (GREEN).
 
 ## Standing briefing instructions (per Mr. Menéndez, 2026-07-14)
 - FORMAT (added later on 2026-07-14, SUPERSEDES the long template): the daily
@@ -197,6 +198,33 @@ exposure 1.0 confirmed.
   threshold further not recommended without significance improvement.
 
 ## Session log
+- 2026-07-23 s18 — Three new investing-philosophy experiments (per standing mandate).
+  New mark $996.65 (2026-07-22 close, −0.116% day). v2 exposure 1.0; no trades.
+  Guardrails ALL GREEN; drawdown from peak −0.98% (GREEN). Suite 79/79 (+16 tests).
+  E26 Donchian Channel / Turtle Trading (Dennis & Eckhardt 1983, 4 cfg, reg id
+  in hypotheses.jsonl): best DCH(S1,tv0.15) mean_wf=0.475 (<0.844 bar), worst DD
+  −21.4%, DSR=0.9531 (passes), CI=[−0.703,+1.003] straddles zero, corr_v2=0.610.
+  DISCARDED. Fold-1 Sharpe −0.158 — breakout signal caught bubble top without the
+  SMA200 anchor to stay out of dot-com peak. Family PERMANENTLY CLOSED.
+  E27 52-Week High Proximity (George & Hwang 2004, 4 cfg): best 52wk(H0.95,L0.85)
+  mean_wf=0.634 (<0.844), worst DD −19.75% (better than v2), DSR=0.9452 (fails
+  0.95 bar), CI=[−0.694,+0.690] straddles zero, corr_v2=0.937 (near-duplicate of v2).
+  Critical finding: the 52-week high anchoring signal IS the SMA200 signal in
+  disguise on a broad index — 0.937 correlation confirms near-identical information.
+  DISCARDED. Family PERMANENTLY CLOSED.
+  E28 ADX Trend Strength (Wilder 1978, 4 cfg): best ADX(p14,t20) mean_wf=0.797
+  (<0.844), worst DD −18.45% (better than v2), DSR=0.856 (<0.95 bar), CI=[−0.841,
+  +0.814] straddles zero, corr_v2=0.804. Notable: ADX(p14,t25) produced second-
+  lowest DD ever (−9.65%, after CTA −6.19%) and OOS Sharpe 1.003, but fold-2
+  Sharpe 0.463 (2010-2019 bull market exposes instability). DISCARDED, not watch-
+  list eligible (DSR <0.95 and corr >0.50). Not closed — ADX concept could revisit
+  as overlay in Phase 3 if capital-preservation mandate is separated.
+  v2 significance re-check (ROADMAP #10): CI=[−0.0128,+0.7077], essentially
+  unchanged (vs −0.0129 in s13). Lower bound improved by 0.0001. Next: August.
+  $1k benchmark (2000→2026-07-22): v2 $8,381 > QQQ $6,946 > SPY $6,774 > DIA
+  $6,759 > IWM $6,711 > EWC $5,768 > E28 $5,029 > E27 $4,864 > EFA $3,909 >
+  ACWI $3,594 > E26 $2,105. v2 champion remains best realistic strategy found.
+  Configs 180→192.
 - 2026-07-22 s17 — Engineering session (queue exhausted; zero configs, 180
   unchanged). Built Phase-3 stress harness backtest/stress.py: bear-regime
   replay (dot-com/GFC/COVID/2022), doubled-cost runner (no-lookahead

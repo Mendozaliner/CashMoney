@@ -1,0 +1,76 @@
+{
+ "session": "2026-07-23-s18",
+ "portfolio_mark": {
+  "date": "2026-07-22",
+  "value": 996.65,
+  "spy_close": 747.4099731445312,
+  "spy_day_chg_pct": -0.116,
+  "port_chg_pct": -0.116,
+  "all_time_pct": -0.335,
+  "spy_since_live_pct": -0.235,
+  "v2_exposure": 1.0,
+  "dd_from_peak_pct": -0.98
+ },
+ "E26_Donchian": {
+  "verdict": "discarded",
+  "best_label": "DCH(S1,tv0.15)",
+  "mean_wf": 0.475,
+  "worst_dd": -21.36,
+  "dsr": 0.9531,
+  "ci": [
+   -0.703,
+   1.003
+  ],
+  "corr_v2": 0.61,
+  "watchlist": false
+ },
+ "E27_52wkHigh": {
+  "verdict": "discarded",
+  "best_label": "52wk(H0.95,L0.85,tv0.18)",
+  "mean_wf": 0.634,
+  "worst_dd": -19.75,
+  "dsr": 0.9452,
+  "ci": [
+   -0.694,
+   0.69
+  ],
+  "corr_v2": 0.937,
+  "watchlist": false
+ },
+ "E28_ADX": {
+  "verdict": "discarded",
+  "best_label": "ADX(p14,t20,tv0.18)",
+  "mean_wf": 0.797,
+  "worst_dd": -18.45,
+  "dsr": 0.856,
+  "ci": [
+   -0.841,
+   0.814
+  ],
+  "corr_v2": 0.804,
+  "watchlist": false
+ },
+ "v2_significance": {
+  "dsr": 1.0,
+  "ci": [
+   -0.0128,
+   0.7077
+  ],
+  "clears": false
+ },
+ "benchmarks_1k": {
+  "v2": 8381.86,
+  "E26_Donchian": 2105.23,
+  "E27_52wk": 4864.35,
+  "E28_ADX": 5029.6,
+  "SPY": 6774.51,
+  "DIA": 6759.07,
+  "QQQ": 6946.65,
+  "IWM": 6711.99,
+  "EWC": 5768.31,
+  "EFA": 3909.87,
+  "ACWI": 3594.54,
+  "Mag7_2012": 63681.37
+ },
+ "total_configs": 192
+}

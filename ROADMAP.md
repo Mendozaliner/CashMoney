@@ -96,21 +96,59 @@
     run the harness on champion returns until a Phase-3 graduation candidate is
     declared (leakage guard).
 
+24. ~~Donchian Channel / Turtle Trading~~ DONE s18 (E26, 4 cfg, DISCARDED and CLOSED).
+    Best DCH(S1,tv0.15): mean WF 0.475 <0.844 bar, DSR 0.9531 (passes!), CI straddles
+    zero, fold-1 Sharpe −0.158. Root cause: breakout entry on single-asset SPY without
+    SMA200 anchor buys bubble tops (dot-com). Family PERMANENTLY CLOSED.
+
+25. ~~52-Week High Proximity (George & Hwang 2004)~~ DONE s18 (E27, 4 cfg, DISCARDED
+    and CLOSED). Best 52wk(H0.95,L0.85): mean WF 0.634, DSR 0.9452 (<0.95), corr_v2
+    0.937 (near-duplicate). CRITICAL FINDING: 52-week high anchoring IS the SMA200
+    signal on a broad market index — both encode "market near recent peak." No new
+    information. Family PERMANENTLY CLOSED.
+
+26. ~~ADX Trend Strength (Wilder 1978)~~ DONE s18 (E28, 4 cfg, DISCARDED). Best
+    ADX(p14,t20): mean WF 0.797, DD −18.45%, DSR 0.856 (<0.95), corr_v2 0.804. Notable:
+    ADX(p14,t25) produced DD −9.65% (2nd-best ever) and OOS Sharpe 1.003, but fold-2
+    collapses (bull-market ADX instability). Not watch-listed (DSR <0.95, corr >0.50).
+    NOT permanently closed — ADX overlay may revisit in Phase 3 capital-preservation work.
+
 ## Priority order for next sessions
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
 2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI now
-   [−0.013,+0.708]; needs more live data to extend the sample toward significance)
+   [−0.0128,+0.7077]; essentially flat vs s13; needs more live data)
 3. (#14) Guardrails run at every mark — standing, cheap.
 4. (#6) Value tilt — blocked on fundamentals data pipeline; research queue now FULLY
-   EXHAUSTED (180 configs burned; 11 families permanently closed: sector, kill-switch,
+   EXHAUSTED (192 configs burned; 13 families permanently closed: sector, kill-switch,
    blended-mom, AAA, RSI-2, IBS, seasonal, market-breadth, low-vol-sector,
-   country-rotation, VAA/breadth-protection). Prefer NO new families over re-tuning.
+   country-rotation, VAA/breadth-protection, Donchian/turtle, 52wk-high).
+   Prefer NO new families over re-tuning.
 5. Phase-2 graduation review in August once 3 live months have elapsed.
 6. Consider whether the Ensemble (E22) bear-regime benefit (fold-1 Sharpe boost, DD
    improvement) warrants a CAPITAL-PRESERVATION mandate portfolio separate from the
    growth mandate. Do NOT revisit for the current live portfolio — champion v2 stays.
 
 ## Negative results (do NOT re-test in the original form)
+- **ADX Trend Strength Filter, ADX(p14-20, t20-25) on SPY** (E28, s18): best ADX(p14,t20)
+  mean WF 0.797 (< 0.844 bar), DD −18.45% (better than v2), DSR 0.856 (fails 0.95). CI
+  straddles zero; corr_v2 0.804 (above watch-list threshold). Grid burned — do NOT
+  re-tune period or threshold. Notable: ADX(p14,t25) DD only −9.65% (second-best ever)
+  and OOS Sharpe 1.003, but fold-2 Sharpe 0.463 reveals bull-market instability. The ADX
+  concept is not closed — it may revisit as a Phase-3 capital-preservation overlay, but
+  not as a standalone growth-mandate strategy.
+- **52-Week High Proximity Momentum** (E27, s18, George & Hwang 2004): best
+  52wk(H0.95,L0.85) mean WF 0.634, DD −19.75% (marginally better than v2), DSR 0.9452
+  (fails 0.95 bar), CI straddles zero, corr_v2 0.937. Root cause: on a broad market
+  index, proximity to 52-week high and proximity to SMA200 encode nearly identical
+  information. Individual-stock behavioral anchoring does not aggregate to index level.
+  Do NOT re-test anchor-based signals on single broad indices — they are v2 in disguise.
+- **Donchian Channel Breakout / Turtle Trading (20-day entry, 10-55 day exit)** (E26, s18,
+  Dennis & Eckhardt 1983): best DCH(S1,tv0.15) mean WF 0.475 (< 0.844 bar), DD −21.4%,
+  DSR 0.9531 (passes!), CI straddles zero, corr_v2 0.610. Fold-1 Sharpe −0.158 —
+  breakout on single-asset SPY enters on new highs (tech bubble top in 2000) without the
+  SMA200 level anchor to stay out. Terminal value $2,105 vs v2 $8,381 (75% less wealth).
+  Do NOT retry channel-breakout without a separate trend gate; the SMA200 gate IS the
+  necessary stabilizer that Donchian lacks.
 - **Vigilant Asset Allocation VAA(n3,bp0.50)** (E25, s15): DSR 0.9639 passes; best
   mean WF Sharpe 0.626 (< 0.844 bar), worst DD −41.85%, diff-CI [−0.653,+1.144]
   straddles zero, corr_v2 0.60 > 0.50 threshold. Terminal $9,202 > v2 $8,382 on raw
