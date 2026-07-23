@@ -113,6 +113,11 @@
     collapses (bull-market ADX instability). Not watch-listed (DSR <0.95, corr >0.50).
     NOT permanently closed — ADX overlay may revisit in Phase 3 capital-preservation work.
 
+27. ~~Live-track checkpoint tooling~~ DONE s19 (engineering, zero configs):
+    backtest/live_track.py — monthly live-vs-SPY checkpoints, consecutive-beat
+    counter, live worst-DD, PSR MinTRL. STANDING: summary() at every mark; the
+    July completed-month checkpoint prints in the first August session.
+
 ## Priority order for next sessions
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
 2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI now

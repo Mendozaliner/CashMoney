@@ -201,6 +201,17 @@
    "spy_pct_same_window": -0.116,
    "all_time_pct": -0.335,
    "note": "Session 18 (2026-07-23): New SPY close 747.4100 (2026-07-22), -0.116% on the day. 1.333476 units x $747.4100 = $996.65 (-0.116%). v2 exposure 1.0000 (close 747.41 >715.53 band; vol 10.7% vs 18%). No trades. E26 Donchian: DISCARDED (DCH(S1,tv0.15) mean_wf=0.475, DD=-21.36%, DSR=0.9531, CI=[-0.703,1.003], corr_v2=0.610, watchlist=False). E27 52wk-High: DISCARDED (52wk(H0.95,L0.85,tv0.18) mean_wf=0.634, DD=-19.75%, DSR=0.9452, CI=[-0.694,0.690], corr_v2=0.937, watchlist=False). E28 ADX Filter: DISCARDED (ADX(p14,t20,tv0.18) mean_wf=0.797, DD=-18.45%, DSR=0.8560, CI=[-0.841,0.814], corr_v2=0.804, watchlist=False). Guardrails G1-G7 ALL GREEN. DD from peak: -0.98%. v2 significance re-check: DSR=1.0000, CI=[-0.0128,+0.7077] still straddles zero."
+  },
+  {
+   "date": "2026-07-23",
+   "session": 19,
+   "mark_date": "2026-07-22",
+   "value": 996.65,
+   "chg_dollar": 0.0,
+   "chg_pct": 0.0,
+   "spy_pct_same_window": 0.0,
+   "all_time_pct": -0.335,
+   "note": "Session 19 (2026-07-23, second run today): mark carried $996.65 - no new completed close since s18's 2026-07-22 mark (today's partial 2026-07-23 bar dropped per protocol). v2 exposure 1.0 re-confirmed (747.41 > SMA200+3% band 715.53; 20d vol 10.7% < 18%). No trades. Guardrails G1-G7 ALL GREEN. 79/79 tests. Zero-config engineering session: backtest/live_track.py monthly graduation-checkpoint tool for the August Phase-2 review."
   }
  ],
  "trades": [
