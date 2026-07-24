@@ -118,15 +118,31 @@
     counter, live worst-DD, PSR MinTRL. STANDING: summary() at every mark; the
     July completed-month checkpoint prints in the first August session.
 
+28. ~~VIX-Regime Dynamic Ensemble~~ DONE s20 (E29, 4 cfg, DISCARDED and CLOSED).
+    Best RE(v25/c40,60/40): mean WF 0.825, DD −20.73%, DSR 0.9715 (✓), CI
+    [−0.589,+0.927] straddles zero, corr_v2=0.967 — highest correlation ever.
+    Root cause: crisis periods (VIX>30) are rare (~10% of days); CTA-SPY sleeve
+    replicates the SMA200 gate — VIX regime switching IS v2 in macro clothing.
+    Family PERMANENTLY CLOSED (corr 0.967 >> 0.70 ensemble threshold; CI fails).
+
+29. ~~Inter-Market Bond-Equity Relative Strength~~ DONE s20 (E30, 4 cfg, DISCARDED
+    and CLOSED). Best IM(lb63,scale0.50): mean WF 0.769, DD −20.37%, DSR 0.9468
+    (<0.95), CI [−0.674,+0.824] straddles zero, corr_v2=0.974. Root cause: when IEF
+    outperforms SPY over 3 months, v2's SMA200 gate has already signaled cash —
+    the inter-market filter adds caution after v2 already knows. Murphy (1991)
+    bond-leading-equity relationship works at the stock level, not at the broad index
+    level where SMA200 captures the same information. Family PERMANENTLY CLOSED.
+
 ## Priority order for next sessions
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
 2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI now
    [−0.0128,+0.7077]; essentially flat vs s13; needs more live data)
 3. (#14) Guardrails run at every mark — standing, cheap.
 4. (#6) Value tilt — blocked on fundamentals data pipeline; research queue now FULLY
-   EXHAUSTED (192 configs burned; 13 families permanently closed: sector, kill-switch,
+   EXHAUSTED (200 configs burned; 15 families permanently closed: sector, kill-switch,
    blended-mom, AAA, RSI-2, IBS, seasonal, market-breadth, low-vol-sector,
-   country-rotation, VAA/breadth-protection, Donchian/turtle, 52wk-high).
+   country-rotation, VAA/breadth-protection, Donchian/turtle, 52wk-high,
+   VIX-regime-ensemble, inter-market-bond-equity).
    Prefer NO new families over re-tuning.
 5. Phase-2 graduation review in August once 3 live months have elapsed.
 6. Consider whether the Ensemble (E22) bear-regime benefit (fold-1 Sharpe boost, DD
@@ -134,6 +150,25 @@
    growth mandate. Do NOT revisit for the current live portfolio — champion v2 stays.
 
 ## Negative results (do NOT re-test in the original form)
+- **Inter-Market Bond-Equity Relative Strength, IM(lb21-126, scale0.0-0.5)** (E30, s20):
+  best IM(lb63, scale0.50) mean WF 0.769 (< 0.844 bar), DD −20.37%, DSR 0.947 (< 0.95),
+  CI straddles zero, corr_v2 0.974. When IEF outperforms SPY over any multi-month lookback,
+  SPY has already been declining and v2's SMA200 gate has already flagged risk-off — the
+  filter is structurally redundant. Scale=0.0 (full exit in risk-off) makes it worse:
+  mean_wf 0.601, DD −24.42%. Murphy (1991) bond-leading-equity applies at individual
+  security level, not at the broad-index level. Do NOT re-test bond-equity relative
+  momentum overlays on single broad indices — the information is already in SMA200.
+
+- **VIX-Regime Dynamic Ensemble (VIX<20/20-30/>30 thresholds)** (E29, s20):
+  best RE(v25/c40, 60/40 blend) mean WF 0.825 (< 0.844 bar), DD −20.73%, DSR 0.972 (✓),
+  CI [−0.589,+0.927] straddles zero, corr_v2 0.967 — highest OOS correlation ever recorded.
+  Tried wider thresholds (v25/c40) and v2-only crisis mode: all configs ≥ 0.814 correlation.
+  Crisis periods (VIX>30) are ~10% of days; CTA-SPY sleeve (the crisis alpha source) uses
+  the same SMA200 gate as v2 during non-crisis periods, creating structural redundancy.
+  Do NOT re-test VIX-triggered ensemble switching on SPY — regime detection is already
+  implicit in v2's price-based trend gate, and multi-asset CTA correlation to v2 is too
+  high (E20: 0.635; E22: 0.943; E29: 0.967) for any ensemble benefit.
+
 - **ADX Trend Strength Filter, ADX(p14-20, t20-25) on SPY** (E28, s18): best ADX(p14,t20)
   mean WF 0.797 (< 0.844 bar), DD −18.45% (better than v2), DSR 0.856 (fails 0.95). CI
   straddles zero; corr_v2 0.804 (above watch-list threshold). Grid burned — do NOT

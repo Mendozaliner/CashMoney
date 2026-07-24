@@ -5,14 +5,14 @@
  "positions": {
   "SPY": {
    "units": 1.3334757435413753,
-   "last_px": 747.4099731445312
+   "last_px": 738.1799926757812
   }
  },
  "cash": 0.0,
  "last_mark": {
-  "date": "2026-07-22",
-  "value": 996.65,
-  "spy_close": 747.4099731445312
+  "date": "2026-07-23",
+  "value": 984.35,
+  "spy_close": 738.1799926757812
  },
  "history": [
   {
@@ -212,6 +212,17 @@
    "spy_pct_same_window": 0.0,
    "all_time_pct": -0.335,
    "note": "Session 19 (2026-07-23, second run today): mark carried $996.65 - no new completed close since s18's 2026-07-22 mark (today's partial 2026-07-23 bar dropped per protocol). v2 exposure 1.0 re-confirmed (747.41 > SMA200+3% band 715.53; 20d vol 10.7% < 18%). No trades. Guardrails G1-G7 ALL GREEN. 79/79 tests. Zero-config engineering session: backtest/live_track.py monthly graduation-checkpoint tool for the August Phase-2 review."
+  },
+  {
+   "date": "2026-07-24",
+   "session": 20,
+   "mark_date": "2026-07-23",
+   "value": 984.35,
+   "chg_dollar": -12.3,
+   "chg_pct": -1.234,
+   "spy_pct_same_window": -1.235,
+   "all_time_pct": -1.565,
+   "note": "Session 20 (2026-07-24): New SPY close 738.1800 (2026-07-23), -1.235% on the day. 1.333476 units \u00d7 $738.1800 = $984.35 (-1.234%). v2 exposure 1.0000 (close 738.18 > band 715.92; vol 11.7% vs 18% target). No trades. E29 Regime Ensemble: discarded (best RE(v25/c40,60/40,tv0.18) mean_wf=0.825, DD=-20.73%, DSR=0.9715, CI=[-0.589,0.927], corr_v2=0.967, watchlist=False). E30 Inter-Market: discarded (best IM(lb63,scale0.50) mean_wf=0.769, DD=-20.37%, DSR=0.9468, CI=[-0.674,0.824], corr_v2=0.974, watchlist=False). Guardrails G1-G7 ALL GREEN. DD from peak: -2.20%."
   }
  ],
  "trades": [
