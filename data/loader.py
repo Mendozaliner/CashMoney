@@ -158,3 +158,25 @@ def data_freshness() -> dict:
     return {"available": True, "newest_close": newest, "stale_days": stale,
             "tickers_ok": meta.get("tickers_ok"),
             "updated_utc": meta.get("updated_utc")}
+
+
+FUND_DIR = CACHE / "fundamentals"
+
+
+def load_shiller(start=None, end=None) -> pd.DataFrame:
+    """Shiller monthly S&P fundamentals (Price, Dividend, Earnings, Cpi, CAPE).
+
+    Monthly rows from 1871 (CAPE from 1881), refreshed by the data Action via
+    scripts/fetch_data.py:refresh_fundamentals(). As-published values, no
+    forward-fill. NOTE for research use: earnings arrive with a publication
+    lag -- lag the signal at least one month (use .shift(1)) to avoid
+    lookahead, and compute any percentile rank on an expanding window only.
+    """
+    p = FUND_DIR / "shiller_monthly.csv"
+    if not p.exists():
+        raise FileNotFoundError(
+            f"No Shiller fundamentals at {p}. The data Action populates it "
+            "(scripts/fetch_data.py); run the workflow or git pull after it runs."
+        )
+    df = pd.read_csv(p, parse_dates=["Date"], index_col="Date")
+    return df.loc[start:end]

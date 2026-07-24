@@ -24,6 +24,12 @@
    ~~v2/RP ensemble~~ DONE s8 (E13, DISCARDED — CI straddles zero, raw terminal
    lags SPY). Do NOT re-tune mixture weights; see watch-list conditions.
 
+6a. **E31 — CAPE value tilt on v2** (UNBLOCKED s21): Shiller monthly feed lands via the
+   data Action (push-triggered). Pre-register BEFORE running: mild exposure tilt on v2
+   only at extreme top-decile CAPE (expanding-window percentile, signal shift(1) for
+   publication lag), <=2 params (percentile threshold, tilt size), <=12 configs.
+   Literature prior: expect FAIL/watch-list (research/2026-07-24-s21-value-timing-literature.md).
+
 6. **Momentum + Value tilt on sector basket**: overlay a simple price-to-earnings
    or price-to-book screen on top of sector momentum. Requires fundamentals data
    not yet in the pipeline. FLAG: fundamentals data source needed first.

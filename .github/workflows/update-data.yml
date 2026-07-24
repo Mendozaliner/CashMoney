@@ -27,14 +27,14 @@ jobs:
         with:
           python-version: "3.11"
       - name: Install deps
-        run: pip install --quiet yfinance pandas
+        run: pip install --quiet -r scripts/requirements-data.txt
       - name: Fetch market data
         run: python scripts/fetch_data.py
       - name: Commit refreshed data
         run: |
           git config user.name  "Menendez Capital Data Bot"
           git config user.email "90nojo@gmail.com"
-          git add data/cache/ohlcv data/cache/ohlcv_panel.csv data/cache/last_updated.json
+          git add data/cache/ohlcv data/cache/ohlcv_panel.csv data/cache/last_updated.json data/cache/fundamentals
           if git diff --cached --quiet; then
             echo "No data changes."
           else

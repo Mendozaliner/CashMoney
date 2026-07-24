@@ -106,6 +106,103 @@ def fetch(ticker: str):
     return pd.DataFrame(), None
 
 
+
+
+# ---------------------------------------------------------------------------
+# Fundamentals: Shiller monthly S&P dataset (price, D, E, CPI, CAPE, 1871->)
+# Unblocks ROADMAP #6 (value tilt). Sources: canonical ie_data.xls at Yale,
+# datahub.io parsed CSV as fallback. Written as a tidy monthly CSV so the
+# sandbox never needs xls parsing.
+# ---------------------------------------------------------------------------
+FUND = CACHE / "fundamentals"
+SHILLER_XLS_URLS = [
+    "http://www.econ.yale.edu/~shiller/data/ie_data.xls",
+    "https://img1.wsimg.com/blobby/go/e5e77e0b-59d1-44d9-ab25-4763ac982e53/downloads/ie_data.xls",  # shillerdata.com mirror (path may rotate)
+]
+DATAHUB_CSV = "https://datahub.io/core/s-and-p-500/r/data.csv"
+
+
+def _normalize_shiller(df: pd.DataFrame) -> pd.DataFrame:
+    """Tidy a raw Shiller frame -> monthly CSV with stable columns.
+
+    Expects columns (any case): Date (fractional year like 1871.01), P, D, E,
+    CPI, CAPE. Returns Date-indexed monthly rows, numeric, CAPE may be NaN for
+    the first 10 years. No forward-fill (no lookahead): each row is as-published.
+    """
+    df = df.rename(columns={c: str(c).strip().title() for c in df.columns})
+    ren = {"P": "Price", "D": "Dividend", "E": "Earnings",
+           "Cape": "CAPE", "Sp500": "Price", "Real Price": "RealPrice"}
+    df = df.rename(columns=ren)
+    if "Date" not in df.columns:
+        raise ValueError("Shiller frame lacks Date column")
+    # Shiller dates are fractional years: 1871.01 .. 1871.1 means Jan..Oct.
+    def _to_ts(x):
+        try:
+            y = int(float(x))
+            frac = round((float(x) - y) * 100)
+            m = 10 if frac == 1 and f"{x}".endswith(".1") else max(1, min(12, frac))
+            return pd.Timestamp(year=y, month=m, day=1)
+        except (TypeError, ValueError):
+            return pd.NaT
+    idx = df["Date"].map(_to_ts)
+    keep = [c for c in ["Price", "Dividend", "Earnings", "Cpi", "CAPE"] if c in df.columns]
+    out = df[keep].apply(pd.to_numeric, errors="coerce")
+    out.index = idx
+    out.index.name = "Date"
+    out = out[out.index.notna()].sort_index()
+    out = out[~out.index.duplicated(keep="last")]
+    return out.dropna(subset=["Price"])
+
+
+def fetch_shiller() -> pd.DataFrame:
+    """Try Yale xls, then datahub CSV. Returns tidy monthly frame or empty."""
+    for url in SHILLER_XLS_URLS:
+        try:
+            raw = pd.read_excel(url, sheet_name="Data", skiprows=7)
+            raw = raw.rename(columns={raw.columns[0]: "Date"})
+            cols = {raw.columns[i]: n for i, n in
+                    zip(range(1, 5), ["P", "D", "E", "CPI"])}
+            raw = raw.rename(columns=cols)
+            if "CAPE" not in raw.columns:
+                for c in raw.columns:
+                    if str(c).upper().startswith("CAPE"):
+                        raw = raw.rename(columns={c: "CAPE"})
+                        break
+            df = _normalize_shiller(raw)
+            if len(df) > 1000:
+                return df
+        except Exception as e:  # noqa: BLE001
+            print(f"  shiller: {url} failed: {e}")
+    try:
+        raw = pd.read_csv(DATAHUB_CSV)
+        raw = raw.rename(columns={"SP500": "P", "Consumer Price Index": "CPI"})
+        raw["Date"] = pd.to_datetime(raw["Date"])
+        raw = raw.set_index("Date")
+        ren = {"Dividend": "Dividend", "Earnings": "Earnings",
+               "P": "Price", "CPI": "Cpi", "PE10": "CAPE"}
+        raw = raw.rename(columns=ren)
+        keep = [c for c in ["Price", "Dividend", "Earnings", "Cpi", "CAPE"]
+                if c in raw.columns]
+        df = raw[keep].apply(pd.to_numeric, errors="coerce").sort_index()
+        if len(df) > 1000:
+            return df.dropna(subset=["Price"])
+    except Exception as e:  # noqa: BLE001
+        print(f"  shiller: datahub fallback failed: {e}")
+    return pd.DataFrame()
+
+
+def refresh_fundamentals() -> bool:
+    FUND.mkdir(parents=True, exist_ok=True)
+    df = fetch_shiller()
+    if not len(df):
+        print("!! shiller: NO DATA (kept previous file if any)")
+        return False
+    df.to_csv(FUND / "shiller_monthly.csv")
+    print(f"   shiller: {len(df)} monthly rows "
+          f"{df.index[0].date()}..{df.index[-1].date()}")
+    return True
+
+
 def main() -> int:
     OHLCV.mkdir(parents=True, exist_ok=True)
     manifest, frames, ok = {}, [], 0
@@ -137,7 +234,10 @@ def main() -> int:
         "tickers": manifest,
     }
     (CACHE / "last_updated.json").write_text(json.dumps(meta, indent=2))
-    print(f"\nDone: {ok}/{len(ALL)} tickers refreshed.")
+    fund_ok = refresh_fundamentals()
+    meta["fundamentals_ok"] = bool(fund_ok)
+    (CACHE / "last_updated.json").write_text(json.dumps(meta, indent=2))
+    print(f"\nDone: {ok}/{len(ALL)} tickers refreshed; fundamentals={'ok' if fund_ok else 'FAILED'}.")
     return 0 if ok >= len(ALL) // 2 else 1
 
 
