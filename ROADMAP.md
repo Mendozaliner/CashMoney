@@ -24,11 +24,12 @@
    ~~v2/RP ensemble~~ DONE s8 (E13, DISCARDED — CI straddles zero, raw terminal
    lags SPY). Do NOT re-tune mixture weights; see watch-list conditions.
 
-6a. **E31 — CAPE value tilt on v2** (UNBLOCKED s21): Shiller monthly feed lands via the
-   data Action (push-triggered). Pre-register BEFORE running: mild exposure tilt on v2
-   only at extreme top-decile CAPE (expanding-window percentile, signal shift(1) for
-   publication lag), <=2 params (percentile threshold, tilt size), <=12 configs.
-   Literature prior: expect FAIL/watch-list (research/2026-07-24-s21-value-timing-literature.md).
+6a. ~~E31 — CAPE value tilt on v2~~ DONE s22 (DISCARDED — CI straddles zero, corr_v2=1.000
+   in OOS because CAPE above 90th pct throughout 2020-2025H). Notable: ALL 6 configs beat
+   v2's mean WF Sharpe (best 0.937 vs 0.851) and best DD improved to -13.7% — the best
+   ever for a single-equity strategy. CAPE concept NOT closed: valid at DECADE horizons;
+   grid exhausted for this formulation; revisit with longer data or different mechanism
+   (fractional Kelly under high CAPE). 6 configs burned (206 total after E31).
 
 6. **Momentum + Value tilt on sector basket**: overlay a simple price-to-earnings
    or price-to-book screen on top of sector momentum. Requires fundamentals data
@@ -139,21 +140,46 @@
     bond-leading-equity relationship works at the stock level, not at the broad index
     level where SMA200 captures the same information. Family PERMANENTLY CLOSED.
 
-## Priority order for next sessions
+30. ~~CAPE Value Tilt (E31)~~ DONE s22 (DISCARDED — CI straddles zero; corr_v2=1.000 OOS).
+    See 6a above. 6 configs. CAPE family NOT permanently closed.
+
+31. ~~Yield Curve Regime Overlay (E32)~~ DONE s22 (DISCARDED and PERMANENTLY CLOSED —
+    corr_v2=0.990; 2022-2024 inversion + bull market severely hurt OOS). Best YC(lb63,s0.75):
+    mean_wf=0.865, DD=-19.95%, DSR=0.976, CI=[-0.554,+0.899]. Root cause: yield curve at
+    ETF relative-momentum level (IEF vs SHY) is structurally absorbed by v2's SMA200 gate
+    (both respond to the same macro cycle, SMA200 gate faster at turning points). The signal
+    operates at 4-8 quarter business-cycle frequency, not daily-return frequency. Do NOT
+    re-test yield-curve slope signals on ETF relative momentum — they will always be
+    dominated by v2 in the OOS equity bull markets. 6 configs.
+
+32. **Tactical Bond Cash Sleeve (E33)** — DISCARDED (CI straddles zero) but NOT closed.
+    Best TB(w200,f1.0): mean_wf=0.882, DD=-20.17%, end1k=$10,467 (+$2,085, +25% vs v2).
+    corr_v2=0.975. Economic significance is real: in equity bear markets (v2 in cash),
+    Treasury rally + IEF SMA200 gate compounds the outperformance. Statistical significance
+    cannot be demonstrated in the current 5-year OOS window. Revisit: (a) after 12+ live
+    months extend the effective OOS window; (b) as a capital-preservation portfolio product.
+    Do NOT revisit as a Phase-2 growth-mandate champion change.
+
+## Priority order for next sessions (updated s22)
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
+   First checkpoint ~2026-08-13. Portfolio $985.35, tracking SPY 1:1 (full exposure).
 2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI now
-   [−0.0128,+0.7077]; essentially flat vs s13; needs more live data)
-3. (#14) Guardrails run at every mark — standing, cheap.
-4. (#6) Value tilt — blocked on fundamentals data pipeline; research queue now FULLY
-   EXHAUSTED (200 configs burned; 15 families permanently closed: sector, kill-switch,
-   blended-mom, AAA, RSI-2, IBS, seasonal, market-breadth, low-vol-sector,
-   country-rotation, VAA/breadth-protection, Donchian/turtle, 52wk-high,
-   VIX-regime-ensemble, inter-market-bond-equity).
-   Prefer NO new families over re-tuning.
+   [−0.0128,+0.7077]; essentially flat; needs more live data to push into positive territory)
+3. (#14) Guardrails run at every mark — standing, cheap. ALL GREEN in s22.
+4. CAPE concept at DECADE horizons — future research direction (not a near-term experiment;
+   needs fractional Kelly framework or decade-frequency signal first).
 5. Phase-2 graduation review in August once 3 live months have elapsed.
-6. Consider whether the Ensemble (E22) bear-regime benefit (fold-1 Sharpe boost, DD
-   improvement) warrants a CAPITAL-PRESERVATION mandate portfolio separate from the
-   growth mandate. Do NOT revisit for the current live portfolio — champion v2 stays.
+6. (#32) Tactical Bond Cash Sleeve revisit after 12+ live months as capital-preservation
+   product consideration. $10,467 vs $8,382 per $1k is the economic target.
+   Do NOT change the current growth-mandate champion.
+
+## Research scope update (s22)
+216 configs burned. 16 families permanently closed: sector, kill-switch, blended-mom,
+AAA, RSI-2, IBS, seasonal, market-breadth, low-vol-sector, country-rotation,
+VAA/breadth-protection, Donchian/turtle, 52wk-high, VIX-regime-ensemble,
+inter-market-bond-equity, yield-curve-ETF-relative-momentum.
+Open families: CAPE (decade-horizon formulation), Tactical Bond (capital-preservation),
+Fractional Kelly (Phase-3), VIX term-structure futures (pipeline not built).
 
 ## Negative results (do NOT re-test in the original form)
 - **Inter-Market Bond-Equity Relative Strength, IM(lb21-126, scale0.0-0.5)** (E30, s20):

@@ -5,14 +5,14 @@
  "positions": {
   "SPY": {
    "units": 1.3334757435413753,
-   "last_px": 738.1799926757812
+   "last_px": 738.9299926757812
   }
  },
  "cash": 0.0,
  "last_mark": {
-  "date": "2026-07-23",
-  "value": 984.35,
-  "spy_close": 738.1799926757812
+  "date": "2026-07-24",
+  "value": 985.35,
+  "spy_close": 738.9299926757812
  },
  "history": [
   {
@@ -223,6 +223,17 @@
    "spy_pct_same_window": -1.235,
    "all_time_pct": -1.565,
    "note": "Session 20 (2026-07-24): New SPY close 738.1800 (2026-07-23), -1.235% on the day. 1.333476 units \u00d7 $738.1800 = $984.35 (-1.234%). v2 exposure 1.0000 (close 738.18 > band 715.92; vol 11.7% vs 18% target). No trades. E29 Regime Ensemble: discarded (best RE(v25/c40,60/40,tv0.18) mean_wf=0.825, DD=-20.73%, DSR=0.9715, CI=[-0.589,0.927], corr_v2=0.967, watchlist=False). E30 Inter-Market: discarded (best IM(lb63,scale0.50) mean_wf=0.769, DD=-20.37%, DSR=0.9468, CI=[-0.674,0.824], corr_v2=0.974, watchlist=False). Guardrails G1-G7 ALL GREEN. DD from peak: -2.20%."
+  },
+  {
+   "date": "2026-07-26",
+   "session": 22,
+   "mark_date": "2026-07-24",
+   "value": 985.35,
+   "chg_dollar": 1.0,
+   "chg_pct": 0.102,
+   "spy_pct_same_window": 0.102,
+   "all_time_pct": -1.465,
+   "note": "Session 22 (2026-07-26): New SPY close 738.9300 (2026-07-24), +0.102% on the day. 1.333476 units \u00d7 $738.9300 = $985.35 (+0.102%). v2 exposure 1.0000 (close 738.93 > band 716.29; vol 11.7% vs 18% target). No trades. E31 CAPE Tilt: discarded (best CT(pct0.90,t0.35) mean_wf=0.937, DD=-13.66%, DSR=0.9867, CI=[-0.443,1.006], corr_v2=1.000, watchlist=False). E32 Yield Curve: discarded (best YC(lb63,s0.75) mean_wf=0.865, DD=-19.95%, DSR=0.9760, CI=[-0.554,0.899], corr_v2=0.990, watchlist=False). E33 Tactical Bond: discarded (best TB(w200,f1.0) mean_wf=0.882, DD=-20.17%, DSR=0.9764, CI=[-0.625,0.953], corr_v2=0.975, watchlist=False). Guardrails G1-G7 ALL GREEN. DD from peak: -2.10%. $1k v2=8381.88 SPY=6774.5 DIA=6759.08 QQQ=6946.65."
   }
  ],
  "trades": [
