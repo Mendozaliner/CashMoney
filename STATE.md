@@ -1,3 +1,4 @@
+Updated: 2026-07-28 s23 (E34 Def. Dual-Asset DISCARDED, E35 Corr-Regime DISCARDED. 17 new configs (233 total). E34 DDAS(g0.25,w200): mean_wf=0.887 BEATS v2 0.851, DD=-19.76% BETTER than v2 -20.5%, DSR=0.978 ✓ — BUT CI=[-0.586,+0.952] straddles zero, corr_v2=0.972. end1k=$10,565 (+$184 over E33, +$2,183 over v2). E35 CRDS(lb63,t0.00): mean_wf=0.920 BEST EVER for cash-sleeve strategies, DD=-20.17%, DSR=0.988 ✓ — BUT CI=[-0.512,+1.070] straddles zero, corr_v2=0.965. end1k=$11,420 — NEW ALL-TIME RECORD terminal value (+$3,038, +36% over v2). ALL 9 CRDS configs beat v2 mean_wf (0.897-0.920). Correlation-regime concept NOT closed (no statistical significance yet but strong economic signal). v2 CI unchanged [-0.0129,+0.7077]. New mark $985.56 (SPY 739.09, +0.022% day, -1.444% all-time). Exposure 1.0; no trades. Guardrails ALL GREEN. Suite 141/141.)
 Updated: 2026-07-26 s22 (E31 CAPE Tilt DISCARDED, E32 Yield Curve DISCARDED&CLOSED, E33 Tactical Bond DISCARDED. 16 new configs (216 total). E31 CT(pct0.90,t0.35): mean_wf=0.937 BEATS v2 0.851, DD=-13.7% BEST EVER for equity-focused strategy, DSR=0.987 ✓ — BUT CI=[-0.443,+1.006] straddles zero, corr_v2=1.000 (tilt always active in OOS bull market). CAPE concept NOT closed. E32 YC(lb63,s0.75): mean_wf=0.865, DSR=0.976, CI=[-0.554,+0.899], corr_v2=0.990 — 2022-2024 inversion+bull-market kills OOS. Yield curve family PERMANENTLY CLOSED. E33 TB(w200,f1.0): mean_wf=0.882, DD=-20.2%, DSR=0.976, CI=[-0.625,+0.953], corr_v2=0.975, end1k=$10,467 — $2,085 (+25%) MORE than v2! Best terminal value of any strategy this project. NOT permanently closed. New mark $985.35 (SPY 738.93, +0.102% day, -1.465% all-time). Exposure 1.0; no trades. Guardrails ALL GREEN. v2 CI unchanged [-0.0128,+0.7077] straddles zero.)
 Updated: 2026-07-24 s21 (second run today; zero-config engineering + literature. Value-tilt family UNBLOCKED: Shiller monthly fundamentals feed added to the data Action (scripts/fetch_data.py refresh_fundamentals -> data/cache/fundamentals/shiller_monthly.csv; loader.load_shiller with no-lookahead guidance; 5 new tests, suite 106/106). 8-source literature pass saved to research/2026-07-24-s21-value-timing-literature.md — CAPE useless short-horizon, decade-horizon signal real, top-decile-only teeth, current CAPE~41 IS top decile; E31 to be pre-registered as mild tilt <=2 params <=12 configs next research session. Mark CARRIED $984.35 (2026-07-23 close; today's partial bar dropped). Exposure 1.0; no trades. Guardrails ALL GREEN. live_track: MinTRL now finite ~123 trading days. Configs unchanged 200.)
 Updated: 2026-07-24 s20 (E29 VIX-Regime Ensemble DISCARDED&CLOSED, E30 Inter-Market Bond-Equity Filter DISCARDED&CLOSED. 8 new configs (200 total). E29: mean WF 0.825, DSR 0.9715, CI [−0.589,+0.927] straddles zero, corr_v2=0.967 — VIX regime switching duplicates v2; crisis periods ~10% of days; CTA-SPY replicates SMA200 gate. E30: mean WF 0.769, DSR 0.9468 (<0.95), CI [−0.674,+0.824] straddles zero, corr_v2=0.974 — bond-equity relative momentum adds nothing when v2's trend gate already detects risk-off. Both families PERMANENTLY CLOSED. New mark $984.35 (SPY 738.18, −1.235% day, −1.565% all-time; SPY since live −1.467%). Exposure 1.0; no trades. Guardrails ALL GREEN. Suite 101/101 (87 prior + 14 new). v2 $8,381/$1k since 2000.)
@@ -139,9 +140,9 @@ terminal value. Mag-7 eqw $83,104 (2012+ only, concentrated tech). Legacy PROXY-
 ## Portfolio
 portfolio.json created session 2 (session 1 omitted it): $1,000 inception
 2026-07-13, fully invested per v2 (exposure 1.0), value $999.00 after entry cost.
-**Current value: $997.81** (2026-07-21 close, session 17 mark). 1.333476 SPY units
-@ $748.28. All-time: −$2.19 / −0.219% from $1,000 inception. No rebalance needed;
-exposure 1.0 confirmed.
+**Current value: $985.56** (2026-07-27 close, session 23 mark). 1.333476 SPY units
+@ $739.09. All-time: −$14.44 / −1.444% from $1,000 inception. No rebalance needed;
+exposure 1.0 confirmed (SPY 739.09 > band 716.68; 20d vol 11.3% < 18%).
 
 ## Watch-list (not adopted; revisit under stated conditions)
 - **CTA Multi-Asset Trend SPY/IEF/GLD (vt0.12)** (E20, s12): mean WF Sharpe **1.099**
@@ -202,6 +203,34 @@ exposure 1.0 confirmed.
   threshold further not recommended without significance improvement.
 
 ## Session log
+- 2026-07-28 s23 — Two new investing-philosophy experiments (defensive cash sleeve family).
+  New mark $985.56 (2026-07-27 close, +0.022% day, −1.444% all-time). v2 exposure 1.0;
+  no trades. Guardrails G1–G7 ALL GREEN; DD from peak −2.08% (GREEN). Suite 141/141
+  (+17 tests: 8 for DDAS, 9 for CRDS). New strategies: strategies/defensive_dual.py
+  (E34 DDAS), strategies/corr_regime.py (E35 CRDS).
+  E34 Defensive Dual-Asset Cash Sleeve (8 cfg): Best DDAS(g0.25,w200): mean_wf=0.887
+  (BEATS v2 bar 0.844), DD=−19.76% (BETTER than v2 −20.5%), DSR=0.978 ✓ (passes).
+  But CI=[−0.586,+0.952] straddles zero; corr_v2=0.972 (too high for ensemble).
+  Terminal $10,565 (+$184 over E33, +26% over v2). w200 configs all beat v2 mean_wf;
+  w100 configs fail DD bar at higher gld_frac. gld_frac=1.0 worsens DD to −22-29%
+  (gold alone is too volatile). DISCARDED. Defensive dual-asset concept NOT closed.
+  E35 Correlation-Regime Defensive Switch (9 cfg): Best CRDS(lb63,t0.00): mean_wf=0.920
+  (NEW RECORD for cash-sleeve family, beats all 35 prior experiments including CTA 1.099
+  — wait, CTA was portfolio-wide; CRDS beats v2 0.844), DD=−20.17%, DSR=0.988 ✓.
+  But CI=[−0.512,+1.070] straddles zero; corr_v2=0.965 (not ensemble-eligible).
+  Terminal $11,420 — NEW ALL-TIME RECORD for any strategy this project. ALL 9 configs
+  beat v2 mean_wf (0.897-0.920); all have DD=−20.17% (slightly better than v2). The
+  stock-bond correlation signal (switch from IEF to GLD when corr(SPY,IEF)≥threshold)
+  adds 0.069-0.076 mean_wf Sharpe over v2 and $2,746-$3,038 terminal value per $1k.
+  Key insight: corr_threshold=0.00 (any positive SPY-IEF correlation → GLD regime)
+  provides the most consistent regime detection; 63-day lookback optimal.
+  DISCARDED on CI. Correlation-regime concept NOT closed; NOT permanently closed.
+  v2 significance re-check (#10): CI=[−0.0129,+0.7077] — unchanged from s22/s18.
+  Configs 216→233. $1k comparison (2000→2026-07-27): E35 $11,420 > E34 $10,565 >
+  E33 $10,467 > v2 $8,382 > QQQ $6,947 > SPY $6,775 > DIA $6,759 > IWM $6,712.
+  E35 CRDS surpasses ALL benchmarks including QQQ by 65% on terminal wealth. Champion v2
+  UNCHANGED. The defensive cash sleeve improvements are economically compelling but
+  require more live bear-market data to achieve statistical significance.
 - 2026-07-23 s18 — Three new investing-philosophy experiments (per standing mandate).
   New mark $996.65 (2026-07-22 close, −0.116% day). v2 exposure 1.0; no trades.
   Guardrails ALL GREEN; drawdown from peak −0.98% (GREEN). Suite 79/79 (+16 tests).

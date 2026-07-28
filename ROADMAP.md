@@ -160,26 +160,48 @@
     months extend the effective OOS window; (b) as a capital-preservation portfolio product.
     Do NOT revisit as a Phase-2 growth-mandate champion change.
 
-## Priority order for next sessions (updated s22)
-1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark)
-   First checkpoint ~2026-08-13. Portfolio $985.35, tracking SPY 1:1 (full exposure).
-2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI now
-   [−0.0128,+0.7077]; essentially flat; needs more live data to push into positive territory)
-3. (#14) Guardrails run at every mark — standing, cheap. ALL GREEN in s22.
-4. CAPE concept at DECADE horizons — future research direction (not a near-term experiment;
-   needs fractional Kelly framework or decade-frequency signal first).
-5. Phase-2 graduation review in August once 3 live months have elapsed.
-6. (#32) Tactical Bond Cash Sleeve revisit after 12+ live months as capital-preservation
-   product consideration. $10,467 vs $8,382 per $1k is the economic target.
-   Do NOT change the current growth-mandate champion.
+33. **Defensive Dual-Asset Cash Sleeve (E34, s23)** — DISCARDED (CI straddles zero). NOT closed.
+    Best DDAS(g0.25,w200): mean_wf=0.887, DD=−19.76%, end1k=$10,565, DSR=0.978, corr_v2=0.972.
+    Split defensive cash between IEF (75%) and GLD (25%), each SMA200-gated independently.
+    end1k=$10,565 beats E33 ($10,467) and v2 ($8,382). Key finding: gld_frac=0.25 (25% gold)
+    improves over pure IEF in all 3 folds; gld_frac=1.0 fails DD bar (−22-29%). Concept of
+    adding gold to defensive sleeve is sound but CI requires more bear-market data. Revisit
+    alongside #32 after 12+ live months. Grid exhausted (8 configs burned; no re-testing).
 
-## Research scope update (s22)
-216 configs burned. 16 families permanently closed: sector, kill-switch, blended-mom,
+34. **Correlation-Regime Defensive Switch (E35, s23)** — DISCARDED (CI straddles zero). NOT closed.
+    Best CRDS(lb63,t0.00): mean_wf=0.920, DD=−20.17%, end1k=$11,420 (NEW ALL-TIME RECORD),
+    DSR=0.988, corr_v2=0.965. Uses rolling 63-day corr(SPY_ret, IEF_ret) to dynamically
+    select IEF (normal/deflation regime, corr<threshold) or GLD (inflation regime, corr≥threshold)
+    as the defensive cash-sleeve asset. ALL 9 configs beat v2 mean_wf (0.897-0.920) and
+    all produce end1k > $10,962. The stock-bond correlation is a genuine macro-regime signal
+    (academic: Ilmanen 2011, Asness 2012, Campbell 2020). Critically surpasses E33 (+$953)
+    and v2 (+$3,038). Cannot achieve statistical significance in 5-year OOS window — defensive
+    improvements occur only during ~35% cash periods. Revisit after 12+ live months.
+    Concept NOT permanently closed — strongest economic signal found for the cash sleeve.
+
+## Priority order for next sessions (updated s23)
+1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark).
+   First checkpoint ~2026-08-13. Portfolio $985.56, tracking SPY 1:1 (full exposure).
+2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI now
+   [−0.0129,+0.7077]; essentially flat vs s22/s18; needs more live data).
+3. (#14) Guardrails run at every mark — standing, cheap. ALL GREEN in s23.
+4. CAPE concept at DECADE horizons — future research direction (not near-term experiment;
+   needs fractional Kelly framework or decade-frequency signal mechanism).
+5. Phase-2 graduation review in August once 3 live months have elapsed (~2026-08-13).
+6. (#33, #34) Defensive cash sleeve family revisit after 12+ live months: CRDS (E35,
+   $11,420) and DDAS (E34, $10,565) as capital-preservation product consideration.
+   CRDS is the priority given its record-setting terminal value and consistent all-config
+   outperformance. Do NOT change the current growth-mandate champion.
+7. Fractional Kelly position sizing on v2 (Phase-3 material, after Criterion-1 significance).
+
+## Research scope update (s23)
+233 configs burned. 16 families permanently closed: sector, kill-switch, blended-mom,
 AAA, RSI-2, IBS, seasonal, market-breadth, low-vol-sector, country-rotation,
 VAA/breadth-protection, Donchian/turtle, 52wk-high, VIX-regime-ensemble,
 inter-market-bond-equity, yield-curve-ETF-relative-momentum.
-Open families: CAPE (decade-horizon formulation), Tactical Bond (capital-preservation),
-Fractional Kelly (Phase-3), VIX term-structure futures (pipeline not built).
+Open families: CAPE (decade-horizon formulation), Tactical Bond (capital-preservation,
+E33/E34/E35 cluster), Correlation-Regime (capital-preservation), Fractional Kelly (Phase-3).
+Grid exhausted on: E33-E35 defensive sleeve variants (cannot re-test without new data).
 
 ## Negative results (do NOT re-test in the original form)
 - **Inter-Market Bond-Equity Relative Strength, IM(lb21-126, scale0.0-0.5)** (E30, s20):
