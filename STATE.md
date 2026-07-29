@@ -1,3 +1,4 @@
+Updated: 2026-07-29 s24 (E36 GTAA-5 Revisited DISCARDED, E37 Swensen 4-Asset DISCARDED. 12 new configs (245 total). E36 GTAA5(w252,b0.03): mean_wf=0.776 BELOW v2 0.851, DD=-13.58%, DSR=0.813 (FAILS 0.95), CI=[-0.938,+0.633] straddles zero, corr_v2=0.741 (above watch-list 0.70). end1k=$3,546. Root cause: 5-asset equal-weight penalizes US equity bull 2010-2019; international+commodity drag in fold-2 (Sharpe 0.298-0.486). E37 SWN4(w150,DBC): mean_wf=0.748 BELOW bar, DD=-11.0% (BEST EVER for multi-asset), DSR=0.923 (<0.95), CI=[-0.837,+1.095] straddles zero, corr_v2=0.504 (above 0.50 watch-list). end1k=$3,002. DBC fold-2 Sharpe=0.437 same structural problem. Neither strategy permanently closed (economic logic is valid; equal-weight constraint is the failure mechanism). v2 CI unchanged [-0.0128,+0.7077] (straddles zero, CI lower bound improved by 0.0001 from s23). New mark $987.92 (SPY 740.86, +0.239% day, -1.208% all-time). Exposure 1.0; no trades. Guardrails ALL GREEN. 17 new tests pass.)
 Updated: 2026-07-28 s23 (E34 Def. Dual-Asset DISCARDED, E35 Corr-Regime DISCARDED. 17 new configs (233 total). E34 DDAS(g0.25,w200): mean_wf=0.887 BEATS v2 0.851, DD=-19.76% BETTER than v2 -20.5%, DSR=0.978 ✓ — BUT CI=[-0.586,+0.952] straddles zero, corr_v2=0.972. end1k=$10,565 (+$184 over E33, +$2,183 over v2). E35 CRDS(lb63,t0.00): mean_wf=0.920 BEST EVER for cash-sleeve strategies, DD=-20.17%, DSR=0.988 ✓ — BUT CI=[-0.512,+1.070] straddles zero, corr_v2=0.965. end1k=$11,420 — NEW ALL-TIME RECORD terminal value (+$3,038, +36% over v2). ALL 9 CRDS configs beat v2 mean_wf (0.897-0.920). Correlation-regime concept NOT closed (no statistical significance yet but strong economic signal). v2 CI unchanged [-0.0129,+0.7077]. New mark $985.56 (SPY 739.09, +0.022% day, -1.444% all-time). Exposure 1.0; no trades. Guardrails ALL GREEN. Suite 141/141.)
 Updated: 2026-07-26 s22 (E31 CAPE Tilt DISCARDED, E32 Yield Curve DISCARDED&CLOSED, E33 Tactical Bond DISCARDED. 16 new configs (216 total). E31 CT(pct0.90,t0.35): mean_wf=0.937 BEATS v2 0.851, DD=-13.7% BEST EVER for equity-focused strategy, DSR=0.987 ✓ — BUT CI=[-0.443,+1.006] straddles zero, corr_v2=1.000 (tilt always active in OOS bull market). CAPE concept NOT closed. E32 YC(lb63,s0.75): mean_wf=0.865, DSR=0.976, CI=[-0.554,+0.899], corr_v2=0.990 — 2022-2024 inversion+bull-market kills OOS. Yield curve family PERMANENTLY CLOSED. E33 TB(w200,f1.0): mean_wf=0.882, DD=-20.2%, DSR=0.976, CI=[-0.625,+0.953], corr_v2=0.975, end1k=$10,467 — $2,085 (+25%) MORE than v2! Best terminal value of any strategy this project. NOT permanently closed. New mark $985.35 (SPY 738.93, +0.102% day, -1.465% all-time). Exposure 1.0; no trades. Guardrails ALL GREEN. v2 CI unchanged [-0.0128,+0.7077] straddles zero.)
 Updated: 2026-07-24 s21 (second run today; zero-config engineering + literature. Value-tilt family UNBLOCKED: Shiller monthly fundamentals feed added to the data Action (scripts/fetch_data.py refresh_fundamentals -> data/cache/fundamentals/shiller_monthly.csv; loader.load_shiller with no-lookahead guidance; 5 new tests, suite 106/106). 8-source literature pass saved to research/2026-07-24-s21-value-timing-literature.md — CAPE useless short-horizon, decade-horizon signal real, top-decile-only teeth, current CAPE~41 IS top decile; E31 to be pre-registered as mild tilt <=2 params <=12 configs next research session. Mark CARRIED $984.35 (2026-07-23 close; today's partial bar dropped). Exposure 1.0; no trades. Guardrails ALL GREEN. live_track: MinTRL now finite ~123 trading days. Configs unchanged 200.)
@@ -203,6 +204,32 @@ exposure 1.0 confirmed (SPY 739.09 > band 716.68; 20d vol 11.3% < 18%).
   threshold further not recommended without significance improvement.
 
 ## Session log
+- 2026-07-29 s24 — Two new investing-philosophy experiments (global diversification family).
+  New mark $987.92 (2026-07-28 close, +0.239% day, −1.208% all-time). v2 exposure 1.0;
+  no trades. Guardrails G1–G7 ALL GREEN; DD from peak −1.85% (GREEN). 17 new tests
+  (all pass). New strategies: strategies/gtaa_full.py (E36 GTAA-5), strategies/swensen_alloc.py
+  (E37 Swensen-4).
+  E36 Faber GTAA-5 Revisited (6 cfg): ROADMAP revisit of E10 (now DBC has 19+ years).
+  Best GTAA5(w252,b0.03): mean_wf=0.776 (<0.844 bar), DD=−13.58%, DSR=0.813 (<0.95).
+  CI=[−0.938,+0.633] straddles zero; corr_v2=0.741 (above watch-list 0.70 threshold).
+  Terminal $3,546. Fold-2 Sharpe 0.298-0.486 across all configs — the international
+  equity (EFA) + commodities (DBC) drag during 2010-2019 US bull is the structural
+  failure. Hysteresis band consistently helps (w252/b0.03 best vs w252/b0.00). 
+  DISCARDED. Not permanently closed (equal-weight is the constraint; the diversification
+  mechanism is sound for non-US-bull regimes).
+  E37 Swensen 4-Asset Allocation (6 cfg): Yale Endowment philosophy (Swensen 2000/2009).
+  SPY/IEF/GLD/VNQ or DBC at 25% each, each SMA-gated.
+  Best SWN4(w150,DBC): mean_wf=0.748 (<0.844), DD=−11.0% (LOWEST WORST-DD for any
+  multi-asset strategy), DSR=0.923 (<0.95). CI=[−0.837,+1.095] straddles zero.
+  corr_v2=0.504 (above 0.50 threshold — marginally not watch-list eligible). Terminal
+  $3,002. DBC configs superior OOS Sharpe (0.811-1.005) but fold-2 weakness mirrors E36.
+  VNQ configs more consistent across folds. DISCARDED. Not permanently closed.
+  v2 significance re-check (#10): CI=[−0.0128,+0.7077] — essentially unchanged
+  (lower bound improved by 0.0001 from s23 [-0.0129]). Configs 233→245.
+  $1k comparison (2000→2026-07-28): v2 $8,382 > QQQ $6,947 > SPY $6,775 > DIA
+  $6,759 > IWM $6,712 > EFA $3,910 > ACWI $3,595 > E36 $3,546 > E37 $3,002.
+  Champion v2 UNCHANGED. Global diversification strategies had better DD profiles
+  but significantly lower terminal values — the diversification-return tradeoff.
 - 2026-07-28 s23 — Two new investing-philosophy experiments (defensive cash sleeve family).
   New mark $985.56 (2026-07-27 close, +0.022% day, −1.444% all-time). v2 exposure 1.0;
   no trades. Guardrails G1–G7 ALL GREEN; DD from peak −2.08% (GREEN). Suite 141/141

@@ -3,6 +3,10 @@
 0. ~~Universe expansion~~ DONE s7: EFA, EEM, AGG, DBC, VNQ tested.
    ~~TRUE Antonacci GEM~~ DONE (E9, DISCARDED). ~~TRUE Faber GTAA-5~~ DONE (E10,
    DISCARDED on significance — added to watch-list for revisit when DBC has more history).
+   ~~GTAA-5 revisit (DBC 19+ years)~~ DONE s24 (E36, DISCARDED — mean_wf 0.776,
+   DSR 0.813, corr_v2 0.741; international+commodity equal-weight drag persists
+   in 2010-2019 US bull). ~~Swensen 4-Asset Allocation~~ DONE s24 (E37, DISCARDED —
+   mean_wf 0.748, DSR 0.923, DD -11.0% best-ever multi-asset, corr_v2 0.504).
 
 1. ~~Criterion-1 significance on v2~~ DONE s6b: full-sample diff CI
    [-0.009, +0.708] — misses zero by 0.009. Not passed.
@@ -179,31 +183,52 @@
     improvements occur only during ~35% cash periods. Revisit after 12+ live months.
     Concept NOT permanently closed — strongest economic signal found for the cash sleeve.
 
-## Priority order for next sessions (updated s23)
+## Priority order for next sessions (updated s24)
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark).
-   First checkpoint ~2026-08-13. Portfolio $985.56, tracking SPY 1:1 (full exposure).
+   First checkpoint ~2026-08-13. Portfolio $987.92, tracking SPY 1:1 (full exposure).
 2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI now
-   [−0.0129,+0.7077]; essentially flat vs s22/s18; needs more live data).
-3. (#14) Guardrails run at every mark — standing, cheap. ALL GREEN in s23.
+   [−0.0128,+0.7077]; lower bound improved by 0.0001 from s23; needs more live data).
+3. (#14) Guardrails run at every mark — standing, cheap. ALL GREEN in s24.
 4. CAPE concept at DECADE horizons — future research direction (not near-term experiment;
    needs fractional Kelly framework or decade-frequency signal mechanism).
 5. Phase-2 graduation review in August once 3 live months have elapsed (~2026-08-13).
-6. (#33, #34) Defensive cash sleeve family revisit after 12+ live months: CRDS (E35,
+6. (#33, #34, #35) Defensive cash sleeve family revisit after 12+ live months: CRDS (E35,
    $11,420) and DDAS (E34, $10,565) as capital-preservation product consideration.
    CRDS is the priority given its record-setting terminal value and consistent all-config
    outperformance. Do NOT change the current growth-mandate champion.
 7. Fractional Kelly position sizing on v2 (Phase-3 material, after Criterion-1 significance).
 
-## Research scope update (s23)
-233 configs burned. 16 families permanently closed: sector, kill-switch, blended-mom,
+## Research scope update (s24)
+245 configs burned. 16 families permanently closed: sector, kill-switch, blended-mom,
 AAA, RSI-2, IBS, seasonal, market-breadth, low-vol-sector, country-rotation,
 VAA/breadth-protection, Donchian/turtle, 52wk-high, VIX-regime-ensemble,
 inter-market-bond-equity, yield-curve-ETF-relative-momentum.
 Open families: CAPE (decade-horizon formulation), Tactical Bond (capital-preservation,
-E33/E34/E35 cluster), Correlation-Regime (capital-preservation), Fractional Kelly (Phase-3).
+E33/E34/E35 cluster), Correlation-Regime (capital-preservation), Fractional Kelly (Phase-3),
+GTAA/Swensen (revisit with dynamic/inverse-vol weights if bear market materializes).
 Grid exhausted on: E33-E35 defensive sleeve variants (cannot re-test without new data).
+Grid exhausted on: E36 GTAA-5 (6 configs, sma_window/band space covered);
+E37 Swensen-4 (6 configs, sma_window/use_dbc space covered).
 
 ## Negative results (do NOT re-test in the original form)
+- **Faber GTAA-5 (equal-weight 5-asset, SMA-gated)** (E36, s24, SPY/EFA/DBC/VNQ/IEF):
+  best GTAA5(w252,b0.03) mean_wf=0.776 (< 0.844 bar), DD=−13.6%, DSR=0.813 (< 0.95).
+  CI straddles zero; corr_v2=0.741 (above watch-list threshold). Terminal $3,546 vs v2
+  $8,382 — 57% less wealth over 26 years. Root cause: equal-weight 20% to EFA and DBC
+  drags severely in 2010-2019 US equity bull (fold-2 Sharpe 0.298-0.486). Hysteresis
+  band (b0.03) consistently helps vs no band. NOT permanently closed — the diversification
+  mechanism is valid; the equal-weight constraint in a US-dominant equity era is the failure.
+  Do NOT retry with the same equal-weight architecture without a dynamic allocation mechanism.
+- **Swensen 4-Asset Allocation (equal-weight 25%, SMA-gated)** (E37, s24, SPY/IEF/GLD/VNQ or DBC):
+  best SWN4(w150,DBC) mean_wf=0.748 (< 0.844), DD=−11.0% (lowest worst-DD ever for
+  multi-asset), DSR=0.923 (< 0.95). CI straddles zero; corr_v2=0.504 (marginally above
+  0.50 watch-list threshold). Terminal $3,002 vs v2 $8,382 — 64% less wealth. VNQ configs
+  more consistent (fold-2 Sharpe 0.411-0.676) vs DBC (fold-2 0.124-0.515). Root cause:
+  same equal-weight problem as E36; adding GLD (inflation hedge) and IEF (deflation hedge)
+  at 25% each costs return during sustained bull markets. The DD improvement (−11%) is
+  genuine but insufficient to compensate the Sharpe shortfall. NOT permanently closed —
+  inverse-vol weighting on the Swensen universe (similar to E12 risk parity) might
+  preserve the DD benefit; do NOT retry with pure equal-weight.
 - **Inter-Market Bond-Equity Relative Strength, IM(lb21-126, scale0.0-0.5)** (E30, s20):
   best IM(lb63, scale0.50) mean WF 0.769 (< 0.844 bar), DD −20.37%, DSR 0.947 (< 0.95),
   CI straddles zero, corr_v2 0.974. When IEF outperforms SPY over any multi-month lookback,

@@ -5,14 +5,14 @@
  "positions": {
   "SPY": {
    "units": 1.3334757435413753,
-   "last_px": 739.0900268554688
+   "last_px": 740.8599853515625
   }
  },
  "cash": 0.0,
  "last_mark": {
-  "date": "2026-07-27",
-  "value": 985.56,
-  "spy_close": 739.0900268554688
+  "date": "2026-07-28",
+  "value": 987.92,
+  "spy_close": 740.8599853515625
  },
  "history": [
   {
@@ -245,6 +245,17 @@
    "spy_pct_same_window": 0.022,
    "all_time_pct": -1.444,
    "note": "Session 23 (2026-07-28): SPY close 739.0900 (2026-07-27), +0.022% on the day. 1.333476 units \u00d7 $739.0900 = $985.56 (+0.021%). v2 exposure 1.0000. No trades. E34 DDAS: discarded (best DDAS(g0.25,w200) mean_wf=0.887, DD=-19.76%, DSR=0.9784, CI=[-0.586,0.952], corr_v2=0.972, watchlist=False). E35 CRDS: discarded (best CRDS(lb63,t0.00) mean_wf=0.92, DD=-20.17%, DSR=0.9875, CI=[-0.512,1.070], corr_v2=0.965, watchlist=False). Guardrails G1-G7 ALL GREEN. DD from peak: -2.08%. $1k v2=8381.88 SPY=6774.5."
+  },
+  {
+   "date": "2026-07-29",
+   "session": 24,
+   "mark_date": "2026-07-28",
+   "value": 987.92,
+   "chg_dollar": 2.36,
+   "chg_pct": 0.239,
+   "spy_pct_same_window": 0.239,
+   "all_time_pct": -1.208,
+   "note": "Session 24 (2026-07-29): SPY close 740.8600 (2026-07-28), +0.239% on the day. 1.333476 units \u00d7 $740.8600 = $987.92 (+0.239%). v2 exposure 1.0000. No trades. E36 GTAA-5: discarded (best GTAA5(w252,b0.03) mean_wf=0.776, DD=-13.58%, DSR=0.8131, CI=[-0.938,0.633], corr_v2=0.741, watchlist=False). E37 Swensen-4: discarded (best SWN4(w150,DBC) mean_wf=0.748, DD=-11.0%, DSR=0.9228, CI=[-0.837,1.095], corr_v2=0.504, watchlist=False). Guardrails G1-G7 ALL GREEN. DD from peak: -1.85%. $1k v2=8381.87 SPY=6774.5."
   }
  ],
  "trades": [

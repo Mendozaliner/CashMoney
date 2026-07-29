@@ -1,0 +1,265 @@
+{
+ "session": "2026-07-29-s24",
+ "portfolio_mark": {
+  "date": "2026-07-28",
+  "value": 987.92,
+  "spy_close": 740.8599853515625,
+  "spy_day_chg_pct": 0.239,
+  "port_chg_pct": 0.239,
+  "all_time_pct": -1.208,
+  "spy_since_live_pct": -1.109,
+  "v2_exposure": 1.0,
+  "dd_from_peak_pct": -1.85
+ },
+ "guardrails": {
+  "nav": 985.56,
+  "all_ok": true,
+  "checks": [
+   {
+    "guardrail": "G1_leverage",
+    "ok": true,
+    "detail": "gross=1.0000 cap=1.0"
+   },
+   {
+    "guardrail": "G2_instruments",
+    "ok": true,
+    "detail": "all whitelisted"
+   },
+   {
+    "guardrail": "G4_concentration",
+    "ok": true,
+    "detail": "within caps"
+   },
+   {
+    "guardrail": "G6_drawdown",
+    "ok": true,
+    "level": "GREEN",
+    "drawdown": -0.0208
+   },
+   {
+    "guardrail": "G7_staleness",
+    "ok": true,
+    "detail": "stale_days=0 max=4"
+   },
+   {
+    "guardrail": "G5_vol_spike",
+    "ok": true,
+    "detail": "vol20=0.086 med1y=0.142 last_move_4sig=False"
+   }
+  ]
+ },
+ "v2_significance": {
+  "dsr": 1.0,
+  "diff_ci": [
+   -0.0128,
+   0.7077
+  ],
+  "clears": false
+ },
+ "E36_GTAA5": {
+  "verdict": "discarded",
+  "best": {
+   "label": "GTAA5(w252,b0.03)",
+   "folds": [
+    1.259,
+    0.486,
+    0.584
+   ],
+   "mean_wf": 0.776,
+   "worst_dd": -13.58,
+   "oos_sharpe": 0.584,
+   "end1k": 3546.2
+  },
+  "dsr": 0.8131,
+  "ci": [
+   -0.938,
+   0.633
+  ],
+  "corr_v2_oos": 0.741,
+  "all_rows": [
+   {
+    "label": "GTAA5(w150,b0.00)",
+    "folds": [
+     0.889,
+     0.371,
+     0.497
+    ],
+    "mean_wf": 0.586,
+    "worst_dd": -10.0,
+    "oos_sharpe": 0.497,
+    "end1k": 2683.01
+   },
+   {
+    "label": "GTAA5(w150,b0.03)",
+    "folds": [
+     1.018,
+     0.451,
+     0.774
+    ],
+    "mean_wf": 0.748,
+    "worst_dd": -11.64,
+    "oos_sharpe": 0.774,
+    "end1k": 3531.75
+   },
+   {
+    "label": "GTAA5(w200,b0.00)",
+    "folds": [
+     0.953,
+     0.298,
+     0.408
+    ],
+    "mean_wf": 0.553,
+    "worst_dd": -13.4,
+    "oos_sharpe": 0.408,
+    "end1k": 2483.65
+   },
+   {
+    "label": "GTAA5(w200,b0.03)",
+    "folds": [
+     1.164,
+     0.408,
+     0.595
+    ],
+    "mean_wf": 0.722,
+    "worst_dd": -16.89,
+    "oos_sharpe": 0.595,
+    "end1k": 3348.96
+   },
+   {
+    "label": "GTAA5(w252,b0.00)",
+    "folds": [
+     1.23,
+     0.326,
+     0.349
+    ],
+    "mean_wf": 0.635,
+    "worst_dd": -14.74,
+    "oos_sharpe": 0.349,
+    "end1k": 2799.15
+   },
+   {
+    "label": "GTAA5(w252,b0.03)",
+    "folds": [
+     1.259,
+     0.486,
+     0.584
+    ],
+    "mean_wf": 0.776,
+    "worst_dd": -13.58,
+    "oos_sharpe": 0.584,
+    "end1k": 3546.2
+   }
+  ],
+  "watchlist_eligible": false
+ },
+ "E37_SWN4": {
+  "verdict": "discarded",
+  "best": {
+   "label": "SWN4(w150,DBC)",
+   "folds": [
+    0.928,
+    0.437,
+    0.879
+   ],
+   "mean_wf": 0.748,
+   "worst_dd": -11.0,
+   "oos_sharpe": 0.879,
+   "end1k": 3001.98
+  },
+  "dsr": 0.9228,
+  "ci": [
+   -0.837,
+   1.095
+  ],
+  "corr_v2_oos": 0.504,
+  "all_rows": [
+   {
+    "label": "SWN4(w100,VNQ)",
+    "folds": [
+     0.824,
+     0.411,
+     0.663
+    ],
+    "mean_wf": 0.633,
+    "worst_dd": -13.85,
+    "oos_sharpe": 0.663,
+    "end1k": 2793.92
+   },
+   {
+    "label": "SWN4(w150,VNQ)",
+    "folds": [
+     0.781,
+     0.676,
+     0.6
+    ],
+    "mean_wf": 0.686,
+    "worst_dd": -15.4,
+    "oos_sharpe": 0.6,
+    "end1k": 3067.16
+   },
+   {
+    "label": "SWN4(w200,VNQ)",
+    "folds": [
+     0.943,
+     0.65,
+     0.459
+    ],
+    "mean_wf": 0.684,
+    "worst_dd": -12.01,
+    "oos_sharpe": 0.459,
+    "end1k": 3069.33
+   },
+   {
+    "label": "SWN4(w100,DBC)",
+    "folds": [
+     0.773,
+     0.124,
+     1.005
+    ],
+    "mean_wf": 0.634,
+    "worst_dd": -16.87,
+    "oos_sharpe": 1.005,
+    "end1k": 2426.25
+   },
+   {
+    "label": "SWN4(w150,DBC)",
+    "folds": [
+     0.928,
+     0.437,
+     0.879
+    ],
+    "mean_wf": 0.748,
+    "worst_dd": -11.0,
+    "oos_sharpe": 0.879,
+    "end1k": 3001.98
+   },
+   {
+    "label": "SWN4(w200,DBC)",
+    "folds": [
+     0.919,
+     0.515,
+     0.811
+    ],
+    "mean_wf": 0.748,
+    "worst_dd": -12.67,
+    "oos_sharpe": 0.811,
+    "end1k": 3049.5
+   }
+  ],
+  "watchlist_eligible": false
+ },
+ "benchmarks_1k": {
+  "v2": 8381.87,
+  "E36_GTAA5": 3546.2,
+  "E37_SWN4": 3001.98,
+  "SPY": 6774.5,
+  "DIA": 6759.08,
+  "QQQ": 6946.66,
+  "IWM": 6711.99,
+  "EWC": 5768.3,
+  "EFA": 3909.87,
+  "ACWI": 3594.54,
+  "Mag7_from2012": 63681.37
+ },
+ "total_configs": 245
+}
