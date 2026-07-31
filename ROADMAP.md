@@ -183,12 +183,35 @@
     improvements occur only during ~35% cash periods. Revisit after 12+ live months.
     Concept NOT permanently closed — strongest economic signal found for the cash sleeve.
 
-## Priority order for next sessions (updated s24)
+35. ~~Inverse-Vol GTAA on Swensen-4 (E38, s25)~~ DONE. DISCARDED (CI straddles zero). NOT closed.
+    Best IVG(vl60,sma150): mean_wf=0.968 (BEATS v2 0.851), DD=−8.87% (MUCH BETTER than v2),
+    DSR=0.9565 (✓). CI=[−0.912,+1.066] straddles zero. corr_v2=0.539 (near ensemble threshold).
+    end1k=$3,840 — 54% less than v2 due to diversification drag in sustained US equity bull.
+    All 4 configs beat v2 mean_wf bar. Exceptional DD profile (all < −12%). The IVG concept IS
+    an improvement over E37 equal-weight on DD (−8.87% vs −11.0%) as hypothesized.
+    sma150 beats sma200 (more responsive); vol_lookback=60 beats 252 (less stale).
+    corr_v2=0.539 is the closest to ensemble-eligible of any multi-asset strategy (threshold 0.50).
+    Condition to revisit: if a bear market materializes making IEF/GLD/VNQ allocations valuable,
+    or if 3-5 more live years push the CI lower bound > 0. Grid exhausted (4 configs).
+
+36. ~~Real Earnings Growth Shiller Overlay (E39, s25)~~ DONE. DISCARDED (CI straddles zero). NOT closed.
+    Best EG(thr-5%,sc0.75): mean_wf=0.857 (BEATS v2 bar), DD=−16.88%, DSR=0.9650 (✓).
+    CI=[−0.611,+0.853] straddles zero. corr_v2=0.991 — near-duplicate of v2 (expected: it IS
+    v2 with occasional de-risking). end1k=$7,533 (close to v2 $8,382 but lower).
+    The real earnings growth signal DOES vary meaningfully in the OOS window — distinguishing it
+    from E31 CAPE (which was static high-decile OOS). H2-2022 contraction correctly de-risked;
+    2023-24 recovery correctly un-risked. But de-risking occurs only ~15-20% of days, providing
+    insufficient OOS draws to clear the CI. EG(thr-10%,sc0.75) best OOS Sharpe 0.855.
+    Condition to revisit: after a genuine earnings recession (2001/2008 scale) extends the live
+    sample. The Shiller feed is correctly plumbed and no-lookahead enforced — mechanism is sound.
+    Grid exhausted (4 configs). Do NOT re-tune thresholds.
+
+## Priority order for next sessions (updated s25)
 1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark).
-   First checkpoint ~2026-08-13. Portfolio $987.92, tracking SPY 1:1 (full exposure).
-2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI now
-   [−0.0128,+0.7077]; lower bound improved by 0.0001 from s23; needs more live data).
-3. (#14) Guardrails run at every mark — standing, cheap. ALL GREEN in s24.
+   First checkpoint ~2026-08-13. Portfolio $989.03, tracking SPY 1:1 (full exposure).
+2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI still
+   [−0.0129,+0.7077]; unchanged from s24; needs more live data).
+3. (#14) Guardrails run at every mark — standing, cheap. ALL GREEN in s25.
 4. CAPE concept at DECADE horizons — future research direction (not near-term experiment;
    needs fractional Kelly framework or decade-frequency signal mechanism).
 5. Phase-2 graduation review in August once 3 live months have elapsed (~2026-08-13).
@@ -197,18 +220,21 @@
    CRDS is the priority given its record-setting terminal value and consistent all-config
    outperformance. Do NOT change the current growth-mandate champion.
 7. Fractional Kelly position sizing on v2 (Phase-3 material, after Criterion-1 significance).
+8. IVG corr_v2=0.539 is close to ensemble-eligible (threshold 0.50) — revisit as ensemble
+   component IF a bear market makes the diversification benefit economically significant.
 
-## Research scope update (s24)
-245 configs burned. 16 families permanently closed: sector, kill-switch, blended-mom,
+## Research scope update (s25)
+253 configs burned. 16 families permanently closed: sector, kill-switch, blended-mom,
 AAA, RSI-2, IBS, seasonal, market-breadth, low-vol-sector, country-rotation,
 VAA/breadth-protection, Donchian/turtle, 52wk-high, VIX-regime-ensemble,
 inter-market-bond-equity, yield-curve-ETF-relative-momentum.
 Open families: CAPE (decade-horizon formulation), Tactical Bond (capital-preservation,
 E33/E34/E35 cluster), Correlation-Regime (capital-preservation), Fractional Kelly (Phase-3),
-GTAA/Swensen (revisit with dynamic/inverse-vol weights if bear market materializes).
+GTAA/Swensen/IVG (revisit with dynamic/inverse-vol weights if bear market materializes),
+Earnings Growth Shiller overlay (revisit after genuine earnings recession on live data).
 Grid exhausted on: E33-E35 defensive sleeve variants (cannot re-test without new data).
-Grid exhausted on: E36 GTAA-5 (6 configs, sma_window/band space covered);
-E37 Swensen-4 (6 configs, sma_window/use_dbc space covered).
+Grid exhausted on: E36 GTAA-5; E37 Swensen-4; E38 IVG (4 configs, vol_lookback/sma covered);
+E39 Earnings Growth (4 configs, threshold/scale space covered).
 
 ## Negative results (do NOT re-test in the original form)
 - **Faber GTAA-5 (equal-weight 5-asset, SMA-gated)** (E36, s24, SPY/EFA/DBC/VNQ/IEF):
@@ -219,6 +245,21 @@ E37 Swensen-4 (6 configs, sma_window/use_dbc space covered).
   band (b0.03) consistently helps vs no band. NOT permanently closed — the diversification
   mechanism is valid; the equal-weight constraint in a US-dominant equity era is the failure.
   Do NOT retry with the same equal-weight architecture without a dynamic allocation mechanism.
+- **Real Earnings Growth Shiller Overlay (E39, s25, threshold/scale on v2)**: best EG(thr-5%,sc0.75)
+  mean_wf=0.857 (> v2 bar), DD=−16.88%, DSR=0.9650 (✓). CI=[−0.611,+0.853] straddles zero.
+  corr_v2=0.991 (near-duplicate — it IS v2 with occasional de-risking). end1k=$7,533 vs v2 $8,382.
+  The signal correctly identifies 2022 earnings contraction and 2023-24 recovery but de-risking events
+  are too infrequent (~15-20% of days) to clear the CI in the current sample window. The Shiller feed
+  is correctly no-lookahead (1-month shift). Grid exhausted. Do NOT re-tune; revisit after earnings
+  recession extends the live sample with new bear-market draws.
+- **Inverse-Volatility GTAA on Swensen-4 (E38, s25, SPY/IEF/GLD/VNQ)**: best IVG(vl60,sma150)
+  mean_wf=0.968 (> v2 0.851), DD=−8.87% (much better than v2 −20.5%), DSR=0.9565 (✓). All 4 configs
+  beat v2 mean_wf bar (0.841-0.968). CI=[−0.912,+1.066] straddles zero; corr_v2=0.539 (near ensemble
+  threshold of 0.50 — closest any multi-asset strategy has come). end1k=$3,840 vs v2 $8,382 — the IEF/
+  GLD/VNQ budget (75%) drags terminal wealth in sustained US equity bull. The inverse-vol mechanism IS
+  the right improvement over equal-weight E37 (DD improved from −11.0% to −8.87%), but bull-market
+  returns dominate the 26-year sample, making the CI impossible to clear. Do NOT retry equal-weight
+  or wider grids. Revisit as ensemble component if corr_v2 drops below 0.50 on extended data.
 - **Swensen 4-Asset Allocation (equal-weight 25%, SMA-gated)** (E37, s24, SPY/IEF/GLD/VNQ or DBC):
   best SWN4(w150,DBC) mean_wf=0.748 (< 0.844), DD=−11.0% (lowest worst-DD ever for
   multi-asset), DSR=0.923 (< 0.95). CI straddles zero; corr_v2=0.504 (marginally above

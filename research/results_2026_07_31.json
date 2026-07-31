@@ -1,0 +1,217 @@
+{
+ "session": "2026-07-31-s25",
+ "portfolio_mark": {
+  "date": "2026-07-30",
+  "value": 989.03,
+  "spy_close": 741.6900024414062,
+  "spy_day_chg_pct": 1.677,
+  "port_chg_pct": 0.112,
+  "all_time_pct": -1.097,
+  "spy_since_live_pct": -0.998,
+  "v2_exposure": 1.0,
+  "dd_from_peak_pct": -1.74
+ },
+ "guardrails": {
+  "nav": 987.92,
+  "all_ok": true,
+  "checks": [
+   {
+    "guardrail": "G1_leverage",
+    "ok": true,
+    "detail": "gross=1.0000 cap=1.0"
+   },
+   {
+    "guardrail": "G2_instruments",
+    "ok": true,
+    "detail": "all whitelisted"
+   },
+   {
+    "guardrail": "G4_concentration",
+    "ok": true,
+    "detail": "within caps"
+   },
+   {
+    "guardrail": "G6_drawdown",
+    "ok": true,
+    "level": "GREEN",
+    "drawdown": -0.0185
+   },
+   {
+    "guardrail": "G7_staleness",
+    "ok": true,
+    "detail": "stale_days=0 max=4"
+   },
+   {
+    "guardrail": "G5_vol_spike",
+    "ok": true,
+    "detail": "vol20=0.086 med1y=0.142 last_move_4sig=False"
+   }
+  ]
+ },
+ "v2_significance": {
+  "dsr": 1.0,
+  "diff_ci": [
+   -0.0129,
+   0.7077
+  ],
+  "clears": false
+ },
+ "E38_IVG": {
+  "verdict": "discarded",
+  "best": {
+   "label": "IVG(vl60,sma150)",
+   "folds": [
+    0.959,
+    1.13,
+    0.816
+   ],
+   "mean_wf": 0.968,
+   "worst_dd": -8.87,
+   "oos_sharpe": 0.816,
+   "end1k": 3840.55
+  },
+  "dsr": 0.9565,
+  "ci": [
+   -0.912,
+   1.066
+  ],
+  "corr_v2_oos": 0.539,
+  "all_rows": [
+   {
+    "label": "IVG(vl60,sma150)",
+    "folds": [
+     0.959,
+     1.13,
+     0.816
+    ],
+    "mean_wf": 0.968,
+    "worst_dd": -8.87,
+    "oos_sharpe": 0.816,
+    "end1k": 3840.55
+   },
+   {
+    "label": "IVG(vl60,sma200)",
+    "folds": [
+     0.959,
+     0.972,
+     0.696
+    ],
+    "mean_wf": 0.876,
+    "worst_dd": -11.99,
+    "oos_sharpe": 0.696,
+    "end1k": 3409.64
+   },
+   {
+    "label": "IVG(vl252,sma150)",
+    "folds": [
+     0.902,
+     1.129,
+     0.747
+    ],
+    "mean_wf": 0.926,
+    "worst_dd": -10.67,
+    "oos_sharpe": 0.747,
+    "end1k": 3697.37
+   },
+   {
+    "label": "IVG(vl252,sma200)",
+    "folds": [
+     0.946,
+     0.933,
+     0.645
+    ],
+    "mean_wf": 0.841,
+    "worst_dd": -12.01,
+    "oos_sharpe": 0.645,
+    "end1k": 3344.98
+   }
+  ],
+  "watchlist_eligible": false
+ },
+ "E39_EG": {
+  "verdict": "discarded",
+  "best": {
+   "label": "EG(thr-5%,sc0.75)",
+   "folds": [
+    0.871,
+    0.857,
+    0.843
+   ],
+   "mean_wf": 0.857,
+   "worst_dd": -16.88,
+   "oos_sharpe": 0.843,
+   "end1k": 7533.3
+  },
+  "dsr": 0.965,
+  "ci": [
+   -0.611,
+   0.853
+  ],
+  "corr_v2_oos": 0.991,
+  "all_rows": [
+   {
+    "label": "EG(thr-5%,sc0.50)",
+    "folds": [
+     0.872,
+     0.909,
+     0.743
+    ],
+    "mean_wf": 0.841,
+    "worst_dd": -15.89,
+    "oos_sharpe": 0.743,
+    "end1k": 6729.34
+   },
+   {
+    "label": "EG(thr-5%,sc0.75)",
+    "folds": [
+     0.871,
+     0.857,
+     0.843
+    ],
+    "mean_wf": 0.857,
+    "worst_dd": -16.88,
+    "oos_sharpe": 0.843,
+    "end1k": 7533.3
+   },
+   {
+    "label": "EG(thr-10%,sc0.50)",
+    "folds": [
+     0.831,
+     0.909,
+     0.795
+    ],
+    "mean_wf": 0.845,
+    "worst_dd": -15.89,
+    "oos_sharpe": 0.795,
+    "end1k": 7485.57
+   },
+   {
+    "label": "EG(thr-10%,sc0.75)",
+    "folds": [
+     0.85,
+     0.857,
+     0.855
+    ],
+    "mean_wf": 0.854,
+    "worst_dd": -16.88,
+    "oos_sharpe": 0.855,
+    "end1k": 7934.89
+   }
+  ],
+  "watchlist_eligible": false
+ },
+ "benchmarks_1k": {
+  "v2": 8381.87,
+  "E38_IVG": 3840.55,
+  "E39_EG": 7533.3,
+  "SPY": 6774.51,
+  "DIA": 6759.07,
+  "QQQ": 6946.66,
+  "IWM": 6711.99,
+  "EWC": 5768.3,
+  "EFA": 3909.87,
+  "ACWI": 3594.54,
+  "Mag7_from2012": 63681.37
+ },
+ "total_configs": 253
+}
