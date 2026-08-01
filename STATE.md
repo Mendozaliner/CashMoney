@@ -1,3 +1,4 @@
+Updated: 2026-08-01 s26 (E40 VRP Timing DISCARDED. 4 new configs (257 total). Best VRP(lb40,sc0.75): mean_wf=0.752 BELOW v2 bar 0.851, CI=[-0.109,+0.603] straddles zero, corr_v2=0.991 (near-duplicate). Root cause: VRP "complacency" regime fires during calm bull markets — exactly when B&H earns most. Scaling down in these periods costs return without compensating in bear markets (v2's SMA gate already handles that). end1k VRP=$6,232 vs v2=$9,199. DISCARDED. NOT permanently closed — VRP economic basis is real (Bollerslev 2009); failure is the binary regime-flag and symmetric 50/50 split. v2 CI re-check: [-0.0289,+0.6834] straddles zero (lower bound drifted from -0.0129 in s25 as July's SPY day-return slightly outpaced the fully-invested v2 mark). New mark $996.15 (2026-07-31 close, +0.720% day, -0.385% all-time, SPY day +0.720%). Exposure 1.0; no trades. Guardrails ALL GREEN; DD from peak -0.99% (GREEN). 6 new tests (178 total, all pass). strategies/vrp_timing.py + tests/test_vrp_timing.py + research/run_2026_08_01_s26_vrp_timing.py added.)
 Updated: 2026-07-31 s25 (E38 Inv-Vol GTAA DISCARDED, E39 Real Earnings Growth DISCARDED. 8 new configs (253 total). E38 IVG(vl60,sma150): mean_wf=0.968 (BEATS v2 0.851), DD=-8.87% (MUCH BETTER than v2), DSR=0.9565 (✓) — BUT CI=[-0.912,+1.066] straddles zero; corr_v2=0.539 (near watch-list threshold 0.50). end1k=$3,840 (much less than v2 $8,382 — low exposure giveaway in bull market). All 4 configs beat the v2 mean_wf bar (0.841-0.968); drawdowns all < -12% (exceptional risk control). The inverse-vol weighting on Swensen-4 delivers the hypothesized DD improvement over E37 equal-weight (-8.87% vs -11.0%) but cannot overcome the raw-return giveaway in the 2000-2026 bull-market-dominated window. Root cause: IEF/GLD/VNQ diversification = 75% of budget going to lower-return assets; all 4 assets fall below SMA in crisis so budget shifts to cash anyway. DISCARDED. E39 EG(thr-5%,sc0.75): mean_wf=0.857 (BEATS v2 bar), DD=-16.88%, DSR=0.9650 (✓) — BUT CI=[-0.611,+0.853] straddles zero; corr_v2=0.991 (near-duplicate of v2). end1k=$7,533. The real earnings growth signal does vary in OOS window (2022 contraction, 2023-24 recovery) but the CI straddles zero because the rare de-risking periods don't provide enough draws to separate from SPY noise. EG(thr-10%,sc0.75) best OOS Sharpe 0.855. DISCARDED. NOT permanently closed — both IVG and EG concepts have economic merit; IVG corr 0.539 is near ensemble-eligible. v2 CI re-check: [-0.0129,+0.7077] — unchanged from s24. New mark $989.03 (2026-07-30 close, +0.112% day, -1.097% all-time, SPY day +1.677%). Exposure 1.0; no trades. Guardrails ALL GREEN; DD from peak -1.74% (GREEN). 14 new tests (all pass, 1 test fixed for correct month-end semantics).)
 Updated: 2026-07-29 s24 (E36 GTAA-5 Revisited DISCARDED, E37 Swensen 4-Asset DISCARDED. 12 new configs (245 total). E36 GTAA5(w252,b0.03): mean_wf=0.776 BELOW v2 0.851, DD=-13.58%, DSR=0.813 (FAILS 0.95), CI=[-0.938,+0.633] straddles zero, corr_v2=0.741 (above watch-list 0.70). end1k=$3,546. Root cause: 5-asset equal-weight penalizes US equity bull 2010-2019; international+commodity drag in fold-2 (Sharpe 0.298-0.486). E37 SWN4(w150,DBC): mean_wf=0.748 BELOW bar, DD=-11.0% (BEST EVER for multi-asset), DSR=0.923 (<0.95), CI=[-0.837,+1.095] straddles zero, corr_v2=0.504 (above 0.50 watch-list). end1k=$3,002. DBC fold-2 Sharpe=0.437 same structural problem. Neither strategy permanently closed (economic logic is valid; equal-weight constraint is the failure mechanism). v2 CI unchanged [-0.0128,+0.7077] (straddles zero, CI lower bound improved by 0.0001 from s23). New mark $987.92 (SPY 740.86, +0.239% day, -1.208% all-time). Exposure 1.0; no trades. Guardrails ALL GREEN. 17 new tests pass.)
 Updated: 2026-07-28 s23 (E34 Def. Dual-Asset DISCARDED, E35 Corr-Regime DISCARDED. 17 new configs (233 total). E34 DDAS(g0.25,w200): mean_wf=0.887 BEATS v2 0.851, DD=-19.76% BETTER than v2 -20.5%, DSR=0.978 ✓ — BUT CI=[-0.586,+0.952] straddles zero, corr_v2=0.972. end1k=$10,565 (+$184 over E33, +$2,183 over v2). E35 CRDS(lb63,t0.00): mean_wf=0.920 BEST EVER for cash-sleeve strategies, DD=-20.17%, DSR=0.988 ✓ — BUT CI=[-0.512,+1.070] straddles zero, corr_v2=0.965. end1k=$11,420 — NEW ALL-TIME RECORD terminal value (+$3,038, +36% over v2). ALL 9 CRDS configs beat v2 mean_wf (0.897-0.920). Correlation-regime concept NOT closed (no statistical significance yet but strong economic signal). v2 CI unchanged [-0.0129,+0.7077]. New mark $985.56 (SPY 739.09, +0.022% day, -1.444% all-time). Exposure 1.0; no trades. Guardrails ALL GREEN. Suite 141/141.)
@@ -37,11 +38,11 @@ Phase-transition: not met (needs 3 live months + significance on #1).
 Portfolio re-based from SPY_PROXY (stale, ended 2025-12-19) to real SPY cache:
 $999.00 carried, 1.333476 SPY units @ 749.17 (2026-07-13 close). Live clock and
 all live-vs-SPY comparisons measure from this mark. Costs standard now 0.15%.
-**Latest mark (2026-07-22 close, session 18):**
-1.333476 SPY × $747.41 = **$996.65** (−0.116% day, −0.335% all-time from $1,000
-inception). SPY since live baseline: −0.235%. Portfolio tracking SPY 1:1 fully invested.
-v2 exposure confirmed 1.0 (747.41 > SMA200+3% band 715.53; 20d vol 10.7% < 18%). No trades.
-Guardrails G1–G7 ALL GREEN. Peak $1,006.52, current drawdown from peak −0.98% (GREEN).
+**Latest mark (2026-07-31 close, session 26):**
+1.333476 SPY × $747.03 = **$996.15** (+0.720% day, −0.385% all-time from $1,000
+inception). SPY since live baseline (2026-07-13 @ $749.17): −0.286%. Portfolio tracking SPY 1:1 fully invested.
+v2 exposure confirmed 1.0 (747.03 > SMA200+3% band; 20d vol < 18%). No trades.
+Guardrails G1–G7 ALL GREEN. Peak $1,006.52, current drawdown from peak −0.99% (GREEN).
 
 ## Standing briefing instructions (per Mr. Menéndez, 2026-07-14)
 - FORMAT (added later on 2026-07-14, SUPERSEDES the long template): the daily
@@ -142,9 +143,9 @@ terminal value. Mag-7 eqw $83,104 (2012+ only, concentrated tech). Legacy PROXY-
 ## Portfolio
 portfolio.json created session 2 (session 1 omitted it): $1,000 inception
 2026-07-13, fully invested per v2 (exposure 1.0), value $999.00 after entry cost.
-**Current value: $989.03** (2026-07-30 close, session 25 mark). 1.333476 SPY units
-@ $741.69. All-time: −$10.97 / −1.097% from $1,000 inception. No rebalance needed;
-exposure 1.0 confirmed (SPY 741.69 > SMA200+3% band 717.87; 20d vol 12.4% < 18%). No trades.
+**Current value: $996.15** (2026-07-31 close, session 26 mark). 1.333476 SPY units
+@ $747.03. All-time: −$3.85 / −0.385% from $1,000 inception. No rebalance needed;
+exposure 1.0 confirmed (SPY 747.03 > SMA200+3% band; 20d vol < 18%). No trades.
 
 ## Watch-list (not adopted; revisit under stated conditions)
 - **CTA Multi-Asset Trend SPY/IEF/GLD (vt0.12)** (E20, s12): mean WF Sharpe **1.099**

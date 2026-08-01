@@ -5,14 +5,14 @@
  "positions": {
   "SPY": {
    "units": 1.3334757435413753,
-   "last_px": 741.6900024414062
+   "last_px": 747.030029296875
   }
  },
  "cash": 0.0,
  "last_mark": {
-  "date": "2026-07-30",
-  "value": 989.03,
-  "spy_close": 741.6900024414062
+  "date": "2026-07-31",
+  "value": 996.15,
+  "spy_close": 747.030029296875
  },
  "history": [
   {
@@ -267,6 +267,17 @@
    "spy_pct_same_window": 1.677,
    "all_time_pct": -1.097,
    "note": "Session 25 (2026-07-31): SPY close 741.6900 (2026-07-30), +1.677% on the day. 1.333476 units \u00d7 $741.6900 = $989.03 (+0.112%). v2 exposure 1.0000. No trades. E38 Inv-Vol GTAA: discarded (best IVG(vl60,sma150) mean_wf=0.968, DD=-8.87%, DSR=0.9565, CI=[-0.912,1.066], corr_v2=0.539, watchlist=False). E39 Earnings Growth: discarded (best EG(thr-5%,sc0.75) mean_wf=0.857, DD=-16.88%, DSR=0.9650, CI=[-0.611,0.853], corr_v2=0.991, watchlist=False). Guardrails G1-G7 ALL GREEN. DD from peak: -1.74%. $1k v2=8381.87 SPY=6774.51."
+  },
+  {
+   "date": "2026-08-01",
+   "session": 26,
+   "mark_date": "2026-07-31",
+   "value": 996.15,
+   "chg_dollar": 7.12,
+   "chg_pct": 0.720,
+   "spy_pct_same_window": 0.720,
+   "all_time_pct": -0.385,
+   "note": "Session 26 (2026-08-01): SPY close 747.0300 (2026-07-31), +0.720% on the day. 1.333476 units \u00d7 $747.0300 = $996.15 (+0.720%). v2 exposure 1.0000 (747.03 > SMA200+3% band; vol < 18%). No trades. E40 VRP Timing: DISCARDED (best VRP(lb40,sc0.75) mean_wf=0.752 < 0.851 v2 bar; CI=[-0.109,+0.603] straddles zero; corr_v2=0.991 near-duplicate). 4 new configs (257 total). v2 CI re-check: [-0.0289,+0.6834] straddles zero (unchanged verdict). 6 new tests (178 total, all pass). Guardrails G1-G7 ALL GREEN. DD from peak: -0.99%."
   }
  ],
  "trades": [
