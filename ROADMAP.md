@@ -206,35 +206,59 @@
     sample. The Shiller feed is correctly plumbed and no-lookahead enforced — mechanism is sound.
     Grid exhausted (4 configs). Do NOT re-tune thresholds.
 
-## Priority order for next sessions (updated s25)
-1. (#9) Live-track marks — highest priority for Phase-2 graduation (just wait + mark).
-   First checkpoint ~2026-08-13. Portfolio $989.03, tracking SPY 1:1 (full exposure).
-2. (#10) Monthly v2 full-sample significance re-check — first week of August (CI still
-   [−0.0129,+0.7077]; unchanged from s24; needs more live data).
-3. (#14) Guardrails run at every mark — standing, cheap. ALL GREEN in s25.
-4. CAPE concept at DECADE horizons — future research direction (not near-term experiment;
-   needs fractional Kelly framework or decade-frequency signal mechanism).
-5. Phase-2 graduation review in August once 3 live months have elapsed (~2026-08-13).
+37. ~~Minimum Variance Portfolio (E41, s27)~~ DONE. DISCARDED (CI straddles zero). NOT closed.
+    Best MV(lb60,gate=F): mean_wf=0.887 (BEATS v2 bar 0.851), DD=−20.1%, DSR=1.000
+    (within-session). CI=[−0.049,+0.844] straddles zero. corr_v2=0.267 — NEW ALL-TIME
+    PROJECT RECORD for lowest correlation to v2 (prior record: Bollinger E18 at 0.364).
+    Ensemble-eligible (well below 0.50 threshold). end1k=$3,251 vs v2=$9,199 — huge raw
+    return deficit driven by 62% average IEF allocation.
+    Philosophy: Markowitz (1952) modern portfolio theory — analytical minimum variance weights
+    from rolling 60 or 120-day covariance matrix. First experiment in this project to use the
+    full Σ matrix. The unconstrained solution (clipped long-only) concentrates heavily in IEF
+    because IEF has far lower variance and negative/zero correlation with SPY in crisis.
+    Root cause of failure: 62% IEF weight costs ~3-4% CAGR in the 2000-2026 bull-market era.
+    Fold-1 IS Sharpe was 0.96 (dot-com/GFC era) — the strategy's genuine value shows in bearish
+    environments. Fold-3 OOS 2020-2025 Sharpe = 0.327 — catastrophic in equity bull market.
+    Condition to revisit: (a) a sustained bear market (2008-style) materialises — MinVar's IEF
+    allocation would compound the defensive benefit dramatically; (b) v2 achieves Criterion-1
+    significance AND CI improves — then a v2+MinVar ensemble with corr=0.267 is compelling.
+    Grid exhausted (4 configs: lb60/lb120 × gate=T/F). Do NOT re-tune without new regime data.
+
+## Priority order for next sessions (updated s27)
+1. (#9) Live-track marks — highest priority for Phase-2 graduation.
+   First full-month checkpoint ~2026-08-13. Portfolio $996.15, tracking SPY 1:1.
+2. (#10) Monthly v2 full-sample significance re-check — CI now [−0.0274,+0.6778]
+   (improved +0.0015 from s26 [−0.0289,+0.6834]). Re-check in first September session.
+3. (#14) Guardrails run at every mark — standing. ALL GREEN in s27.
+4. **MinVar ensemble investigation (NEW s27):** E41 corr_v2=0.267 is the lowest
+   correlation ever found. A v2+MinVar ensemble is theoretically compelling (genuinely
+   different signals). Pre-condition: v2 must achieve Criterion-1 significance first.
+   Revisit also if a bear market materialises (E41 fold-1 Sharpe was 0.96).
+5. Phase-2 graduation review — first checkpoint ~2026-08-13; needs 3 consecutive months.
 6. (#33, #34, #35) Defensive cash sleeve family revisit after 12+ live months: CRDS (E35,
    $11,420) and DDAS (E34, $10,565) as capital-preservation product consideration.
    CRDS is the priority given its record-setting terminal value and consistent all-config
    outperformance. Do NOT change the current growth-mandate champion.
 7. Fractional Kelly position sizing on v2 (Phase-3 material, after Criterion-1 significance).
+   Infrastructure now in place: tools/kelly.py. v2 full-Kelly = 7.76x; vol-target implies
+   ~0.22 Kelly at target vol. Phase-3 experiment: run Sharpe-estimated Kelly directly.
 8. IVG corr_v2=0.539 is close to ensemble-eligible (threshold 0.50) — revisit as ensemble
    component IF a bear market makes the diversification benefit economically significant.
 
-## Research scope update (s25)
-253 configs burned. 16 families permanently closed: sector, kill-switch, blended-mom,
+## Research scope update (s27)
+261 configs burned. 16 families permanently closed: sector, kill-switch, blended-mom,
 AAA, RSI-2, IBS, seasonal, market-breadth, low-vol-sector, country-rotation,
 VAA/breadth-protection, Donchian/turtle, 52wk-high, VIX-regime-ensemble,
 inter-market-bond-equity, yield-curve-ETF-relative-momentum.
 Open families: CAPE (decade-horizon formulation), Tactical Bond (capital-preservation,
 E33/E34/E35 cluster), Correlation-Regime (capital-preservation), Fractional Kelly (Phase-3),
 GTAA/Swensen/IVG (revisit with dynamic/inverse-vol weights if bear market materializes),
-Earnings Growth Shiller overlay (revisit after genuine earnings recession on live data).
+Earnings Growth Shiller overlay (revisit after genuine earnings recession on live data),
+MinVar ensemble (NEW — corr_v2 0.267 record low; revisit when v2 achieves significance
+or bear market materialises).
 Grid exhausted on: E33-E35 defensive sleeve variants (cannot re-test without new data).
-Grid exhausted on: E36 GTAA-5; E37 Swensen-4; E38 IVG (4 configs, vol_lookback/sma covered);
-E39 Earnings Growth (4 configs, threshold/scale space covered).
+Grid exhausted on: E36 GTAA-5; E37 Swensen-4; E38 IVG (4 configs); E39 Earnings Growth;
+E41 MinVar (4 configs, cov_lookback/sma_gate space covered).
 
 ## Negative results (do NOT re-test in the original form)
 - **Faber GTAA-5 (equal-weight 5-asset, SMA-gated)** (E36, s24, SPY/EFA/DBC/VNQ/IEF):
