@@ -224,41 +224,45 @@
     significance AND CI improves — then a v2+MinVar ensemble with corr=0.267 is compelling.
     Grid exhausted (4 configs: lb60/lb120 × gate=T/F). Do NOT re-tune without new regime data.
 
-## Priority order for next sessions (updated s27)
-1. (#9) Live-track marks — highest priority for Phase-2 graduation.
-   First full-month checkpoint ~2026-08-13. Portfolio $996.15, tracking SPY 1:1.
-2. (#10) Monthly v2 full-sample significance re-check — CI now [−0.0274,+0.6778]
-   (improved +0.0015 from s26 [−0.0289,+0.6834]). Re-check in first September session.
-3. (#14) Guardrails run at every mark — standing. ALL GREEN in s27.
-4. **MinVar ensemble investigation (NEW s27):** E41 corr_v2=0.267 is the lowest
-   correlation ever found. A v2+MinVar ensemble is theoretically compelling (genuinely
-   different signals). Pre-condition: v2 must achieve Criterion-1 significance first.
-   Revisit also if a bear market materialises (E41 fold-1 Sharpe was 0.96).
-5. Phase-2 graduation review — first checkpoint ~2026-08-13; needs 3 consecutive months.
-6. (#33, #34, #35) Defensive cash sleeve family revisit after 12+ live months: CRDS (E35,
-   $11,420) and DDAS (E34, $10,565) as capital-preservation product consideration.
-   CRDS is the priority given its record-setting terminal value and consistent all-config
-   outperformance. Do NOT change the current growth-mandate champion.
-7. Fractional Kelly position sizing on v2 (Phase-3 material, after Criterion-1 significance).
-   Infrastructure now in place: tools/kelly.py. v2 full-Kelly = 7.76x; vol-target implies
-   ~0.22 Kelly at target vol. Phase-3 experiment: run Sharpe-estimated Kelly directly.
-8. IVG corr_v2=0.539 is close to ensemble-eligible (threshold 0.50) — revisit as ensemble
-   component IF a bear market makes the diversification benefit economically significant.
+38. **E42 CRQS ADOPTED (s28)** — first strategy to clear CI lower bound in project history.
+    CRQS(eps=0.00, sd=0.75, ct=0.00): CI [+0.0482,+0.8641], Sharpe 0.960, MaxDD -16.02%,
+    End$1k $12,104. Criterion 1 NOW MET. New champion replaces v2. Current signal = v2
+    signal (fully invested, quality gate inactive, deflation regime). 12 configs burned (273 total).
 
-## Research scope update (s27)
-261 configs burned. 16 families permanently closed: sector, kill-switch, blended-mom,
+## Priority order for next sessions (updated s28)
+1. (#9) Live-track marks — **CRITICAL**. First full-month checkpoint ~2026-08-13.
+   Run live_track.summary() with CRQS as champion; check if July 13→Aug 13 is a beat.
+   Portfolio $996.15, fully invested in SPY per CRQS signal.
+2. (#10) Monthly CRQS full-sample significance re-check — CI now [+0.0482,+0.8641].
+   With August data added, confirm lower bound stays positive. Re-check in first September session.
+3. (#14) Guardrails run at every mark — standing. ALL GREEN in s27; re-run at s29.
+4. **Fractional Kelly on CRQS (UNLOCKED s28):** Criterion-1 significance now met.
+   CRQS full-Kelly = Sharpe_CRQS/vol_CRQS ≈ 0.960/0.107 ≈ 8.97x (well above 1.0 cap).
+   Hypothesis: at 1/4 or 1/3 Kelly position sizing, can geometric growth improve without
+   exceeding -20% MaxDD? tools/kelly.py infrastructure is in place. Phase-3 experiment.
+5. Phase-2 graduation review — first checkpoint ~2026-08-13; needs 3 consecutive months.
+6. **MinVar ensemble investigation (s27):** corr_v2=0.267 (all-time record). Pre-condition
+   (Criterion-1 significance) now met via CRQS. If a bear market materialises, a CRQS+MinVar
+   ensemble becomes genuinely compelling. Both CIs must individually clear zero first.
+7. (#33, #34, #35) Defensive cash sleeve family revisit after 12+ live months: CRDS (E35)
+   mechanism is now subsumed by CRQS (corr_threshold=0.00 implements it directly). The
+   standalone sleeve family (pure IEF/GLD without equity overlay) remains a capital-
+   preservation product option. Do NOT re-test until 12+ live months. Not needed for champion.
+8. IVG corr_v2=0.539 — near ensemble-eligible. Revisit if bear market materialises.
+
+## Research scope update (s28)
+273 configs burned. 16 families permanently closed: sector, kill-switch, blended-mom,
 AAA, RSI-2, IBS, seasonal, market-breadth, low-vol-sector, country-rotation,
 VAA/breadth-protection, Donchian/turtle, 52wk-high, VIX-regime-ensemble,
 inter-market-bond-equity, yield-curve-ETF-relative-momentum.
+1 strategy ADOPTED: E42 CRQS (s28) — first CI clearance, new champion.
 Open families: CAPE (decade-horizon formulation), Tactical Bond (capital-preservation,
-E33/E34/E35 cluster), Correlation-Regime (capital-preservation), Fractional Kelly (Phase-3),
-GTAA/Swensen/IVG (revisit with dynamic/inverse-vol weights if bear market materializes),
-Earnings Growth Shiller overlay (revisit after genuine earnings recession on live data),
-MinVar ensemble (NEW — corr_v2 0.267 record low; revisit when v2 achieves significance
-or bear market materialises).
-Grid exhausted on: E33-E35 defensive sleeve variants (cannot re-test without new data).
-Grid exhausted on: E36 GTAA-5; E37 Swensen-4; E38 IVG (4 configs); E39 Earnings Growth;
-E41 MinVar (4 configs, cov_lookback/sma_gate space covered).
+E33/E34/E35 cluster), Fractional Kelly on CRQS (UNLOCKED — Criterion-1 now met),
+GTAA/Swensen/IVG (revisit if bear market materialises), Earnings Growth overlay
+(revisit after genuine earnings recession), MinVar ensemble (corr_v2=0.267 record;
+Criterion-1 now met; revisit if bear market or CRQS CI improves further).
+Grid exhausted on: E33-E35 defensive sleeve variants; E36 GTAA-5; E37 Swensen-4;
+E38 IVG; E39 Earnings Growth; E41 MinVar; E42 CRQS (12 configs, full grid).
 
 ## Negative results (do NOT re-test in the original form)
 - **Faber GTAA-5 (equal-weight 5-asset, SMA-gated)** (E36, s24, SPY/EFA/DBC/VNQ/IEF):

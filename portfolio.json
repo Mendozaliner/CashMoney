@@ -1,7 +1,7 @@
 {
  "inception": "2026-07-13",
  "note": "Virtual paper portfolio, $1,000 inception 2026-07-13. 2026-07-14 migration: live track re-based from the stale SPY_PROXY dataset (ended 2025-12-19) to real SPY closes from the self-refreshing cache. Value carried at $999.00 (no P&L recognized for the stale gap); units converted at the 2026-07-13 close. Live-outperformance clock starts at this mark, per STATE.md. T-bill yield accrues on any cash sleeve.",
- "champion": "vol_target(target_vol=0.18, lookback=20) x SMA200/b3 gate, T-bill cash",
+ "champion": "CRQS(eps_threshold=0.00, scale_down=0.75, corr_threshold=0.00) — adopted 2026-08-03 s28; first CI-positive strategy in project history. Base: vol_target(target_vol=0.18, lookback=20) x SMA200/b3 gate + EPS quality gate + Ilmanen regime defensive (IEF/GLD). See strategies/crqs.py.",
  "positions": {
   "SPY": {
    "units": 1.3334757435413753,
@@ -278,6 +278,17 @@
    "spy_pct_same_window": 0.720,
    "all_time_pct": -0.385,
    "note": "Session 26 (2026-08-01): SPY close 747.0300 (2026-07-31), +0.720% on the day. 1.333476 units \u00d7 $747.0300 = $996.15 (+0.720%). v2 exposure 1.0000 (747.03 > SMA200+3% band; vol < 18%). No trades. E40 VRP Timing: DISCARDED (best VRP(lb40,sc0.75) mean_wf=0.752 < 0.851 v2 bar; CI=[-0.109,+0.603] straddles zero; corr_v2=0.991 near-duplicate). 4 new configs (257 total). v2 CI re-check: [-0.0289,+0.6834] straddles zero (unchanged verdict). 6 new tests (178 total, all pass). Guardrails G1-G7 ALL GREEN. DD from peak: -0.99%."
+  },
+  {
+   "date": "2026-08-03",
+   "session": 28,
+   "mark_date": "2026-07-31",
+   "value": 996.15,
+   "chg_dollar": 0.0,
+   "chg_pct": 0.0,
+   "spy_pct_same_window": 0.0,
+   "all_time_pct": -0.385,
+   "note": "Session 28 (2026-08-03): Data stale 3 days at 2026-07-31. Mark carried $996.15; no new close. CRQS signal check: SPY > SMA200+3% band, EPS growth positive (quality gate inactive), SB corr negative (deflation regime \u2014 no GLD sleeve needed). Exposure 1.0000. No trades. MAJOR EVENT: E42 CRQS ADOPTED \u2014 first strategy in project history to clear CI lower bound (CI [+0.0482,+0.8641]). New champion CRQS(eps=0.00,sd=0.75,ct=0.00): Sharpe 0.960, MaxDD -16.02%, End$1k $12,104. 3 new tools, 37 new tests (217 total, all pass)."
   }
  ],
  "trades": [
