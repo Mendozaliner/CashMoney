@@ -4,15 +4,15 @@
  "champion": "CRQS(eps_threshold=0.00, scale_down=0.75, corr_threshold=0.00) — adopted 2026-08-03 s28; first CI-positive strategy in project history. Base: vol_target(target_vol=0.18, lookback=20) x SMA200/b3 gate + EPS quality gate + Ilmanen regime defensive (IEF/GLD). See strategies/crqs.py.",
  "positions": {
   "SPY": {
-   "units": 1.3334757435413753,
-   "last_px": 747.030029296875
+   "units": 1.0001,
+   "last_px": 757.67
   }
  },
- "cash": 0.0,
+ "cash": 252.21,
  "last_mark": {
-  "date": "2026-07-31",
-  "value": 996.15,
-  "spy_close": 747.030029296875
+  "date": "2026-08-03",
+  "value": 1009.96,
+  "spy_close": 757.67
  },
  "history": [
   {
@@ -289,6 +289,17 @@
    "spy_pct_same_window": 0.0,
    "all_time_pct": -0.385,
    "note": "Session 28 (2026-08-03): Data stale 3 days at 2026-07-31. Mark carried $996.15; no new close. CRQS signal check: SPY > SMA200+3% band, EPS growth positive (quality gate inactive), SB corr negative (deflation regime \u2014 no GLD sleeve needed). Exposure 1.0000. No trades. MAJOR EVENT: E42 CRQS ADOPTED \u2014 first strategy in project history to clear CI lower bound (CI [+0.0482,+0.8641]). New champion CRQS(eps=0.00,sd=0.75,ct=0.00): Sharpe 0.960, MaxDD -16.02%, End$1k $12,104. 3 new tools, 37 new tests (217 total, all pass)."
+  },
+  {
+   "date": "2026-08-04",
+   "session": 29,
+   "mark_date": "2026-08-03",
+   "value": 1009.96,
+   "chg_dollar": 13.81,
+   "chg_pct": 1.387,
+   "spy_pct_same_window": 1.424,
+   "all_time_pct": 0.996,
+   "note": "Session 29 (2026-08-04): SPY close 757.67 (2026-08-03). Pre-rebalance value 1.3334757 \u00d7 $757.67 = $1,010.34 (new ATH). CRQS signal change: EPS quality gate FIRED (quality_ok=False, 12m EPS growth negative from 2026-07-28); inflation regime active (rolling 63d SPY-IEF corr = +0.489 > 0.00 threshold \u2192 GLD preferred), but GLD below SMA200 \u2192 no GLD, IEF below SMA200 \u2192 no IEF; net signal SPY=0.75, IEF=0, GLD=0. REBALANCE EXECUTED: sell 0.333376 SPY @ $757.67 \u2192 gross $252.59 minus commission $0.38 = $252.21 cash. New portfolio: SPY=1.0001 units ($757.75) + cash=$252.21 = $1,009.96. CRQS CI re-check: CI improved to [+0.0534,+0.8629] (lower bound strengthened). E43 Kelly-sized CRQS: tested (best vt=0.18 matches champion; architecture validates Kelly position sizing). E44 CRQS-MinVar ensemble: tested (blend_w=0.80 viable, all constraints satisfied). New tools: tools/drawdown_analytics.py (Thorp risk-of-ruin, Markowitz semivariance), tools/market_cycle.py (Howard Marks cycle composite). Production bug fixed in underwater_periods (integer-index handling). 66 new tests (283 total, all pass). Guardrails G1-G7 ALL GREEN. DD from peak: 0.04% (new ATH $1,010.34 before commission)."
   }
  ],
  "trades": [
@@ -311,6 +322,16 @@
    "notional": 999.0,
    "cost": 0.0,
    "reason": "Data-migration bookkeeping conversion to real SPY cache; not a strategy trade."
+  },
+  {
+   "date": "2026-08-04",
+   "action": "SELL",
+   "asset": "SPY",
+   "units": 0.333376,
+   "px": 757.67,
+   "notional": 252.59,
+   "cost": 0.38,
+   "reason": "CRQS EPS quality gate fired (12m EPS growth negative); signal changed SPY=1.0→0.75. IEF and GLD below SMA200 → no defensive allocation; excess goes to T-bill/cash sleeve."
   }
  ],
  "baseline_for_live_clock": {
