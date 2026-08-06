@@ -5,14 +5,14 @@
  "positions": {
   "SPY": {
    "units": 1.0001,
-   "last_px": 757.67
+   "last_px": 769.79
   }
  },
- "cash": 252.21,
+ "cash": 252.28,
  "last_mark": {
-  "date": "2026-08-03",
-  "value": 1009.96,
-  "spy_close": 757.67
+  "date": "2026-08-05",
+  "value": 1022.15,
+  "spy_close": 769.79
  },
  "history": [
   {
@@ -300,6 +300,17 @@
    "spy_pct_same_window": 1.424,
    "all_time_pct": 0.996,
    "note": "Session 29 (2026-08-04): SPY close 757.67 (2026-08-03). Pre-rebalance value 1.3334757 \u00d7 $757.67 = $1,010.34 (new ATH). CRQS signal change: EPS quality gate FIRED (quality_ok=False, 12m EPS growth negative from 2026-07-28); inflation regime active (rolling 63d SPY-IEF corr = +0.489 > 0.00 threshold \u2192 GLD preferred), but GLD below SMA200 \u2192 no GLD, IEF below SMA200 \u2192 no IEF; net signal SPY=0.75, IEF=0, GLD=0. REBALANCE EXECUTED: sell 0.333376 SPY @ $757.67 \u2192 gross $252.59 minus commission $0.38 = $252.21 cash. New portfolio: SPY=1.0001 units ($757.75) + cash=$252.21 = $1,009.96. CRQS CI re-check: CI improved to [+0.0534,+0.8629] (lower bound strengthened). E43 Kelly-sized CRQS: tested (best vt=0.18 matches champion; architecture validates Kelly position sizing). E44 CRQS-MinVar ensemble: tested (blend_w=0.80 viable, all constraints satisfied). New tools: tools/drawdown_analytics.py (Thorp risk-of-ruin, Markowitz semivariance), tools/market_cycle.py (Howard Marks cycle composite). Production bug fixed in underwater_periods (integer-index handling). 66 new tests (283 total, all pass). Guardrails G1-G7 ALL GREEN. DD from peak: 0.04% (new ATH $1,010.34 before commission)."
+  },
+  {
+   "date": "2026-08-06",
+   "session": 30,
+   "mark_date": "2026-08-05",
+   "value": 1022.15,
+   "chg_dollar": 12.19,
+   "chg_pct": 1.207,
+   "spy_pct_same_window": 1.600,
+   "all_time_pct": 2.215,
+   "note": "Session 30 (2026-08-06): SPY close $769.79 (2026-08-05, +1.600% since last mark 2026-08-03 $757.67). Portfolio: 1.0001 units \u00d7 $769.79 = $769.87 + $252.28 cash (T-bill 3.725%/yr \u00d7 2 days) = $1,022.15 (NEW ATH). CRQS signal UNCHANGED: SPY=0.75, IEF=0, GLD=0, cash=0.25. EPS quality gate STILL FIRED (12m EPS growth negative). IEF @ $93.31 < SMA200 $93.93 \u2192 no IEF. GLD @ $389.64 < SMA200 $411.72 \u2192 no GLD. Inflation regime still active (SB corr +0.489). No rebalance needed. E45 CRQS-CycleOverlay (Howard Marks 4-component cycle tilt): DISCARDED. Best config CycleOverlay(th=0.80,sc=0.90): mean_wf=1.034 (passes 1.033 bar), MaxDD=-16.02% (passes), DSR=1.000 (passes), CI=[+0.0413,+0.8520] (passes) \u2014 but End$1k=$11,982 FAILS bar (< CRQS $12,104). All 6 configs underperform CRQS champion terminal value. Cycle overlay fires on only 6-16% of OOS days \u2014 too infrequent to offset equity drag in bull markets. CRQS champion unchanged. New file: strategies/crqs_cycle_overlay.py. Howard Marks cycle score 0.665 (mid_late_cycle): val=0.804, fear=0.781, mom=0.826, eps=0.0, erp=0.951. Guardrails G1-G7 ALL GREEN. All-time: +2.215% vs SPY +2.752% \u2192 CRQS -0.537% behind since inception (75% exposure while SPY rallied)."
   }
  ],
  "trades": [

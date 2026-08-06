@@ -229,55 +229,63 @@
     End$1k $12,104. Criterion 1 NOW MET. New champion replaces v2. Current signal = v2
     signal (fully invested, quality gate inactive, deflation regime). 12 configs burned (273 total).
 
-39. **E43 Kelly-sized CRQS (s29)** — architecture validated, NOT a new experiment.
-    strategies/kelly_sized_crqs.py wraps champion CRQS with fractional-Kelly vol-target scaling.
-    VOL_TARGET_GRID = [0.09, 0.12, 0.15, 0.18, 0.21, 0.24]. vol_target=0.18 produces identical
-    results to champion. No backtest run (pre-registration required before full grid test). Tests pass.
-    Config budget: 0 burned (architecture-only session). Status: WATCH-LIST PENDING PRE-REG.
+39. ~~**E43 Kelly-sized CRQS (s29)**~~ DONE. ADOPTED. Best KellyCRQS(vt=0.15): mean_wf=1.044,
+    MaxDD=-15.67%, DSR=1.000, CI=[+0.0397,+0.856]. All 6 vol-target configs (0.09–0.24) beat
+    the CRQS champion bar (0.871–1.044). vol_target=0.15 and 0.18 tied; champion uses 0.18 which
+    is already at or near the Kelly-optimal vol target for this strategy. ADOPTED for its architecture;
+    champion still uses vol_target=0.18. 6 configs burned (279 total).
 
-40. **E44 CRQS-MinVar Ensemble (s29)** — architecture validated, NOT a new experiment.
-    strategies/crqs_minvar_ensemble.py blends CRQS (blend_w) with MinVar (1-blend_w).
-    BLEND_GRID = [0.95, 0.90, 0.80, 0.70, 0.60]. All constraint tests pass (non-negative,
-    row sum ≤ 1.0 across all blends). No backtest run (pre-registration required). Tests pass.
-    Config budget: 0 burned (architecture-only session). Status: WATCH-LIST PENDING PRE-REG.
+40. ~~**E44 CRQS-MinVar Ensemble (s29)**~~ DONE. DISCARDED. Best blend_w=0.60:
+    CI=[+0.1845,+0.9698] (clears zero!), MaxDD improved — but End$1k=$7,422 << CRQS $12,104.
+    The MinVar 0.267 corr_v2 creates genuine diversification but costs 39% of terminal wealth
+    in the sustained US equity bull market. 5 configs burned (284 total). Not closed — revisit
+    if bear market materialises.
 
-## Priority order for next sessions (updated s29)
-1. (#9) Live-track marks — **CRITICAL**. First full-month checkpoint ~2026-08-13.
-   CRQS signal now SPY=0.75, cash=0.25 (EPS gate fired, IEF+GLD below SMA200).
-   Run live_track.summary() at first August session after ~2026-08-13.
-2. (#10) Monthly CRQS significance re-check — CI now [+0.0534,+0.8629] (improved).
-   Confirm lower bound stays positive as August data accrues. Re-check in first September session.
-3. (#14) Guardrails run at every mark — standing. ALL GREEN in s29; re-run at s30.
-4. **E43 pre-registration & backtest:** Kelly-sized CRQS. Pre-register ≤12 configs from
-   VOL_TARGET_GRID before running full backtest. Hypothesis: lower vol-target reduces
-   live MaxDD with acceptable return drag. Estimate: 1–2 sessions to pre-reg and test.
-5. Phase-2 graduation review — first checkpoint ~2026-08-13; needs 3 consecutive months.
-6. **E44 pre-registration & backtest:** CRQS-MinVar ensemble. Pre-register ≤5 blend_w
-   configs. Hypothesis: 0.267 corr_v2 of MinVar creates diversification benefit in bear
-   markets without sacrificing bull-market returns at the blend level. Estimate: 1 session.
-7. **Howard Marks Cycle score integration (NEW, s29):** tools/market_cycle.py composite is
-   complete and tested. Next step: wire cycle_score into the CRQS signal — e.g., when
-   cycle_score > 0.75 (late cycle) and quality gate inactive, tilt SPY from 1.0 to 0.85.
-   Hypothesis: timing the defensive tilt using a multi-signal composite (not just EPS growth)
-   reduces drawdowns in late-cycle periods. Pre-register as CRQS-CycleOverlay (≤12 configs).
-8. (#33, #34, #35) Defensive cash sleeve family revisit after 12+ live months: not needed now.
-9. IVG corr_v2=0.539 — near ensemble-eligible. Revisit if bear market materialises.
+41. ~~**E45 CRQS-CycleOverlay (s30, Howard Marks)**~~ DONE. DISCARDED. Best
+    CycleOverlay(th=0.80,sc=0.90): mean_wf=1.034 (passes), MaxDD=-16.02% (passes),
+    DSR=1.000 (passes), CI=[+0.0413,+0.8520] (passes) — BUT End$1k=$11,982 FAILS ≥$12,104 bar.
+    All 6 configs underperform CRQS champion terminal value ($10,857–$11,982 vs $12,381).
+    Tilt fires on only 6–16% of OOS days; EPS gate already handles late-cycle risk when
+    earnings deteriorate. Overlay is redundant to CRQS's existing EPS quality gate.
+    Strategy file archived at strategies/crqs_cycle_overlay.py. 6 configs burned (285 total).
+    Howard Marks cycle score as of 2026-08-05: 0.665 (mid_late_cycle). NOT permanently closed —
+    revisit if cycle score methodology can identify non-EPS-overlap signals.
 
-## Research scope update (s29)
-273 configs burned. 16 families permanently closed: sector, kill-switch, blended-mom,
+## Priority order for next sessions (updated s30)
+1. (#9) Live-track marks — **CRITICAL**. First full-month checkpoint ~**2026-08-13**.
+   CRQS at SPY=0.75, cash=0.25 (EPS gate fired). With SPY rallying since s29 rebalance,
+   the 75% exposure window is challenging. Run live_track.summary() and mark vs SPY.
+2. (#10) Monthly CRQS significance re-check — CI [+0.0534,+0.8629]; confirm positive lb.
+   Next re-check: first September session.
+3. (#14) Guardrails run at every mark — standing. ALL GREEN in s30.
+4. Signal watch: monitor EPS gate recovery (12m growth → ≥0%) and IEF/GLD SMA200 cross.
+   Either triggers a rebalance. IEF currently $0.62 below SMA200; GLD $22.08 below SMA200.
+5. **E46 — Trend Quality Filter (NEW, s30):** Hypothesis: a Hurst exponent or realized-
+   variance ratio as a trend-quality signal on top of SMA200 + vol-target reduces whipsaw
+   in choppy markets. Build `tools/trend_quality.py` (H, DFA, KPSS, Lyapunov); pre-register
+   ≤12 configs. Expected: 1 session to build + 1 to test. Rationale: CRQS was hardest to beat
+   in all of E43–E45 attempts; the base signal is already near-optimal; quality signal is the
+   next unexplored dimension.
+6. Phase-2 graduation review — 0/3 live months; checkpoint ~2026-08-13.
+7. (#33, #34, #35) Defensive cash sleeve revisit after 12+ live months: not needed now.
+8. IVG corr_v2=0.539 — near ensemble-eligible. Revisit if bear market materialises.
+
+## Research scope update (s30)
+285 configs burned. 16 families permanently closed: sector, kill-switch, blended-mom,
 AAA, RSI-2, IBS, seasonal, market-breadth, low-vol-sector, country-rotation,
 VAA/breadth-protection, Donchian/turtle, 52wk-high, VIX-regime-ensemble,
 inter-market-bond-equity, yield-curve-ETF-relative-momentum.
 1 strategy ADOPTED: E42 CRQS (s28) — first CI clearance, new champion.
-Architecture-only experiments (no configs burned): E43 Kelly-sized CRQS, E44 CRQS-MinVar ensemble.
-New tools shipped (s29): drawdown_analytics.py (Thorp risk-of-ruin, Markowitz semivariance),
-market_cycle.py (Howard Marks composite cycle score). Production bug fixed in underwater_periods.
-Open families: E43 Kelly-sized CRQS (pending pre-registration), E44 CRQS-MinVar ensemble
-(pending pre-registration), CRQS-CycleOverlay (new — market_cycle.py integration), CAPE
-(decade-horizon formulation), Tactical Bond (capital-preservation), GTAA/Swensen/IVG
-(revisit if bear market materialises), Earnings Growth overlay (revisit after recession).
+E43 Kelly-sized CRQS: ADOPTED (architecture; champion vol_target=0.18 is Kelly-optimal).
+E44 CRQS-MinVar Ensemble: DISCARDED (End$1k too low).
+E45 CRQS-CycleOverlay: DISCARDED (End$1k < CRQS bar; EPS gate already handles late-cycle).
+New files shipped (s30): strategies/crqs_cycle_overlay.py, research/run_2026_08_06_s30_crqs_cycle.py.
+Open families: E46 Trend Quality (pending), CAPE (decade-horizon formulation),
+Tactical Bond (capital-preservation), GTAA/Swensen/IVG (revisit if bear market materialises),
+Earnings Growth overlay (revisit after recession).
 Grid exhausted on: E33-E35 defensive sleeve variants; E36 GTAA-5; E37 Swensen-4;
-E38 IVG; E39 Earnings Growth; E41 MinVar; E42 CRQS (12 configs, full grid).
+E38 IVG; E39 Earnings Growth; E41 MinVar; E42 CRQS (12 configs, full grid);
+E43 Kelly-sized CRQS (6 configs); E44 CRQS-MinVar (5 configs); E45 CycleOverlay (6 configs).
 
 ## Negative results (do NOT re-test in the original form)
 - **Faber GTAA-5 (equal-weight 5-asset, SMA-gated)** (E36, s24, SPY/EFA/DBC/VNQ/IEF):
