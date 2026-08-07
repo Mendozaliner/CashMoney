@@ -1,18 +1,18 @@
 {
  "inception": "2026-07-13",
  "note": "Virtual paper portfolio, $1,000 inception 2026-07-13. 2026-07-14 migration: live track re-based from the stale SPY_PROXY dataset (ended 2025-12-19) to real SPY closes from the self-refreshing cache. Value carried at $999.00 (no P&L recognized for the stale gap); units converted at the 2026-07-13 close. Live-outperformance clock starts at this mark, per STATE.md. T-bill yield accrues on any cash sleeve.",
- "champion": "CRQS(eps_threshold=0.00, scale_down=0.75, corr_threshold=0.00) — adopted 2026-08-03 s28; first CI-positive strategy in project history. Base: vol_target(target_vol=0.18, lookback=20) x SMA200/b3 gate + EPS quality gate + Ilmanen regime defensive (IEF/GLD). See strategies/crqs.py.",
+ "champion": "CRQS(eps_threshold=0.00, scale_down=0.75, corr_threshold=0.00) \u2014 adopted 2026-08-03 s28; first CI-positive strategy in project history. Base: vol_target(target_vol=0.18, lookback=20) x SMA200/b3 gate + EPS quality gate + Ilmanen regime defensive (IEF/GLD). See strategies/crqs.py.",
  "positions": {
   "SPY": {
    "units": 1.0001,
-   "last_px": 769.79
+   "last_px": 768.56
   }
  },
- "cash": 252.28,
+ "cash": 252.31,
  "last_mark": {
-  "date": "2026-08-05",
-  "value": 1022.15,
-  "spy_close": 769.79
+  "date": "2026-08-06",
+  "value": 1020.94,
+  "spy_close": 768.56
  },
  "history": [
   {
@@ -274,8 +274,8 @@
    "mark_date": "2026-07-31",
    "value": 996.15,
    "chg_dollar": 7.12,
-   "chg_pct": 0.720,
-   "spy_pct_same_window": 0.720,
+   "chg_pct": 0.72,
+   "spy_pct_same_window": 0.72,
    "all_time_pct": -0.385,
    "note": "Session 26 (2026-08-01): SPY close 747.0300 (2026-07-31), +0.720% on the day. 1.333476 units \u00d7 $747.0300 = $996.15 (+0.720%). v2 exposure 1.0000 (747.03 > SMA200+3% band; vol < 18%). No trades. E40 VRP Timing: DISCARDED (best VRP(lb40,sc0.75) mean_wf=0.752 < 0.851 v2 bar; CI=[-0.109,+0.603] straddles zero; corr_v2=0.991 near-duplicate). 4 new configs (257 total). v2 CI re-check: [-0.0289,+0.6834] straddles zero (unchanged verdict). 6 new tests (178 total, all pass). Guardrails G1-G7 ALL GREEN. DD from peak: -0.99%."
   },
@@ -308,9 +308,20 @@
    "value": 1022.15,
    "chg_dollar": 12.19,
    "chg_pct": 1.207,
-   "spy_pct_same_window": 1.600,
+   "spy_pct_same_window": 1.6,
    "all_time_pct": 2.215,
    "note": "Session 30 (2026-08-06): SPY close $769.79 (2026-08-05, +1.600% since last mark 2026-08-03 $757.67). Portfolio: 1.0001 units \u00d7 $769.79 = $769.87 + $252.28 cash (T-bill 3.725%/yr \u00d7 2 days) = $1,022.15 (NEW ATH). CRQS signal UNCHANGED: SPY=0.75, IEF=0, GLD=0, cash=0.25. EPS quality gate STILL FIRED (12m EPS growth negative). IEF @ $93.31 < SMA200 $93.93 \u2192 no IEF. GLD @ $389.64 < SMA200 $411.72 \u2192 no GLD. Inflation regime still active (SB corr +0.489). No rebalance needed. E45 CRQS-CycleOverlay (Howard Marks 4-component cycle tilt): DISCARDED. Best config CycleOverlay(th=0.80,sc=0.90): mean_wf=1.034 (passes 1.033 bar), MaxDD=-16.02% (passes), DSR=1.000 (passes), CI=[+0.0413,+0.8520] (passes) \u2014 but End$1k=$11,982 FAILS bar (< CRQS $12,104). All 6 configs underperform CRQS champion terminal value. Cycle overlay fires on only 6-16% of OOS days \u2014 too infrequent to offset equity drag in bull markets. CRQS champion unchanged. New file: strategies/crqs_cycle_overlay.py. Howard Marks cycle score 0.665 (mid_late_cycle): val=0.804, fear=0.781, mom=0.826, eps=0.0, erp=0.951. Guardrails G1-G7 ALL GREEN. All-time: +2.215% vs SPY +2.752% \u2192 CRQS -0.537% behind since inception (75% exposure while SPY rallied)."
+  },
+  {
+   "date": "2026-08-07",
+   "session": 31,
+   "mark_date": "2026-08-06",
+   "value": 1020.94,
+   "chg_dollar": -1.21,
+   "chg_pct": -0.118,
+   "spy_pct_same_window": -0.16,
+   "all_time_pct": 2.196,
+   "note": "Session 31 (2026-08-07): SPY close $768.56 (2026-08-06), -0.160% since last mark (2026-08-05 $769.79). Portfolio: 1.0001 units \u00d7 $768.56 = $768.64 + $252.31 cash (T-bill 3.732%/yr \u00d7 1d accrual) = $1020.94. CRQS signal UNCHANGED: SPY=0.75, IEF=0, GLD=0, cash=0.25. EPS quality gate STILL FIRED (12m EPS growth ~-4%). IEF $92.95 < SMA200 $93.92 \u2192 no IEF. GLD $389.67 < SMA200 $411.72 \u2192 no GLD. Inflation regime active (SB corr > 0). No rebalance needed. E46 CRQS-TQF (Variance Ratio Trend Quality Filter): DISCARDED. Best config TQF(q=10,lb=126,sc=0.50): mean_wf_oos=1.117 (passes 1.033 bar), MaxDD=-11.33% (passes), DSR=1.000 (passes), CI=[+0.0546,+0.9804] (passes) \u2014 but End$1k=$6,614 FAILS bar (< CRQS $12,104). Root cause: VR on daily returns is systematically < 1.0 (microstructure: bid-ask bounce, intraday mean-reversion); filter active 74-78% of OOS days, crushing absolute returns. 12 configs tested (297 total). New tools: tools/trend_quality.py (variance_ratio, rolling_hurst). New strategy: strategies/crqs_tqf.py. Guardrails G1-G7 ALL GREEN. All-time: +2.196% vs SPY +2.588% \u2192 CRQS -0.392% vs SPY."
   }
  ],
  "trades": [
@@ -342,7 +353,7 @@
    "px": 757.67,
    "notional": 252.59,
    "cost": 0.38,
-   "reason": "CRQS EPS quality gate fired (12m EPS growth negative); signal changed SPY=1.0→0.75. IEF and GLD below SMA200 → no defensive allocation; excess goes to T-bill/cash sleeve."
+   "reason": "CRQS EPS quality gate fired (12m EPS growth negative); signal changed SPY=1.0\u21920.75. IEF and GLD below SMA200 \u2192 no defensive allocation; excess goes to T-bill/cash sleeve."
   }
  ],
  "baseline_for_live_clock": {
